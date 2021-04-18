@@ -9,6 +9,7 @@
 *.dll.config
 *.cache
 *.suo
+NoorGeneralHospital.suo
 # Include dlls if they’re in the NuGet packages directorys
 !/packages/*/lib/*.dll
 !/packages/*/lib/*/*.dll
