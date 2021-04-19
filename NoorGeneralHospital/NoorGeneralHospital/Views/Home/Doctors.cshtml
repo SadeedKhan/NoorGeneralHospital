@@ -1,147 +1,180 @@
 ﻿
 @{
-    ViewBag.Title = "Services";
-    Layout = "~/Areas/User/Views/Shared/_UserLayout.cshtml";
+    ViewBag.Title = "Doctors";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
     }
-<!-- End of .header-middle -->
 <!-- Start of .header-bottom-4 -->
 <header class="header-bottom-4">
-    <img src="~/Areas/User/Content/assets/images/banner/banner5.jpg">
+    <img src="~/Content/assets/images/banner/banner5.jpg">
     <div class="header-bottom-4__bg">
         <div class="icon">
-            <img src="~/Areas/User/Content/assets/images/banner/banner-shape.png">
+            <img src="~/Content/assets/images/banner/banner-shape.png">
         </div>
     </div>
     <div class="container">
-        <h1 class="section-title">our <span>Services</span></h1>
+        <h1 class="section-title">Our <span>Doctors</span></h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item active">All Departments</li>
+            <li class="breadcrumb-item"><a href="index.html">Our Doctors</a></li>
+            <li class="breadcrumb-item active">Details</li>
         </ol>
     </div>
 </header>
 <!-- End of .header-bottom-4 -->
-<!-- Start of departments-3 -->
-<section class="departments-3 main-blog">
+<!-- Start of .case -->
+<section class="case main-blog">
     <div class="main-blog__bg">
         <div class="icon">
-            <img src="~/Areas/User/Content/assets/images/png-shapes/form-shape.png">
+            <img src="~/Content/assets/images/png-shapes/form-shape.png">
         </div>
         <div class="icon">
-            <img src="~/Areas/User/Content/assets/images/png-shapes/specialists__left-bottom-shape.png">
+            <img src="~/Content/assets/images/png-shapes/specialists__left-bottom-shape.png">
         </div>
     </div>
     <div class="container">
-        <div class="departments-3__item-1">
-            <a href="departments-details.html" class="item">
+        <!-- filter control btns -->
+        <div class="case__controls">
+            <ul class="case__controls-lists">
+                <li class="case__controls-item active" data-filter="*">All Cases</li>
+                <li class="case__controls-item" data-filter=".filterDental">Dental</li>
+                <li class="case__controls-item" data-filter=".filterPlasticSurgery">Plastic Surgery</li>
+                <li class="case__controls-item" data-filter=".filterBreast">Breast</li>
+                <li class="case__controls-item" data-filter=".filterFatReduction">Fat Reduction</li>
+                <li class="case__controls-item" data-filter=".filterBodyLifts">Body Lifts</li>
+                <li class="case__controls-item" data-filter=".filterFaceNeck">Face & Neck</li>
+            </ul>
+        </div>
+
+        <div class="case__cards filterContainer">
+            <a id="popup-form-open" class="case__cards-item filterDental">
                 <div class="img">
-                    <img src="~/Areas/User/Content/assets/images/jpg/department_1_column.jpg">
+                    <span class="h-line"></span>
+                    <span class="v-line"></span>
+                    <img src="~/Content/assets/images/jpg/specialist-1.jpg">
                 </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">Diagnostics</span>
-                    <h1 class="title">Diagnostics</h1>
-                    <p class="text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                    </p>
-                    <!-- <!--<span class="read-more-2">read more</span> --> -->
-                </div>
-            </a>
-            <a href="departments-details.html" class="item">
-                <div class="img">
-                    <img src="~/Areas/User/Content/assets/images/jpg/department_1_column2.jpg">
-                </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">Diagnostics</span>
-                    <h1 class="title">Diagnostics</h1>
-                    <p class="text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                    </p>
-                    <!--<span class="read-more-2">read more</span> -->
-                </div>
-            </a>
-            <a href="departments-details.html" class="item">
-                <div class="img">
-                    <img src="~/Areas/User/Content/assets/images/jpg/department_1_column3.jpg">
-                </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">Cardialogy</span>
-                    <h1 class="title">Cardialogy</h1>
-                    <p class="text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                    </p>
-                    <!--<span class="read-more-2">read more</span> -->
-                </div>
-            </a>
-            <a href="departments-details.html" class="item">
-                <div class="img">
-                    <img src="~/Areas/User/Content/assets/images/jpg/department_1_column4.jpg">
-                </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">Dental</span>
-                    <h1 class="title">Dental</h1>
-                    <p class="text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                    </p>
-                    <!--<span class="read-more-2">read more</span> -->
-                </div>
-            </a>
-            <a href="departments-details.html" class="item">
-                <div class="img">
-                    <img src="~/Areas/User/Content/assets/images/jpg/department_1_column5.jpg">
-                </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">Ophtalmology</span>
-                    <h1 class="title">Ophtalmology</h1>
-                    <p class="text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                    </p>
-                    <!--<span class="read-more-2">read more</span> -->
-                </div>
-            </a>
-            <a href="departments-details.html" class="item">
-                <div class="img">
-                    <img src="~/Areas/User/Content/assets/images/jpg/department_1_column6.jpg">
-                </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">Pulmonary</span>
-                    <h1 class="title">Pulmonary</h1>
-                    <p class="text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                    </p>
-                    <!--<span class="read-more-2">read more</span> -->
-                </div>
-            </a>
-            <a href="departments-details.html" class="item">
-                <div class="img">
-                    <img src="~/Areas/User/Content/assets/images/jpg/department_1_column7.jpg">
-                </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">Urology</span>
-                    <h1 class="title">Urology</h1>
-                    <p class="text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                    </p>
-                    <!--<span class="read-more-2">read more</span> -->
-                </div>
-            </a>
-            <a href="departments-details.html" class="item">
-                <div class="img">
-                    <img src="~/Areas/User/Content/assets/images/jpg/department_1_column8.jpg">
-                </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">Gastroenterology</span>
-                    <h1 class="title">Gastroenterology</h1>
-                    <p class="text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                    </p>
-                    <!--<span class="read-more-2">read more</span> -->
-                </div>
+                <h1 class="name">Dr Umar  </h1>
+                <p class="profession">Teeth Cleaning</p>
+                <span class="category">Dental</span>
             </a>
 
+            <a href="#" class="case__cards-item filterFaceNeck">
+                <div class="img">
+                    <span class="h-line"></span>
+                    <span class="v-line"></span>
+                    <img src="~/Content/assets/images/jpg/specialist-2.jpg">
+                </div>
+                <h1 class="name">   Dr Usma Nayyar</h1>
+                <p class="profession">Teeth Cleaning</p>
+                <span class="category">Dental</span>
+            </a>
+
+            <a href="#" class="case__cards-item filterPlasticSurgery">
+                <div class="img">
+                    <span class="h-line"></span>
+                    <span class="v-line"></span>
+                    <img src="~/Content/assets/images/jpg/specialist-3.jpg">
+                </div>
+                <h1 class="name">   Dr Owais Ahmad Qureshi </h1>
+                <p class="profession">Teeth Cleaning</p>
+                <span class="category">Dental</span>
+            </a>
+
+            <a href="#" class="case__cards-item filterBreast">
+                <div class="img">
+                    <span class="h-line"></span>
+                    <span class="v-line"></span>
+                    <img src="~/Content/assets/images/jpg/specialist-4.jpg">
+                </div>
+                <h1 class="name">Dr Muhib ur Rehman  </h1>
+                <p class="profession">Teeth Cleaning</p>
+                <span class="category">Dental</span>
+            </a>
+
+
+            <a href="#" class="case__cards-item filterFatReduction">
+                <div class="img">
+                    <span class="h-line"></span>
+                    <span class="v-line"></span>
+                    <img src="~/Content/assets/images/jpg/specialist-5.jpg">
+                </div>
+                <h1 class="name">  Dr Ismail </h1>
+                <p class="profession">Teeth Cleaning</p>
+                <span class="category">Dental</span>
+            </a>
+
+            <a href="#" class="case__cards-item filterDental">
+                <div class="img">
+                    <span class="h-line"></span>
+                    <span class="v-line"></span>
+                    <img src="~/Content/assets/images/jpg/specialist-6.jpg">
+                </div>
+                <h1 class="name">Dr Sharosh Mumtaz</h1>
+                <p class="profession">Teeth Cleaning</p>
+                <span class="category">Dental</span>
+            </a>
+
+            <a href="#" class="case__cards-item filterFaceNeck">
+                <div class="img">
+                    <span class="h-line"></span>
+                    <span class="v-line"></span>
+                    <img src="~/Content/assets/images/jpg/specialist-7.jpg">
+                </div>
+                <h1 class="name">Dr Zanib Maqsood</h1>
+                <p class="profession">Teeth Cleaning</p>
+                <span class="category">Dental</span>
+            </a>
+
+            <a href="#" class="case__cards-item filterBodyLifts">
+                <div class="img">
+                    <span class="h-line"></span>
+                    <span class="v-line"></span>
+                    <img src="~/Content/assets/images/jpg/specialist-8.jpg">
+                </div>
+                <h1 class="name">Dr Furqan Tahir</h1>
+                <p class="profession">Teeth Cleaning</p>
+                <span class="category">Dental</span>
+            </a>
+
+            <a href="#" class="case__cards-item filterDental">
+                <div class="img">
+                    <span class="h-line"></span>
+                    <span class="v-line"></span>
+                    <img src="~/Content/assets/images/jpg/specialist-9.jpg">
+                </div>
+                <h1 class="name">  Dr Naintara</h1>
+                <p class="profession">Teeth Cleaning</p>
+                <span class="category">Dental</span>
+            </a>
+
+
         </div>
+
+        <ul class="my-pagination">
+            <li class="disabled">
+                <span class="fa fa-angle-left"></span>
+            </li>
+            <li class="active">
+                <a href="#">01</a>
+            </li>
+            <li class="">
+                <a href="#">02</a>
+            </li>
+            <li class="">
+                <a href="#">03</a>
+            </li>
+            <li class="dotted">
+                <p>...</p>
+            </li>
+            <li class="">
+                <a href="#">09</a>
+            </li>
+            <li class="">
+                <span class="fa fa-angle-right"></span>
+            </li>
+        </ul>
     </div>
 </section>
-<!-- End of departments-3 -->
+<!-- End of .case -->
 <!-- Start of .emergency-call -->
 <section class="emergency-call">
     <div class="container">

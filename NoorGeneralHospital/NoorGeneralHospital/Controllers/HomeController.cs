@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace NoorGeneralHospital.Areas.User.Controllers
+namespace NoorGeneralHospital.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: User/Home
+        // GET: Home
         public ActionResult Index()
         {
             return View();
