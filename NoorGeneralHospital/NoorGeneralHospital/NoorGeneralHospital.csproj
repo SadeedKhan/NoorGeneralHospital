@@ -121,6 +121,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AppointmentController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DoctorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -128,6 +130,80 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Content\assets\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="Areas\Admin\Content\assets\css\bootstrap.min.css" />
+    <Content Include="Areas\Admin\Content\assets\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Areas\Admin\Content\assets\css\font-awesome.min.css" />
+    <Content Include="Areas\Admin\Content\assets\css\fullcalendar.min.css" />
+    <Content Include="Areas\Admin\Content\assets\css\select2.min.css" />
+    <Content Include="Areas\Admin\Content\assets\css\style.css" />
+    <Content Include="Areas\Admin\Content\assets\css\tagsinput.css" />
+    <Content Include="Areas\Admin\Content\assets\fonts\fontawesome-webfont3e6e.html" />
+    <Content Include="Areas\Admin\Content\assets\fonts\fontawesome-webfont3e6e.svg" />
+    <Content Include="Areas\Admin\Content\assets\img\attachment.png" />
+    <Content Include="Areas\Admin\Content\assets\img\blog\blog-01.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\blog\blog-02.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\blog\blog-03.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\blog\blog-04.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\blog\blog-thumb-01.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\blog\blog-thumb-02.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\blog\blog-thumb-03.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\blog\blog-thumb-04.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\calander.png" />
+    <Content Include="Areas\Admin\Content\assets\img\clock.png" />
+    <Content Include="Areas\Admin\Content\assets\img\doctor-03.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\doctor-thumb-01.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\doctor-thumb-02.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\doctor-thumb-03.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\doctor-thumb-04.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\doctor-thumb-05.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\doctor-thumb-06.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\doctor-thumb-07.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\doctor-thumb-08.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\doctor-thumb-09.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\doctor-thumb-10.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\doctor-thumb-11.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\doctor-thumb-12.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\favicon.ico" />
+    <Content Include="Areas\Admin\Content\assets\img\logo-dark.png" />
+    <Content Include="Areas\Admin\Content\assets\img\logo.png" />
+    <Content Include="Areas\Admin\Content\assets\img\patient-thumb-01.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\patient-thumb-02.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\placeholder-thumb.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\placeholder.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\sent.png" />
+    <Content Include="Areas\Admin\Content\assets\img\user-02.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\user-03.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\user-04.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\user-05.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\user-06.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\user.jpg" />
+    <Content Include="Areas\Admin\Content\assets\img\video-call.jpg" />
+    <Content Include="Areas\Admin\Content\assets\js\app.js" />
+    <Content Include="Areas\Admin\Content\assets\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="Areas\Admin\Content\assets\js\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Content\assets\js\Chart.bundle.js" />
+    <Content Include="Areas\Admin\Content\assets\js\chart.js" />
+    <Content Include="Areas\Admin\Content\assets\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Areas\Admin\Content\assets\js\fullcalendar.min.js" />
+    <Content Include="Areas\Admin\Content\assets\js\jquery-3.2.1.min.js" />
+    <Content Include="Areas\Admin\Content\assets\js\jquery-ui.min.html" />
+    <Content Include="Areas\Admin\Content\assets\js\jquery.dataTables.min.js" />
+    <Content Include="Areas\Admin\Content\assets\js\jquery.fullcalendar.js" />
+    <Content Include="Areas\Admin\Content\assets\js\jquery.slimscroll.js" />
+    <Content Include="Areas\Admin\Content\assets\js\moment.min.js" />
+    <Content Include="Areas\Admin\Content\assets\js\popper.min.js" />
+    <Content Include="Areas\Admin\Content\assets\js\select2.min.js" />
+    <Content Include="Areas\Admin\Content\assets\js\tagsinput.js" />
+    <Content Include="Areas\Admin\Content\assets\plugins\light-gallery\css\lightgallery.min.css" />
+    <Content Include="Areas\Admin\Content\assets\plugins\light-gallery\fonts\lgd641.svg" />
+    <Content Include="Areas\Admin\Content\assets\plugins\light-gallery\img\loading.gif" />
+    <Content Include="Areas\Admin\Content\assets\plugins\light-gallery\img\video-play.png" />
+    <Content Include="Areas\Admin\Content\assets\plugins\light-gallery\img\vimeo-play.png" />
+    <Content Include="Areas\Admin\Content\assets\plugins\light-gallery\img\youtube-play.png" />
+    <Content Include="Areas\Admin\Content\assets\plugins\light-gallery\js\lightgallery-all.min.js" />
+    <Content Include="Areas\Admin\Content\assets\plugins\summernote\dist\summernote-bs4.css" />
+    <Content Include="Areas\Admin\Content\assets\plugins\summernote\dist\summernote-bs4.min.js" />
     <Content Include="bin\NoorGeneralHospital.dll" />
     <Content Include="bin\NoorGeneralHospital.pdb" />
     <Content Include="Content\assets\css\animate.css" />
@@ -305,6 +381,7 @@
     <Content Include="Content\assets\js\owl.carousel.min.js" />
     <Content Include="Content\assets\js\wow.min.js" />
     <Content Include="favicon.ico" />
+    <Content Include="gfgg.svg" />
     <Content Include="Global.asax" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Views\web.config" />
@@ -318,9 +395,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Content\" />
-    <Folder Include="Areas\Admin\Controllers\" />
-    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -430,6 +505,22 @@
     <Content Include="Content\assets\scss\_svg-icons.scss" />
     <Content Include="Content\assets\scss\_to-top.scss" />
     <Content Include="Content\assets\scss\_variables.scss" />
+    <Content Include="Areas\Admin\Content\assets\fonts\fontawesome-webfont3e6e.eot" />
+    <Content Include="Areas\Admin\Content\assets\fonts\fontawesome-webfont3e6e.ttf" />
+    <Content Include="Areas\Admin\Content\assets\fonts\fontawesome-webfont3e6e.woff" />
+    <Content Include="Areas\Admin\Content\assets\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Areas\Admin\Content\assets\plugins\light-gallery\fonts\lgd41d.eot" />
+    <Content Include="Areas\Admin\Content\assets\plugins\light-gallery\fonts\lgd641.eot" />
+    <Content Include="Areas\Admin\Content\assets\plugins\light-gallery\fonts\lgd641.ttf" />
+    <Content Include="Areas\Admin\Content\assets\plugins\light-gallery\fonts\lgd641.woff" />
+    <Content Include="Areas\Admin\Content\assets\plugins\summernote\dist\font\summernote4c4d.eot" />
+    <Content Include="Areas\Admin\Content\assets\plugins\summernote\dist\font\summernote4c4d.ttf" />
+    <Content Include="Areas\Admin\Content\assets\plugins\summernote\dist\font\summernote4c4d.woff" />
+    <Content Include="Areas\Admin\Content\assets\plugins\summernote\dist\font\summernoted41d.eot" />
+    <Content Include="Areas\Admin\Views\Doctors\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Doctors\_AddDoctor.cshtml" />
+    <Content Include="Areas\Admin\Views\Appointment\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Appointment\_AddAppointment.cshtml" />
     <None Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>
