@@ -1,0 +1,39 @@
+﻿@using NoorGeneralHospital.Areas.Admin.Models
+@model NoorGeneralHospital.Areas.Admin.Models.Auth.LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+    Layout = "~/Areas/Admin/Views/Shared/_AccountLayout.cshtml";
+}
+
+<div class="account-page">
+    <div class="account-center">
+        <div class="account-box">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-signin", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <h4>@ViewBag.Title.</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group text-right">
+                    <a href="forgot-password.html">Forgot your password?</a>
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary account-btn">Login</button>
+                </div>
+                <div class="text-center register-link">
+                    Don’t have an account?  @Html.ActionLink("Register Now", "Register")
+                </div>
+            }
+        </div>
+    </div>
+</div>
