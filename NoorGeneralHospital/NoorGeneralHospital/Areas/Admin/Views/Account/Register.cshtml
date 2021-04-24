@@ -12,6 +12,7 @@
                 @Html.AntiForgeryToken()
                 <h4>@ViewBag.Title.</h4>
                 <hr />
+                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
                 <div class="form-group">
                     @Html.LabelFor(m => m.Email, new { @class = "control-label" })
                     @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })

@@ -9,6 +9,7 @@
 *.dll.config
 *.cache
 *.suo
+Web.Config
 NoorGeneralHospital.suo
 # Include dlls if they’re in the NuGet packages directorys
 !/packages/*/lib/*.dll
