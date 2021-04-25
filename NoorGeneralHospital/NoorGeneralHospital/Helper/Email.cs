@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net.Mail;
 using System.Web;
 
-namespace NoorGeneralHospital.Services
+namespace NoorGeneralHospital.Helper
 {
     public class Email
     {

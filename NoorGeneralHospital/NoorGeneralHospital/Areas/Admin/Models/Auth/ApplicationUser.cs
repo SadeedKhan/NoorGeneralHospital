@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using NoorGeneralHospital.Areas.Admin.Models.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -26,9 +28,13 @@ namespace NoorGeneralHospital.Areas.Admin.Models.Auth
         {
         }
 
+        public virtual DbSet<Speciality> Speciality { get; set; }
+
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+
     }
 }
