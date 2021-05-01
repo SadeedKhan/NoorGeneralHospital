@@ -1,38 +1,37 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using NoorGeneralHospital.Models;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+using System.Threading.Tasks;
 
 namespace NoorGeneralHospital.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
-        public ActionResult Index()
-        {
-            return View();
-        }
-        public ActionResult Doctors()
-        {
-            return View();
-        }
-        public ActionResult Services()
-        {
-            return View();
-        }
-        public ActionResult About()
-        {
+        private readonly ILogger<HomeController> _logger;
 
-            return View();
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
         }
-        public ActionResult Contact()
+
+        public IActionResult Index()
         {
             return View();
         }
-        public ActionResult Login()
+
+        public IActionResult Privacy()
         {
             return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
