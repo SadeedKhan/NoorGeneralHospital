@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap4")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-NoorGeneralHospital-5C009B88-6ED7-4AF7-ADC8-91D9958E55FA")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("NoorGeneralHospital")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
