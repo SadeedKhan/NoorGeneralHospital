@@ -113,3 +113,5 @@ E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneral
 E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.StatusLocation.resources
 E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.StatusLocations.resources
 E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.doctors.resources
+E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.doctor.resources
+E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.Doctorfieldupdate.resources

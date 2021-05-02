@@ -1,0 +1,161 @@
+﻿@model NoorGeneralHospital.Models.InputDTO.DoctorInput
+
+@{
+    ViewBag.Title = "Create/Update";
+}
+
+<div class="row">
+    <div class="col-lg-8 offset-lg-2">
+        <h4 class="page-title">Create/Update Doctor</h4>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-8 offset-lg-2">
+        @using (Html.BeginForm("SaveDoctor", "Doctor", FormMethod.Post, new { enctype = "multpart/form-data" }))
+        {
+            <div class="row">
+                @Html.HiddenFor(d=>d.Id)
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Username </label>
+                        @Html.TextBoxFor(s => s.UserName, new { @class = "form-control", @placeholder = "Enter Doctor Name" })
+                        @Html.ValidationMessageFor(s => s.UserName, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Email </label>
+                        @Html.TextBoxFor(s => s.Email, new { @class = "form-control", @placeholder = "Enter Doctor Email" })
+                        @Html.ValidationMessageFor(s => s.Email, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Date of Birth</label>
+                        <div class="cal-icon">
+                            @Html.TextBoxFor(s => s.DOB, new { @class = "form-control datetimepicker", @placeholder = "Enter Doctor Name" })
+                            @Html.ValidationMessageFor(s => s.DOB, null, new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group gender-select">
+                        <label class="gen-label">Gender:</label>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input type="radio" name="gender" class="form-check-input">Male
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input type="radio" name="gender" class="form-check-input">Female
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <label>Country</label>
+                                @Html.DropDownListFor(x => Model.SpecialityId, new SelectList(Model.GetSpeciality(), "Value", "Text"), htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.SpecialityId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 ">
+                            <div class="form-group">
+                                <label>Location</label>
+                                @Html.DropDownListFor(x => Model.LocationId, new SelectList(Model.GetLocation(), "Value", "Text"), htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.LocationId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label>Address</label>
+                                @Html.TextBoxFor(s => s.Address, new { @class = "form-control", @placeholder = "Enter Address" })
+                                @Html.ValidationMessageFor(s => s.Address, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Phone </label>
+                        @Html.TextBoxFor(s => s.Phone, new { @class = "form-control", @placeholder = "Enter Phone Number" })
+                        @Html.ValidationMessageFor(s => s.Phone, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Avatar</label>
+                        <div class="profile-upload">
+                            <div class="upload-input">
+                                @Html.TextBoxFor(m => m.File, new { type = "file" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Short Biography</label>
+                @Html.TextAreaFor(s => s.ShortBioGraphy, new { @class = "form-control", @rows = "3", @cols = "30", @placeholder = "Enter Message" })
+            </div>
+            <div class="form-group">
+                <label class="display-block">Doctor Status</label>
+                <div class="form-check form-check-inline">
+                    @Html.RadioButtonFor(s => s.IsActive, true, new { @class = "form-check-input", @name = "status", @checked = true })
+                    <label class="form-check-label" >
+                        Active
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    @Html.RadioButtonFor(s => s.IsActive, false, new { @class = "form-check-input", @name = "status"})
+                    <label class="form-check-label" >
+                        Inactive
+                    </label>
+                </div>
+            </div>
+            <div class="m-t-20 text-center">
+                <button class="btn btn-primary submit-btn">Create Doctor</button>
+            </div>
+        }
+    </div>
+</div>
+
+<script src="~/Content/assets/js/jquery.validate.min.js"></script>
+<script src="~/Content/assets/js/jquery.validate.unobtrusive.min.js"></script>
+<script>
+    $(document).ready(function () {
+            $('#datetimepicker').datetimepicker();
+
+        $('form').submit(function (e) {
+            debugger
+            e.preventDefault();
+            var isValid = $(this).validate().form();
+            if (!isValid) return false;
+            else {
+                $.ajax({
+                    url: '/Doctor/SaveDoctor',
+                    data: $(this).serialize(),
+                    type: 'POST',
+                    beforeSend: function () {
+                    },
+                    complete: function () {
+                    },
+                    success: function (res) {
+                        if (res.Code == "1") {
+                            toastr.success(res.Message, 'success!');
+                            _SpecialityDetail();
+                        }
+                        else {
+                            toastr.error(res.Message, 'error!');
+                        }
+                    },
+                    error: function (jqXHR, error, errorThrown) {
+                        toastr.error('Sorry Try again', 'error!');
+                    },
+                });
+            }
+        });
+
+    });</script>

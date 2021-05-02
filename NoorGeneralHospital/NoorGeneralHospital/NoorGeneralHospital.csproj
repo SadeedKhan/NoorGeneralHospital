@@ -200,6 +200,14 @@
     <Compile Include="Migrations\202105021200162_doctors.Designer.cs">
       <DependentUpon>202105021200162_doctors.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105021203005_doctor.cs" />
+    <Compile Include="Migrations\202105021203005_doctor.Designer.cs">
+      <DependentUpon>202105021203005_doctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105021322586_Doctorfieldupdate.cs" />
+    <Compile Include="Migrations\202105021322586_Doctorfieldupdate.Designer.cs">
+      <DependentUpon>202105021322586_Doctorfieldupdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Doctor.cs" />
@@ -301,6 +309,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="CustomScripts\Doctor\Doctor.js" />
     <Content Include="CustomScripts\Speciality\Speciality.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -375,6 +384,8 @@
     <Content Include="Views\Specialities\Details.cshtml" />
     <Content Include="Views\Specialities\Index.cshtml" />
     <Content Include="Views\Doctor\Details.cshtml" />
+    <Content Include="Views\Doctor\AddEditDoctor.cshtml" />
+    <Content Include="Views\Doctor\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -410,6 +421,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105021200162_doctors.resx">
       <DependentUpon>202105021200162_doctors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105021203005_doctor.resx">
+      <DependentUpon>202105021203005_doctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105021322586_Doctorfieldupdate.resx">
+      <DependentUpon>202105021322586_Doctorfieldupdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
