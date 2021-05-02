@@ -1,0 +1,57 @@
+﻿@model IEnumerable<NoorGeneralHospital.Models.Speciality>
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="row">
+    <div class="col-sm-5 col-5">
+        <h4 class="page-title">Speciality Details</h4>
+    </div>
+    <div class="col-sm-7 col-7 text-right m-b-30">
+        <a href="#" onclick="_AddEditSpeciality(0)" class="btn btn-primary btn-rounded"><i class="fa fa-plus"></i> Add Speciality</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <table class="table table-striped custom-table mb-0 datatable">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Speciality Name</th>
+                        <th>Status</th>
+                        <th class="text-right">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var cur in Model)
+                    {
+                        <tr>
+                            <td>@cur.Id</td>
+                            <td>@cur.SpecialityName</td>
+                            <td>
+                                @{
+                                    if (cur.IsActive == true)
+                                    {
+                                        <span class="custom-badge status-green">Active</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="custom-badge status-red">InActive</span>
+                                    }
+                                }
+                            </td>
+                            <td class="text-right">
+                                        <a class="btn btn-outline-primary take-btn" onclick="_AddEditSpeciality('@cur.Id')"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+                                        @*<a class="dropdown-item" onclick="DeleteSpeciality('@cur.Id')"><i class="fa fa-trash-o m-r-5"></i> Delete</a>*@
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
