@@ -52,7 +52,7 @@ namespace NoorGeneralHospital.Controllers
                 var Id = db.Specialities.Where(x => x.Id == speciality.Id).FirstOrDefault();
                 if (Id != null)
                 {
-                    Exist = db.Specialities.Where(a => a.SpecialityName == speciality.SpecialityName && a.Id != speciality.Id && a.IsActive == true).Count();
+                    Exist = db.Specialities.Where(a => a.NSpecialityName == speciality.SpecialityName.ToUpper() && a.Id != speciality.Id && a.IsActive == true).Count();
                     if (Exist > 0)
                     {
                         _result.Message = "Record Already Exist With Same Name!";
@@ -65,6 +65,7 @@ namespace NoorGeneralHospital.Controllers
                         {
                             db.Entry(local).State = EntityState.Detached;
                         }
+                        speciality.NSpecialityName = speciality.SpecialityName.ToUpper();
                         speciality.UpdatedOn = DateTime.Now;
                         speciality.UpdatedById = userId;
                         db.Entry(speciality).State = EntityState.Modified;
@@ -75,7 +76,7 @@ namespace NoorGeneralHospital.Controllers
                 }
                 else
                 {
-                    Exist = db.Specialities.Where(a => a.SpecialityName == speciality.SpecialityName).Count();
+                    Exist = db.Specialities.Where(a => a.NSpecialityName == speciality.SpecialityName.ToUpper()).Count();
                     if (Exist > 0)
                     {
                         _result.Message = "Record Already Exist With Same Name!";
@@ -83,6 +84,7 @@ namespace NoorGeneralHospital.Controllers
                     }
                     else
                     {
+                        speciality.NSpecialityName = speciality.SpecialityName.ToUpper();
                         speciality.CreatedOn = DateTime.Now;
                         speciality.CreatedById = userId;
                         db.Specialities.Add(speciality);

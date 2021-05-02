@@ -11,10 +11,10 @@
 </div>
 <div class="row">
     <div class="col-lg-8 offset-lg-2">
-        @using (Html.BeginForm("SaveDoctor", "Doctor", FormMethod.Post, new { enctype = "multpart/form-data" }))
+        @using (Html.BeginForm("SaveDoctor", "Doctor", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             <div class="row">
-                @Html.HiddenFor(d=>d.Id)
+                @Html.HiddenFor(d => d.Id)
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label>Username </label>
@@ -33,28 +33,27 @@
                     <div class="form-group">
                         <label>Date of Birth</label>
                         <div class="cal-icon">
-                            @Html.TextBoxFor(s => s.DOB, new { @class = "form-control datetimepicker", @placeholder = "Enter Doctor Name" })
+                            @Html.TextBoxFor(s => s.DOB, new { @class = "form-control datetimepicker" })
                             @Html.ValidationMessageFor(s => s.DOB, null, new { @class = "text-danger" })
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <div class="form-group gender-select">
-                        <label class="gen-label">Gender:</label>
-                        <div class="form-check-inline">
-                            <label class="form-check-label">
-                                <input type="radio" name="gender" class="form-check-input">Male
-                            </label>
-                        </div>
-                        <div class="form-check-inline">
-                            <label class="form-check-label">
-                                <input type="radio" name="gender" class="form-check-input">Female
-                            </label>
-                        </div>
+                    <div class="form-group">
+                        <label>Phone </label>
+                        @Html.TextBoxFor(s => s.Phone, new { @class = "form-control", @placeholder = "Enter Phone Number" })
+                        @Html.ValidationMessageFor(s => s.Phone, null, new { @class = "text-danger" })
                     </div>
                 </div>
                 <div class="col-sm-12">
                     <div class="row">
+                        <div class="col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <label>Country</label>
+                                @Html.DropDownListFor(x => Model.GenderId, new SelectList(Model.GetGender(), "Value", "Text"), htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.GenderId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
                         <div class="col-sm-6 col-md-6">
                             <div class="form-group">
                                 <label>Country</label>
@@ -69,6 +68,37 @@
                                 @Html.ValidationMessageFor(x => x.LocationId, "", new { @class = "text-danger" })
                             </div>
                         </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Avatar</label>
+                                <div class="profile-upload">
+                                    <div class="upload-input">
+                                        @Html.TextBoxFor(m => m.file, new { type = "file" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label>Services</label>
+                                @Html.TextBoxFor(s => s.Services, new { @class = "form-control", @placeholder = "Enter Education" })
+                                @Html.ValidationMessageFor(s => s.Services, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label>Education</label>
+                                @Html.TextBoxFor(s => s.Education, new { @class = "form-control", @placeholder = "Enter Education" })
+                                @Html.ValidationMessageFor(s => s.Education, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label>Experience</label>
+                                @Html.TextBoxFor(s => s.Experience, new { @class = "form-control", @placeholder = "Enter Experience" })
+                                @Html.ValidationMessageFor(s => s.Experience, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label>Address</label>
@@ -78,39 +108,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <label>Phone </label>
-                        @Html.TextBoxFor(s => s.Phone, new { @class = "form-control", @placeholder = "Enter Phone Number" })
-                        @Html.ValidationMessageFor(s => s.Phone, null, new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <label>Avatar</label>
-                        <div class="profile-upload">
-                            <div class="upload-input">
-                                @Html.TextBoxFor(m => m.File, new { type = "file" })
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="form-group">
-                <label>Short Biography</label>
+                <label>Short Biography(Optional)</label>
                 @Html.TextAreaFor(s => s.ShortBioGraphy, new { @class = "form-control", @rows = "3", @cols = "30", @placeholder = "Enter Message" })
             </div>
             <div class="form-group">
                 <label class="display-block">Doctor Status</label>
                 <div class="form-check form-check-inline">
                     @Html.RadioButtonFor(s => s.IsActive, true, new { @class = "form-check-input", @name = "status", @checked = true })
-                    <label class="form-check-label" >
+                    <label class="form-check-label">
                         Active
                     </label>
                 </div>
                 <div class="form-check form-check-inline">
-                    @Html.RadioButtonFor(s => s.IsActive, false, new { @class = "form-check-input", @name = "status"})
-                    <label class="form-check-label" >
+                    @Html.RadioButtonFor(s => s.IsActive, false, new { @class = "form-check-input", @name = "status" })
+                    <label class="form-check-label">
                         Inactive
                     </label>
                 </div>
@@ -124,20 +137,32 @@
 
 <script src="~/Content/assets/js/jquery.validate.min.js"></script>
 <script src="~/Content/assets/js/jquery.validate.unobtrusive.min.js"></script>
+
 <script>
     $(document).ready(function () {
-            $('#datetimepicker').datetimepicker();
+        $('#DOB').datetimepicker({
+            format: 'DD/MM/YYYY',
+            minDate: moment().millisecond(0).second(0).minute(0).hour(0),
+            clear: false 
+        });
+
 
         $('form').submit(function (e) {
-            debugger
             e.preventDefault();
             var isValid = $(this).validate().form();
             if (!isValid) return false;
             else {
+                debugger
+                var fileInput = document.getElementById('file');
+                var file = fileInput.files[0];
+                var formData = new FormData(this);
+                formData.append('file', file);
                 $.ajax({
                     url: '/Doctor/SaveDoctor',
-                    data: $(this).serialize(),
+                    data: formData,
                     type: 'POST',
+                    processData: false,
+                    contentType: false,
                     beforeSend: function () {
                     },
                     complete: function () {

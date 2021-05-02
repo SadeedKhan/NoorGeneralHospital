@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using NoorGeneralHospital.Models.Sp_Model;
 
 namespace NoorGeneralHospital.Models
 {
@@ -30,9 +31,12 @@ namespace NoorGeneralHospital.Models
             return new ApplicationDbContext();
         }
 
-        public DbSet<Doctor> Doctors { get; set; }
-        public DbSet<Speciality> Specialities { get; set; }
-        public DbSet<Location> Locations { get; set; }
-        public DbSet<Status> Statuses { get; set; }
+        public virtual DbSet<Doctor> Doctors { get; set; }
+        public virtual DbSet<Doctor_GetDoctorDetails> Sp_Doctor_GetDoctorDetails { get; set; }
+        public virtual DbSet<Speciality> Specialities { get; set; }
+        public virtual DbSet<Location> Locations { get; set; }
+        public virtual DbSet<Status> Statuses { get; set; }
+        public virtual DbSet<Gender> Genders { get; set; }
+
     }
 }

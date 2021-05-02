@@ -208,21 +208,34 @@
     <Compile Include="Migrations\202105021322586_Doctorfieldupdate.Designer.cs">
       <DependentUpon>202105021322586_Doctorfieldupdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105021839251_gender.cs" />
+    <Compile Include="Migrations\202105021839251_gender.Designer.cs">
+      <DependentUpon>202105021839251_gender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105022101054_spmodel.cs" />
+    <Compile Include="Migrations\202105022101054_spmodel.Designer.cs">
+      <DependentUpon>202105022101054_spmodel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105022105554_spmodels.cs" />
+    <Compile Include="Migrations\202105022105554_spmodels.Designer.cs">
+      <DependentUpon>202105022105554_spmodels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Doctor.cs" />
+    <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\InputDTO\DoctorInput.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\OutputDTO\GeneralResponse.cs" />
     <Compile Include="Models\Speciality.cs" />
+    <Compile Include="Models\Sp_Model\Doctor_GetDoctorDetails.cs" />
     <Compile Include="Models\Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include=".gitignore.txt" />
     <Content Include="Content\assets\css\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\assets\css\bootstrap.min.css" />
     <Content Include="Content\assets\css\dataTables.bootstrap4.min.css" />
@@ -387,9 +400,11 @@
     <Content Include="Views\Doctor\Details.cshtml" />
     <Content Include="Views\Doctor\AddEditDoctor.cshtml" />
     <Content Include="Views\Doctor\Index.cshtml" />
+    <Content Include="Views\Doctor\DoctorProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Uploads\Doctors\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -428,6 +443,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105021322586_Doctorfieldupdate.resx">
       <DependentUpon>202105021322586_Doctorfieldupdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105021839251_gender.resx">
+      <DependentUpon>202105021839251_gender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105022101054_spmodel.resx">
+      <DependentUpon>202105022101054_spmodel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105022105554_spmodels.resx">
+      <DependentUpon>202105022105554_spmodels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -12,6 +12,7 @@ namespace NoorGeneralHospital.Models
         public int Id { get; set; }
         [Required(ErrorMessage = "Please Enter Speciality.")]
         public string SpecialityName { get; set; }
+        public string NSpecialityName { get; set; }
         public bool? IsActive { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime? CreatedOn { get; set; }
