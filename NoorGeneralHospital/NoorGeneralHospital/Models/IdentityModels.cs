@@ -30,6 +30,8 @@ namespace NoorGeneralHospital.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<NoorGeneralHospital.Models.Speciality> Specialities { get; set; }
+        public DbSet<Speciality> Specialities { get; set; }
+        public DbSet<Location> Locations { get; set; }
+        public DbSet<Status> Statuses { get; set; }
     }
 }
