@@ -6,10 +6,16 @@ using System.Web;
 
 namespace NoorGeneralHospital.Models
 {
-    public class Location
+    public class Doctor
     {
         public int Id { get; set; }
-        public string LocationName { get; set; }
+        public string UserName { get; set; }
+        public int SpecialityId { get; set; }
+        public string Services { get; set; }
+        public string Education { get; set; }
+        public string Experience { get; set; }
+        public string ImagePath { get; set; }
+        public string Description { get; set; }
         public bool IsActive { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime? CreatedOn { get; set; }

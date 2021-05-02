@@ -169,6 +169,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\DoctorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SpecialitiesController.cs" />
@@ -195,9 +196,15 @@
     <Compile Include="Migrations\202105021029365_StatusLocations.Designer.cs">
       <DependentUpon>202105021029365_StatusLocations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105021200162_doctors.cs" />
+    <Compile Include="Migrations\202105021200162_doctors.Designer.cs">
+      <DependentUpon>202105021200162_doctors.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\InputDTO\DoctorInput.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\OutputDTO\GeneralResponse.cs" />
@@ -367,6 +374,7 @@
     <Content Include="Views\Specialities\AddEditSpeciality.cshtml" />
     <Content Include="Views\Specialities\Details.cshtml" />
     <Content Include="Views\Specialities\Index.cshtml" />
+    <Content Include="Views\Doctor\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -399,6 +407,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105021029365_StatusLocations.resx">
       <DependentUpon>202105021029365_StatusLocations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105021200162_doctors.resx">
+      <DependentUpon>202105021200162_doctors.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
