@@ -170,12 +170,14 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DoctorController.cs" />
+    <Compile Include="Controllers\DoctorScheduleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SpecialitiesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\Extention\ExtentionMethods.cs" />
     <Compile Include="Migrations\202105012209373_InitialCreate.cs" />
     <Compile Include="Migrations\202105012209373_InitialCreate.Designer.cs">
       <DependentUpon>202105012209373_InitialCreate.cs</DependentUpon>
@@ -220,16 +222,52 @@
     <Compile Include="Migrations\202105022105554_spmodels.Designer.cs">
       <DependentUpon>202105022105554_spmodels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105042135233_dayanddoctorschedule.cs" />
+    <Compile Include="Migrations\202105042135233_dayanddoctorschedule.Designer.cs">
+      <DependentUpon>202105042135233_dayanddoctorschedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105042336397_dayanddoctorsched.cs" />
+    <Compile Include="Migrations\202105042336397_dayanddoctorsched.Designer.cs">
+      <DependentUpon>202105042336397_dayanddoctorsched.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105090731251_UpdateColumn.cs" />
+    <Compile Include="Migrations\202105090731251_UpdateColumn.Designer.cs">
+      <DependentUpon>202105090731251_UpdateColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105091111335_UpdateColumnd.cs" />
+    <Compile Include="Migrations\202105091111335_UpdateColumnd.Designer.cs">
+      <DependentUpon>202105091111335_UpdateColumnd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105121119576_doctorsch.cs" />
+    <Compile Include="Migrations\202105121119576_doctorsch.Designer.cs">
+      <DependentUpon>202105121119576_doctorsch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105121135349_doctorschs.cs" />
+    <Compile Include="Migrations\202105121135349_doctorschs.Designer.cs">
+      <DependentUpon>202105121135349_doctorschs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105121141286_doctorschss.cs" />
+    <Compile Include="Migrations\202105121141286_doctorschss.Designer.cs">
+      <DependentUpon>202105121141286_doctorschss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105121222298_doctorsc.cs" />
+    <Compile Include="Migrations\202105121222298_doctorsc.Designer.cs">
+      <DependentUpon>202105121222298_doctorsc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Days.cs" />
     <Compile Include="Models\Doctor.cs" />
+    <Compile Include="Models\DoctorSchedule.cs" />
     <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\InputDTO\DoctorInput.cs" />
+    <Compile Include="Models\InputDTO\DoctorScheduleInput.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\OutputDTO\GeneralResponse.cs" />
     <Compile Include="Models\Speciality.cs" />
+    <Compile Include="Models\Sp_Model\DoctorSchedule_GetDoctorScheduleDetails.cs" />
     <Compile Include="Models\Sp_Model\Doctor_GetDoctorDetails.cs" />
     <Compile Include="Models\Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -323,6 +361,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="CustomScripts\DoctorSchedule\DoctorSchedule.js" />
     <Content Include="CustomScripts\Doctor\Doctor.js" />
     <Content Include="CustomScripts\Speciality\Speciality.js" />
     <Content Include="favicon.ico" />
@@ -401,6 +440,9 @@
     <Content Include="Views\Doctor\AddEditDoctor.cshtml" />
     <Content Include="Views\Doctor\Index.cshtml" />
     <Content Include="Views\Doctor\DoctorProfile.cshtml" />
+    <Content Include="Views\DoctorSchedule\Index.cshtml" />
+    <Content Include="Views\DoctorSchedule\Details.cshtml" />
+    <Content Include="Views\DoctorSchedule\AddEditDoctorSchedule.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -452,6 +494,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105022105554_spmodels.resx">
       <DependentUpon>202105022105554_spmodels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105042135233_dayanddoctorschedule.resx">
+      <DependentUpon>202105042135233_dayanddoctorschedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105042336397_dayanddoctorsched.resx">
+      <DependentUpon>202105042336397_dayanddoctorsched.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105090731251_UpdateColumn.resx">
+      <DependentUpon>202105090731251_UpdateColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105091111335_UpdateColumnd.resx">
+      <DependentUpon>202105091111335_UpdateColumnd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105121119576_doctorsch.resx">
+      <DependentUpon>202105121119576_doctorsch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105121135349_doctorschs.resx">
+      <DependentUpon>202105121135349_doctorschs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105121141286_doctorschss.resx">
+      <DependentUpon>202105121141286_doctorschss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105121222298_doctorsc.resx">
+      <DependentUpon>202105121222298_doctorsc.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

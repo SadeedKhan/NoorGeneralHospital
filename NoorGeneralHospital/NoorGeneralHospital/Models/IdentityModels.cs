@@ -37,6 +37,9 @@ namespace NoorGeneralHospital.Models
         public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<Status> Statuses { get; set; }
         public virtual DbSet<Gender> Genders { get; set; }
+        public virtual DbSet<Days> Days { get; set; }
+        public virtual DbSet<DoctorSchedule> DoctorSchedules { get; set; }
+
 
     }
 }
