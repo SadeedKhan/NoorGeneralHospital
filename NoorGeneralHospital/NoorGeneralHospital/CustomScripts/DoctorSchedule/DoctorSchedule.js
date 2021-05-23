@@ -27,6 +27,7 @@ function _DoctorScheduleDetail() {
         url: "/DoctorSchedule/Details",
         success: function (res) {
             $('#_DoctorSchedulePartialView').empty().html(res);
+            $("#example").dataTable();
         },
         error: function (res) {
             alert(res);

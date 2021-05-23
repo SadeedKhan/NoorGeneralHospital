@@ -49,14 +49,14 @@
                     <div class="row">
                         <div class="col-sm-6 col-md-6">
                             <div class="form-group">
-                                <label>Country</label>
+                                <label>Gender</label>
                                 @Html.DropDownListFor(x => Model.GenderId, new SelectList(Model.GetGender(), "Value", "Text"), htmlAttributes: new { @class = "form-control" })
                                 @Html.ValidationMessageFor(x => x.GenderId, "", new { @class = "text-danger" })
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-6">
                             <div class="form-group">
-                                <label>Country</label>
+                                <label>Speciality</label>
                                 @Html.DropDownListFor(x => Model.SpecialityId, new SelectList(Model.GetSpeciality(), "Value", "Text"), htmlAttributes: new { @class = "form-control" })
                                 @Html.ValidationMessageFor(x => x.SpecialityId, "", new { @class = "text-danger" })
                             </div>
@@ -140,12 +140,10 @@
 
 <script>
     $(document).ready(function () {
+       
         $('#DOB').datetimepicker({
             format: 'DD/MM/YYYY',
-            minDate: moment().millisecond(0).second(0).minute(0).hour(0),
-            clear: false 
         });
-
 
         $('form').submit(function (e) {
             e.preventDefault();

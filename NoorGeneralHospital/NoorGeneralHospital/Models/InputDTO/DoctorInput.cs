@@ -31,7 +31,7 @@ namespace NoorGeneralHospital.Models.InputDTO
         [Required(ErrorMessage = "Please Enter Experience.")]
         public string Experience { get; set; }
         [Required(ErrorMessage = "Please Select DOB.")]
-        public DateTime DOB { get; set; }
+        public string DOB { get; set; }
         [Required(ErrorMessage = "Please Enter Address.")]
         public string Address { get; set; }
         public string ShortBioGraphy { get; set; }
@@ -97,7 +97,7 @@ namespace NoorGeneralHospital.Models.InputDTO
                 var gendertip = new SelectListItem()
                 {
                     Value = null,
-                    Text = "--- select Location ---"
+                    Text = "--- select Gender ---"
                 };
                 gender.Insert(0, gendertip);
                 return new SelectList(gender, "Value", "Text");

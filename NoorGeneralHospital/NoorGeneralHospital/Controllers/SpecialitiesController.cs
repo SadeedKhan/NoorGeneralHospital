@@ -12,6 +12,7 @@ using NoorGeneralHospital.Models.OutputDTO;
 
 namespace NoorGeneralHospital.Controllers
 {
+    [Authorize]
     public class SpecialitiesController : Controller
     {
         private readonly ApplicationDbContext db = new ApplicationDbContext();
@@ -44,7 +45,7 @@ namespace NoorGeneralHospital.Controllers
         public ActionResult SaveSpeciality(Speciality speciality)
         {
             GeneralResponse _result = new GeneralResponse();
-            string userId = "1";
+            string userId = User.Identity.GetUserId();
             var res=0;
             int Exist;
             try
@@ -52,7 +53,7 @@ namespace NoorGeneralHospital.Controllers
                 var Id = db.Specialities.Where(x => x.Id == speciality.Id).FirstOrDefault();
                 if (Id != null)
                 {
-                    Exist = db.Specialities.Where(a => a.NSpecialityName == speciality.SpecialityName.ToUpper() && a.Id != speciality.Id && a.IsActive == true).Count();
+                    Exist = db.Specialities.Where(a => a.NormalizeSpecialityName == speciality.SpecialityName.ToUpper() && a.Id != speciality.Id && a.IsActive == true).Count();
                     if (Exist > 0)
                     {
                         _result.Message = "Record Already Exist With Same Name!";
@@ -65,7 +66,7 @@ namespace NoorGeneralHospital.Controllers
                         {
                             db.Entry(local).State = EntityState.Detached;
                         }
-                        speciality.NSpecialityName = speciality.SpecialityName.ToUpper();
+                        speciality.NormalizeSpecialityName = speciality.SpecialityName.ToUpper();
                         speciality.UpdatedOn = DateTime.Now;
                         speciality.UpdatedById = userId;
                         db.Entry(speciality).State = EntityState.Modified;
@@ -76,7 +77,7 @@ namespace NoorGeneralHospital.Controllers
                 }
                 else
                 {
-                    Exist = db.Specialities.Where(a => a.NSpecialityName == speciality.SpecialityName.ToUpper()).Count();
+                    Exist = db.Specialities.Where(a => a.NormalizeSpecialityName == speciality.SpecialityName.ToUpper()).Count();
                     if (Exist > 0)
                     {
                         _result.Message = "Record Already Exist With Same Name!";
@@ -84,7 +85,7 @@ namespace NoorGeneralHospital.Controllers
                     }
                     else
                     {
-                        speciality.NSpecialityName = speciality.SpecialityName.ToUpper();
+                        speciality.NormalizeSpecialityName = speciality.SpecialityName.ToUpper();
                         speciality.CreatedOn = DateTime.Now;
                         speciality.CreatedById = userId;
                         db.Specialities.Add(speciality);
@@ -121,13 +122,14 @@ namespace NoorGeneralHospital.Controllers
         public ActionResult Delete(int id)
         {
             GeneralResponse _result = new GeneralResponse();
+            string userId = User.Identity.GetUserId();
             try
             {
                 if (id > 0)
                 {
                     Speciality speciality = db.Specialities.Find(id);
                     speciality.UpdatedOn = DateTime.Now;
-                    speciality.UpdatedById = "";
+                    speciality.UpdatedById = userId;
                     speciality.IsActive = false;
                     db.Entry(speciality).State = EntityState.Modified;
                     db.SaveChanges();

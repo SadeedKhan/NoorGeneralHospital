@@ -101,7 +101,6 @@ E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneral
 E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.Owin.Security.OAuth.xml
 E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.csprojAssemblyReference.cache
 E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.InitialCreate.resources
 E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.IntialDb.resources
 E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.updateidspecial.resources
@@ -216,3 +215,12 @@ E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneral
 E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.doctorschs.resources
 E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.doctorschss.resources
 E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.doctorsc.resources
+E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.csprojAssemblyReference.cache
+E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.initital.resources
+E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.initi.resources
+E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.initw.resources
+E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.intied.resources
+E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.ithue.resources
+E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.ithuesd.resources
+E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.Appointment.resources
+E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.dashboardstats.resources

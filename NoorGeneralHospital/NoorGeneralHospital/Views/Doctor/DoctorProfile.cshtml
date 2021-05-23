@@ -11,9 +11,9 @@
             <h4 class="page-title">@Model.UserName Profile</h4>
         </div>
 
-        <div class="col-sm-5 col-6 text-right m-b-30">
+        @*<div class="col-sm-5 col-6 text-right m-b-30">
             <a href="edit-profile.html" class="btn btn-primary btn-rounded"><i class="fa fa-plus"></i> Edit Profile</a>
-        </div>
+        </div>*@
     </div>
     <div class="card-box profile-header">
         <div class="row">
@@ -55,7 +55,7 @@
                                     </li>
                                     <li>
                                         <span class="title">Birthday:</span>
-                                        <span class="text">@Model.DOB.ToLongDateString()</span>
+                                        <span class="text">@Model.DOB</span>
                                     </li>
                                     <li>
                                         <span class="title">Address:</span>
@@ -73,7 +73,7 @@
             </div>
         </div>
     </div>
-    <div class="profile-tabs">
+    @*<div class="profile-tabs">
         <ul class="nav nav-tabs nav-tabs-bottom">
             <li class="nav-item"><a class="nav-link active" href="#about-cont" data-toggle="tab">About</a></li>
             <li class="nav-item"><a class="nav-link" href="#bottom-tab2" data-toggle="tab">Profile</a></li>
@@ -165,5 +165,5 @@
                 Tab content 3
             </div>
         </div>
-    </div>
+    </div>*@
 </div>

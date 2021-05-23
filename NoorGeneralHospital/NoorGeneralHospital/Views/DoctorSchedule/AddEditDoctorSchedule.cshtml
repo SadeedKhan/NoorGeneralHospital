@@ -13,6 +13,7 @@
     <div class="col-lg-8 offset-lg-2">
         @using (Html.BeginForm("SaveDoctorSchedule", "DoctorSchedule", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
+            @Html.HiddenFor(x=> x.Id)
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
@@ -35,7 +36,9 @@
                     <div class="form-group">
                         <label>Start Time</label>
                         <div class="time-icon">
-                            @Html.TextBoxFor(s => s.StartTime, new { @class = "form-control", @id = "datetimepicker3" })
+                            @*@Html.TextBoxFor(s => s.StartTime, new { @class = "form-control", @id = "datetimepicker3" })*@
+                            @Html.EditorFor(s => s.StartTime, new { htmlAttributes = new { @id = "StartTime", @class = "form-control timepicker" } })
+                            @Html.ValidationMessageFor(x => x.StartTime, "", new { @class = "text-danger" })
                         </div>
                     </div>
                 </div>
@@ -43,14 +46,16 @@
                     <div class="form-group">
                         <label>End Time</label>
                         <div class="time-icon">
-                            @Html.TextBoxFor(s => s.EndTime, new { @class = "form-control" ,@id= "datetimepicker4" })
+                            @Html.TextBoxFor(s => s.EndTime, new { @class = "form-control", @id = "datetimepicker4" })
+                            @Html.ValidationMessageFor(x => x.EndTime, "", new { @class = "text-danger" })
                         </div>
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                <label>Message</label>
-                <textarea cols="30" rows="4" class="form-control"></textarea>
+                <label>Description</label>
+                @Html.TextAreaFor(s => s.Description, new { @class = "form-control", @cols = "30", @rows = "4" })
+                @Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
             </div>
             <div class="form-group">
                 <label class="display-block">Doctor Status</label>
@@ -71,7 +76,7 @@
                 <button class="btn btn-primary submit-btn">Create Schedule</button>
             </div>
         }
-        </div>
+    </div>
 </div>
 
 <script src="~/Content/assets/js/jquery.validate.min.js"></script>
@@ -79,7 +84,7 @@
 <script>
     $(document).ready(function () {
         //For Time Picker
-        $('#datetimepicker3').datetimepicker({
+        $('.timepicker').datetimepicker({
             format: 'LT'
         });
         $('#datetimepicker4').datetimepicker({

@@ -20,7 +20,7 @@ namespace NoorGeneralHospital.Models
         public string Education { get; set; }
         public string Experience { get; set; }
         public string ImagePath { get; set; }
-        public DateTime DOB { get; set; }
+        public string DOB { get; set; }
         public string Address { get; set; }
         public string ShortBioGraphy { get; set; }
         public bool IsActive { get; set; }

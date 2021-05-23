@@ -1,0 +1,38 @@
+﻿@model IEnumerable<NoorGeneralHospital.Models.Sp_Model.Doctor_GetDoctorDetails>
+
+<div class="card member-panel">
+    <div class="card-header bg-white">
+        <h4 class="card-title mb-0">Doctors</h4>
+    </div>
+    <div class="card-body">
+        <ul class="contact-list">
+            @foreach (var doc in Model)
+            {
+                <li>
+                    <div class="contact-cont">
+                        <div class="float-left user-img m-r-10">
+                            @{
+                                if (string.IsNullOrEmpty(doc.ImagePath))
+                                {
+                                    <a title="@doc.UserName" href="#"><img alt="" class="w-40 rounded-circle" src="~/Content/assets/img/user.jpg"></a>
+                                }
+                                else
+                                {
+                                    <a title="@doc.UserName" href="#"><img alt="" class="w-40 rounded-circle" src="/../@doc.ImagePath"></a>
+                                }
+
+                            }
+                        </div>
+                        <div class="contact-info">
+                            <span class="contact-name text-ellipsis">@doc.UserName</span>
+                            <span class="contact-date">@doc.Speciality</span>
+                        </div>
+                    </div>
+                </li>
+            }
+            </ul>
+    </div>
+    <div class="card-footer text-center bg-white">
+        @Html.ActionLink("View all Doctors", "Index","Doctor",null,new {@class="text-muted" })
+    </div>
+</div>

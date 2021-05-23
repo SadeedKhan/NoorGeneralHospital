@@ -29,6 +29,7 @@
             url: "/Specialities/Details",
             success: function (res) {
                 $('#_SpecialityPartialView').empty().html(res);
+                $("#example").dataTable();
             },
             error: function (res) {
                 alert(res);

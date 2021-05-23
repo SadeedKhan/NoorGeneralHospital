@@ -1,4 +1,6 @@
-﻿using NoorGeneralHospital.Helper.Extention;
+﻿using Microsoft.AspNet.Identity;
+using NoorGeneralHospital.Helper.Enum;
+using NoorGeneralHospital.Helper.Extention;
 using NoorGeneralHospital.Models;
 using NoorGeneralHospital.Models.InputDTO;
 using NoorGeneralHospital.Models.OutputDTO;
@@ -7,12 +9,14 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
 namespace NoorGeneralHospital.Controllers
 {
+    [Authorize]
     public class DoctorScheduleController : Controller
     {
         private readonly ApplicationDbContext db = new ApplicationDbContext();
@@ -29,7 +33,6 @@ namespace NoorGeneralHospital.Controllers
             try
             {
                 list = db.Database.SqlQuery<DoctorSchedule_GetDoctorScheduleDetails>("dbo.DoctorSchedule_GetDoctorScheduleDetails").ToList();
-
             }
             catch (Exception e)
             {
@@ -43,7 +46,7 @@ namespace NoorGeneralHospital.Controllers
         public ActionResult SaveDoctorSchedule(DoctorScheduleInput docseh)
         {
             GeneralResponse _result = new GeneralResponse();
-            string userId = "1";
+            string userId = User.Identity.GetUserId();
             var res = 0;
             if(!ExtentionMethods.IsNullOrEmpty(docseh.AvailableDays))
             {
@@ -61,8 +64,8 @@ namespace NoorGeneralHospital.Controllers
                     }
                     doctorseh.DoctorId = docseh.DoctorId;
                     doctorseh.AvailableDay = docseh.AvailableDay;
-                    doctorseh.StartTime = docseh.StartTime.ToShortTimeString();
-                    doctorseh.EndTime = docseh.StartTime.ToShortTimeString();
+                    doctorseh.StartTime = docseh.StartTime.ToString();
+                    doctorseh.EndTime = docseh.StartTime.ToString();
                     doctorseh.Description = docseh.Description;
                     doctorseh.IsActive = docseh.IsActive;
                     doctorseh.UpdatedOn = DateTime.Now;
@@ -77,8 +80,8 @@ namespace NoorGeneralHospital.Controllers
                     doctorseh = new DoctorSchedule();
                     doctorseh.DoctorId = docseh.DoctorId;
                     doctorseh.AvailableDay = docseh.AvailableDay;
-                    doctorseh.StartTime = docseh.StartTime.ToShortTimeString(); 
-                    doctorseh.EndTime = docseh.EndTime.ToShortTimeString();
+                    doctorseh.StartTime = docseh.StartTime.ToString(); 
+                    doctorseh.EndTime = docseh.EndTime.ToString();
                     doctorseh.Description = docseh.Description;
                     doctorseh.IsActive = docseh.IsActive;
                     doctorseh.CreatedOn = DateTime.Now;
@@ -107,9 +110,10 @@ namespace NoorGeneralHospital.Controllers
                 DoctorSchedule docseh = db.DoctorSchedules.Find(id);
                 doctorseh = new DoctorScheduleInput();
                 doctorseh.DoctorId = docseh.DoctorId;
-                doctorseh.AvailableDays = docseh.AvailableDays;
-                doctorseh.StartTime = Convert.ToDateTime(docseh.StartTime);
-                doctorseh.EndTime = Convert.ToDateTime(docseh.StartTime);
+                var arr=docseh.AvailableDay.Split(',').Select(Int32.Parse).ToArray();
+                doctorseh.AvailableDays = arr;
+                doctorseh.StartTime = docseh.StartTime;
+                doctorseh.EndTime = docseh.EndTime;
                 doctorseh.Description = docseh.Description;
                 doctorseh.IsActive = docseh.IsActive;
                 doctorseh.Id = docseh.Id;
@@ -125,13 +129,14 @@ namespace NoorGeneralHospital.Controllers
         public ActionResult Delete(int id)
         {
             GeneralResponse _result = new GeneralResponse();
+            string userId = User.Identity.GetUserId();
             try
             {
                 if (id > 0)
                 {
                     DoctorSchedule doctorsch = db.DoctorSchedules.Find(id);
                     doctorsch.UpdatedOn = DateTime.Now;
-                    doctorsch.UpdatedById = "1";
+                    doctorsch.UpdatedById = userId;
                     doctorsch.IsActive = false;
                     db.Entry(doctorsch).State = EntityState.Modified;
                     db.SaveChanges();

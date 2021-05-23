@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/assets/css/bootstrap-datetimepicker.min.css">
+<div class="content">
+    <div id="_AppointmentPartialView"></div>
+</div>
+
+<!-- Modal -->
+@using (Html.BeginForm("RejectAppointment", "Appointment", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="modal fade" id="reject_appointment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+
+            <div class="modal-content">
+                <div id="_rejectappointmentmodel"></div>
+            </div>
+        </div>
+    </div>
+}
+
+    <script src="~/Content/assets/js/jquery-3.4.1.min.js"></script>
+    <script src="~/Content/assets/js/moment.min.js"></script>
+    <script src="~/Content/assets/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="~/CustomScripts/Appointment/Appointment.js"></script>

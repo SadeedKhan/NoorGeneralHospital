@@ -13,16 +13,16 @@ namespace NoorGeneralHospital.Models.InputDTO
         [Required(ErrorMessage = "Please Select Doctor")]
         public int DoctorId { get; set; }
         [Required(ErrorMessage = "Must Choose a Date")]
-        public int[] AvailableDays { get; set; }
+        public int[] AvailableDays{ get; set; }
+
         public string AvailableDay { get; set; }
+
         [Required]
-        [DataType(DataType.Time)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:HH:mm}")]
-        public DateTime StartTime { get; set; }
+        public string StartTime { get; set; }
+
         [Required]
-        [DataType(DataType.Time)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:HH:mm}")]
-        public DateTime EndTime { get; set; }
+        public string EndTime { get; set; }
+
         public string Description { get; set; }
         public bool? IsActive { get; set; }
 

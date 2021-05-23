@@ -1,7 +1,5 @@
 ﻿$(document).ready(function () {
     _DoctorDetail();
-  
-
 });
     //function ClearValues() {
     //    $('form#AddVisitorsForm').trigger("reset");
@@ -16,6 +14,7 @@ function _AddEditDoctor(id) {
             data: { Id: id },
             success: function (res) {
                 $('#_DoctorPartialView').empty().html(res);
+                $("#example").dataTable();
             },
             error: function (res) {
                 alert(res);
@@ -29,6 +28,7 @@ function DoctorProfile(id) {
         url: "/Doctor/DoctorProfile",
         data: { Id: id },
         success: function (res) {
+            debugger
             $('#_DoctorPartialView').empty().html(res);
         },
         error: function (res) {

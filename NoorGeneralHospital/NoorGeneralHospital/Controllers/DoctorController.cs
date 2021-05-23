@@ -1,4 +1,5 @@
-﻿using NoorGeneralHospital.Models;
+﻿using Microsoft.AspNet.Identity;
+using NoorGeneralHospital.Models;
 using NoorGeneralHospital.Models.InputDTO;
 using NoorGeneralHospital.Models.OutputDTO;
 using NoorGeneralHospital.Models.Sp_Model;
@@ -15,6 +16,7 @@ using System.Web.Mvc;
 
 namespace NoorGeneralHospital.Controllers
 {
+    [Authorize]
     public class DoctorController : Controller
     {
         private readonly ApplicationDbContext db = new ApplicationDbContext();
@@ -49,7 +51,7 @@ namespace NoorGeneralHospital.Controllers
         public ActionResult SaveDoctor(DoctorInput doc)
         {
             GeneralResponse _result = new GeneralResponse();
-            string userId = "1";
+            string userId = User.Identity.GetUserId();
             var res=0;
             try
             {
@@ -190,13 +192,14 @@ namespace NoorGeneralHospital.Controllers
         public ActionResult Delete(int id)
         {
             GeneralResponse _result = new GeneralResponse();
+            string userId = User.Identity.GetUserId();
             try
             {
                 if (id > 0)
                 {
                     Doctor doctor = db.Doctors.Find(id);
                     doctor.UpdatedOn = DateTime.Now;
-                    doctor.UpdatedById = "";
+                    doctor.UpdatedById = userId;
                     doctor.IsActive = false;
                     db.Entry(doctor).State = EntityState.Modified;
                     db.SaveChanges();
