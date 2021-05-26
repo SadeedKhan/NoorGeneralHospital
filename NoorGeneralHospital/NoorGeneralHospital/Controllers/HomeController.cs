@@ -1,6 +1,4 @@
-﻿using NoorGeneralHospital.Models;
-using NoorGeneralHospital.Models.InputDTO;
-using NoorGeneralHospital.Models.OutputDTO;
+﻿using NoorGeneralHospital.Models.InputDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +9,7 @@ namespace NoorGeneralHospital.Controllers
 {
     public class HomeController : Controller
     {
+        // GET: Home
         // GET: User
         public ActionResult Index()
         {
@@ -35,7 +34,7 @@ namespace NoorGeneralHospital.Controllers
         }
         public ActionResult MakeAnAppointment()
         {
-            return PartialView("MakeAnAppointment",new AppointmentInput());
+            return PartialView("MakeAnAppointment", new AppointmentInput());
         }
     }
 }

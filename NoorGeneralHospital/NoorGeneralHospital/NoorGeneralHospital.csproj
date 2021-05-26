@@ -177,7 +177,6 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\SpecialitiesController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -559,6 +558,8 @@
     <Content Include="CustomScripts\Dashboard\Dashboard.js" />
     <Content Include="CustomScripts\DoctorSchedule\DoctorSchedule.js" />
     <Content Include="CustomScripts\Doctor\Doctor.js" />
+    <Content Include="CustomScripts\Location\Location.js" />
+    <Content Include="CustomScripts\Report\Report.js" />
     <Content Include="CustomScripts\Speciality\Speciality.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -733,6 +734,18 @@
     <Content Include="Views\Doctor\Details.cshtml" />
     <Content Include="Views\Doctor\AddEditDoctor.cshtml" />
     <Content Include="Views\Doctor\Index.cshtml" />
+    <Content Include="Views\Appointment\AddEditAppointment.cshtml" />
+    <Content Include="Views\Appointment\Details.cshtml" />
+    <Content Include="Views\Appointment\Index.cshtml" />
+    <Content Include="Views\Appointment\RejectAppointment.cshtml" />
+    <Content Include="Views\DoctorSchedule\AddEditDoctorSchedule.cshtml" />
+    <Content Include="Views\DoctorSchedule\Details.cshtml" />
+    <Content Include="Views\DoctorSchedule\Index.cshtml" />
+    <Content Include="Views\Location\AddEditlocation.cshtml" />
+    <Content Include="Views\Location\Details.cshtml" />
+    <Content Include="Views\Location\Index.cshtml" />
+    <Content Include="Views\Report\Details.cshtml" />
+    <Content Include="Views\Report\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
