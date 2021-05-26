@@ -33,11 +33,7 @@ namespace NoorGeneralHospital.Controllers
             IEnumerable<Doctor_GetDoctorDetails> list;
             try
             {
-                var context = db.Database.ExecuteSqlCommand(
-                        @"EXEC dbo.Doctor_GetDoctorDetails @Id",
-                        new SqlParameter("Id", int.Parse("0")));
                 list  = db.Database.SqlQuery<Doctor_GetDoctorDetails>("Doctor_GetDoctorDetails @Id", new SqlParameter("@Id",(object)0)).ToList();
-
             }
             catch (Exception e)
             {

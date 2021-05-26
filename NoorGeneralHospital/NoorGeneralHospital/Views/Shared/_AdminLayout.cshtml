@@ -8,6 +8,7 @@
     <title>Noor General Hospital(Admin)</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="~/Content/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="~/Content/assets/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="~/Content/assets/css/select2.min.css">
     <link rel="stylesheet" type="text/css" href="~/Content/assets/css/bootstrap-datetimepicker.min.css">
@@ -57,6 +58,17 @@
                         <li class="active">
                             <a href='@Url.Action("Index", "Dashboard")'><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
                         </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fa fa-edit"></i> <span> Lookups</span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li>
+                                    <a href='@Url.Action("Index", "Specialities")'><i class="fa fa-hospital-o"></i> <span>Speciality</span></a>
+                                </li>
+                                @*<li><a href="form-input-groups.html">Input Groups</a></li>
+                                <li><a href="form-horizontal.html">Horizontal Form</a></li>
+                                <li><a href="form-vertical.html">Vertical Form</a></li>*@
+                            </ul>
+                        </li>
                         <li>
                             <a href='@Url.Action("Index", "Doctor")'><i class="fa fa-user-md"></i> <span>Doctors</span></a>
                         </li>
@@ -67,8 +79,9 @@
                         <li>
                             <a href='@Url.Action("Index", "DoctorSchedule")'><i class="fa fa-calendar-check-o"></i> <span>Doctor Schedule</span></a>
                         </li>
+                       
                         <li>
-                            <a href='@Url.Action("Index", "Specialities")'><i class="fa fa-hospital-o"></i> <span>Speciality</span></a>
+                            <a href='@Url.Action("Index", "Report")'><i class="fa fa-flag-o"></i> <span>Reports</span></a>
                         </li>
                     </ul>
                 </div>

@@ -173,6 +173,7 @@
     <Compile Include="Controllers\DoctorController.cs" />
     <Compile Include="Controllers\DoctorScheduleController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\SpecialitiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -299,6 +300,7 @@
     <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\InputDTO\AppointmentInput.cs" />
+    <Compile Include="Models\InputDTO\AppointmentReportInput.cs" />
     <Compile Include="Models\InputDTO\DoctorInput.cs" />
     <Compile Include="Models\InputDTO\DoctorScheduleInput.cs" />
     <Compile Include="Models\InputDTO\RejectionInput.cs" />
@@ -555,6 +557,7 @@
     <Content Include="CustomScripts\Dashboard\Dashboard.js" />
     <Content Include="CustomScripts\DoctorSchedule\DoctorSchedule.js" />
     <Content Include="CustomScripts\Doctor\Doctor.js" />
+    <Content Include="CustomScripts\Report\Report.js" />
     <Content Include="CustomScripts\Speciality\Speciality.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -742,6 +745,8 @@
     <Content Include="Views\Home\Services.cshtml" />
     <Content Include="Views\Home\MakeAnAppointment.cshtml" />
     <Content Include="Views\Appointment\RejectAppointment.cshtml" />
+    <Content Include="Views\Report\Index.cshtml" />
+    <Content Include="Views\Report\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
