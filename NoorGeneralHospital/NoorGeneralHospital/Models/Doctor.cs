@@ -14,13 +14,13 @@ namespace NoorGeneralHospital.Models
         public string Email { get; set; }
         public string Phone { get; set; }
         public int SpecialityId { get; set; }
-        public int Gender { get; set; }
+        public int GenderId { get; set; }
         public int LocationId { get; set; }
         public string Services { get; set; }
         public string Education { get; set; }
         public string Experience { get; set; }
         public string ImagePath { get; set; }
-        public DateTime DOB { get; set; }
+        public string DOB { get; set; }
         public string Address { get; set; }
         public string ShortBioGraphy { get; set; }
         public bool IsActive { get; set; }

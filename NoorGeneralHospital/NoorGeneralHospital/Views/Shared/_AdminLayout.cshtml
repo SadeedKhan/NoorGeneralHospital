@@ -8,6 +8,7 @@
     <title>Noor General Hospital(Admin)</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="~/Content/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="~/Content/assets/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="~/Content/assets/css/select2.min.css">
     <link rel="stylesheet" type="text/css" href="~/Content/assets/css/bootstrap-datetimepicker.min.css">
@@ -17,184 +18,37 @@
         <script src="~/Content/assets/js/html5shiv.min.js"></script>
         <script src="~/Content/assets/js/respond.min.js"></script>
     <![endif]-->
-    <style type="text/css">
-.ldio-mp5ey22bxl {
-  0% { opacity: 1 }
-  100% { opacity: 0 }
-}
-.ldio-mp5ey22bxl div {
-  left: 97px;
-  top: 35px;
-  position: absolute;
-  animation: ldio-mp5ey22bxl linear 1s infinite;
-  background: #fe718d;
-  width: 6px;
-  height: 26px;
-  border-radius: 3px / 13px;
-  transform-origin: 3px 65px;
-}.ldio-mp5ey22bxl div:nth-child(1) {
-  transform: rotate(0deg);
-  animation-delay: -0.96875s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(2) {
-  transform: rotate(11.25deg);
-  animation-delay: -0.9375s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(3) {
-  transform: rotate(22.5deg);
-  animation-delay: -0.90625s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(4) {
-  transform: rotate(33.75deg);
-  animation-delay: -0.875s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(5) {
-  transform: rotate(45deg);
-  animation-delay: -0.84375s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(6) {
-  transform: rotate(56.25deg);
-  animation-delay: -0.8125s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(7) {
-  transform: rotate(67.5deg);
-  animation-delay: -0.78125s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(8) {
-  transform: rotate(78.75deg);
-  animation-delay: -0.75s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(9) {
-  transform: rotate(90deg);
-  animation-delay: -0.71875s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(10) {
-  transform: rotate(101.25deg);
-  animation-delay: -0.6875s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(11) {
-  transform: rotate(112.5deg);
-  animation-delay: -0.65625s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(12) {
-  transform: rotate(123.75deg);
-  animation-delay: -0.625s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(13) {
-  transform: rotate(135deg);
-  animation-delay: -0.59375s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(14) {
-  transform: rotate(146.25deg);
-  animation-delay: -0.5625s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(15) {
-  transform: rotate(157.5deg);
-  animation-delay: -0.53125s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(16) {
-  transform: rotate(168.75deg);
-  animation-delay: -0.5s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(17) {
-  transform: rotate(180deg);
-  animation-delay: -0.46875s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(18) {
-  transform: rotate(191.25deg);
-  animation-delay: -0.4375s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(19) {
-  transform: rotate(202.5deg);
-  animation-delay: -0.40625s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(20) {
-  transform: rotate(213.75deg);
-  animation-delay: -0.375s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(21) {
-  transform: rotate(225deg);
-  animation-delay: -0.34375s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(22) {
-  transform: rotate(236.25deg);
-  animation-delay: -0.3125s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(23) {
-  transform: rotate(247.5deg);
-  animation-delay: -0.28125s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(24) {
-  transform: rotate(258.75deg);
-  animation-delay: -0.25s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(25) {
-  transform: rotate(270deg);
-  animation-delay: -0.21875s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(26) {
-  transform: rotate(281.25deg);
-  animation-delay: -0.1875s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(27) {
-  transform: rotate(292.5deg);
-  animation-delay: -0.15625s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(28) {
-  transform: rotate(303.75deg);
-  animation-delay: -0.125s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(29) {
-  transform: rotate(315deg);
-  animation-delay: -0.09375s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(30) {
-  transform: rotate(326.25deg);
-  animation-delay: -0.0625s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(31) {
-  transform: rotate(337.5deg);
-  animation-delay: -0.03125s;
-  background: #fe718d;
-}.ldio-mp5ey22bxl div:nth-child(32) {
-  transform: rotate(348.75deg);
-  animation-delay: 0s;
-  background: #fe718d;
-}
-.loadingio-spinner-spinner-61n4qvordg3 {
-  width: 200px;
-  height: 200px;
-  display: inline-block;
-  overflow: hidden;
-  background: #ffffff;
-}
-.ldio-mp5ey22bxl {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform: translateZ(0) scale(1);
-  backface-visibility: hidden;
-  transform-origin: 0 0; /* see note above */
-}
-.ldio-mp5ey22bxl div { box-sizing: content-box; }
-    </style>
 </head>
 <body>
     <div class="main-wrapper">
         <div class="header">
             <div class="header-left">
-                <a href="index-2.html" class="logo">
-                    <img src="~/Content/assets/img/logo.png" width="35" height="35" alt=""> <span>Noor General Hospital</span>
+                <a href="#" class="logo">
+                     <span>Noor General Hospital</span>
                 </a>
             </div>
             <a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
             <a id="mobile_btn" class="mobile_btn float-left" href="#sidebar"><i class="fa fa-bars"></i></a>
-            <div class="dropdown mobile-user-menu float-right">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="login.html">Logout</a>
-                </div>
-            </div>
+            <ul class="nav user-menu float-right">
+                <li class="nav-item dropdown has-arrow">
+                    <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
+                        <span class="user-img">
+                            <img class="rounded-circle" src="~/Content/assets/img/user.jpg" width="40" alt="Admin">
+                            <span class="status online"></span>
+                        </span>
+                        <span>Admin</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        @using (Html.BeginForm("Logoff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                        {
+                            @Html.AntiForgeryToken()
+                        <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()" title="Logout">
+                            Logout
+                        </a>
+                        }
+                    </div>
+                </li>
+            </ul>
         </div>
         <div class="sidebar" id="sidebar">
             <div class="sidebar-inner slimscroll">
@@ -202,22 +56,32 @@
                     <ul>
                         <li class="menu-title">Main</li>
                         <li class="active">
-                            <a href="index-2.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+                            <a href='@Url.Action("Index", "Dashboard")'><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+                        </li>
+                        <li class="submenu">
+                            <a href="#"><i class="fa fa-edit"></i> <span> Lookups</span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li>
+                                    <a href='@Url.Action("Index", "Specialities")'><i class="fa fa-hospital-o"></i> <span>Speciality</span></a>
+                                </li>
+                                @*<li><a href="form-input-groups.html">Input Groups</a></li>
+                                <li><a href="form-horizontal.html">Horizontal Form</a></li>
+                                <li><a href="form-vertical.html">Vertical Form</a></li>*@
+                            </ul>
                         </li>
                         <li>
-                            <a href='@Url.Action("Index", "Doctors")'><i class="fa fa-user-md"></i> <span>Doctors</span></a>
+                            <a href='@Url.Action("Index", "Doctor")'><i class="fa fa-user-md"></i> <span>Doctors</span></a>
                         </li>
-                        <li>
-                            <a href="patients.html"><i class="fa fa-wheelchair"></i> <span>Patients</span></a>
-                        </li>
+
                         <li>
                             <a href='@Url.Action("Index", "Appointment")'><i class="fa fa-calendar"></i> <span>Appointments</span></a>
                         </li>
                         <li>
-                            <a href="schedule.html"><i class="fa fa-calendar-check-o"></i> <span>Doctor Schedule</span></a>
+                            <a href='@Url.Action("Index", "DoctorSchedule")'><i class="fa fa-calendar-check-o"></i> <span>Doctor Schedule</span></a>
                         </li>
+                       
                         <li>
-                            <a href='@Url.Action("Index", "Speciality")'><i class="fa fa-hospital-o"></i> <span>Speciality</span></a>
+                            <a href='@Url.Action("Index", "Report")'><i class="fa fa-flag-o"></i> <span>Reports</span></a>
                         </li>
                     </ul>
                 </div>
@@ -226,20 +90,21 @@
         <div class="page-wrapper">
             @RenderBody()
         </div>
-            </div>
-            <div class="sidebar-overlay" data-reff=""></div>
-            <script src="~/Content/assets/js/jquery-3.4.1.min.js"></script>
-            <script src="~/Content/assets/js/popper.min.js"></script>
-            <script src="~/Content/assets/js/bootstrap.min.js"></script>
-            <script src="~/Content/assets/js/select2.min.js"></script>
-            <script src="~/Content/assets/js/jquery.dataTables.min.js"></script>
-            <script src="~/Content/assets/js/dataTables.bootstrap4.min.js"></script>
-            <script src="~/Content/assets/js/moment.min.js"></script>
-            <script src="~/Content/assets/js/bootstrap-datetimepicker.min.js"></script>
-            <script src="~/Content/assets/js/jquery.slimscroll.js"></script>
-            <script src="~/Content/assets/js/Chart.bundle.js"></script>
-            <script src="~/Content/assets/js/app.js"></script>
-            <script src="~/Content/assets/js/toastr.min.js"></script>
-            <script src="~/Content/assets/js/SweetAlert2.min.js"></script>
+    </div>
+    <div class="sidebar-overlay" data-reff=""></div>
+    <script src="~/Content/assets/js/jquery-3.4.1.min.js"></script>
+    <script src="~/Content/assets/js/popper.min.js"></script>
+    <script src="~/Content/assets/js/bootstrap.min.js"></script>
+    <script src="~/Content/assets/js/select2.min.js"></script>
+    <script src="~/Content/assets/js/jquery.dataTables.min.js"></script>
+    <script src="~/Content/assets/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Content/assets/js/moment.min.js"></script>
+    <script src="~/Content/assets/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="~/Content/assets/js/jquery.slimscroll.js"></script>
+    <script src="~/Content/assets/js/Chart.bundle.js"></script>
+    <script src="~/Content/assets/js/chart.js"></script>
+    <script src="~/Content/assets/js/app.js"></script>
+    <script src="~/Content/assets/js/toastr.min.js"></script>
+    <script src="~/Content/assets/js/SweetAlert2.min.js"></script>
 </body>
 </html>

@@ -1,6 +1,5 @@
 ﻿$(document).ready(function () {
     _DoctorDetail();
-
 });
     //function ClearValues() {
     //    $('form#AddVisitorsForm').trigger("reset");
@@ -14,14 +13,29 @@ function _AddEditDoctor(id) {
             url: "/Doctor/AddEditDoctor",
             data: { Id: id },
             success: function (res) {
-                console.log(res);
                 $('#_DoctorPartialView').empty().html(res);
+                $("#example").dataTable();
             },
             error: function (res) {
                 alert(res);
             }
         });
-    }
+}
+
+function DoctorProfile(id) {
+    $.ajax({
+        type: "POST",
+        url: "/Doctor/DoctorProfile",
+        data: { Id: id },
+        success: function (res) {
+            debugger
+            $('#_DoctorPartialView').empty().html(res);
+        },
+        error: function (res) {
+            alert(res);
+        }
+    });
+}
 
 function _DoctorDetail() {
         $.ajax({

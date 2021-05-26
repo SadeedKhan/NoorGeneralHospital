@@ -1,4 +1,7 @@
-﻿using System;
+﻿using NoorGeneralHospital.Models;
+using NoorGeneralHospital.Models.InputDTO;
+using NoorGeneralHospital.Models.OutputDTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,23 +11,31 @@ namespace NoorGeneralHospital.Controllers
 {
     public class HomeController : Controller
     {
+        // GET: User
         public ActionResult Index()
         {
             return View();
         }
-
+        public ActionResult Doctors()
+        {
+            return View();
+        }
+        public ActionResult Services()
+        {
+            return View();
+        }
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
 
             return View();
         }
-
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
+        }
+        public ActionResult MakeAnAppointment()
+        {
+            return PartialView("MakeAnAppointment",new AppointmentInput());
         }
     }
 }

@@ -1,0 +1,132 @@
+﻿@model NoorGeneralHospital.Models.InputDTO.AppointmentInput
+
+<!-- Popup Form -->
+<div class="popup-form">
+    <div class="inner-block">
+        <button type="button" id="popup-form-close" class="close" data-dismiss="modal">&times;</button>
+        <div class="img">
+            <img src="~/Content/User/assets/images/jpg/popup-form.jpg">
+        </div>
+        @using (Html.BeginForm("SaveAppointment", "Appointment", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.HiddenFor(x => x.Id)
+            <h1 class="section-title">make an appointment</h1>
+            <div class="input-box">
+                <label for="popup-name">Name *</label>
+                @Html.TextBoxFor(s => s.PatientName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(s => s.PatientName, null, new { @class = "text-danger" })
+            </div>
+            <div class="input-box">
+                <label for="popup-name">Age *</label>
+                @Html.TextBoxFor(s => s.PatientAge, new { @type = "number", @class = "form-control", @Value = "" })
+                @Html.ValidationMessageFor(s => s.PatientAge, null, new { @class = "text-danger" })
+            </div>
+            <div class="input-box">
+                <label for="popup-email">Email *</label>
+                @Html.TextBoxFor(s => s.PatientEmail, new { @type = "Email", @class = "form-control" })
+                @Html.ValidationMessageFor(s => s.PatientEmail, null, new { @class = "text-danger" })
+            </div>
+
+            <div class="input-box">
+                <label for="popup-phone">Phone *</label>
+                @Html.TextBoxFor(s => s.PatientPhone, new { @type = "tel", @class = "form-control" })
+                @Html.ValidationMessageFor(s => s.PatientPhone, null, new { @class = "text-danger" })
+            </div>
+
+            <div class="select-box">
+                <i class="fa fa-angle-down"></i>
+                @Html.DropDownListFor(x => Model.SpecialityId, new SelectList(Model.GetSpeciality(), "Value", "Text"), htmlAttributes: new { @class = "form-control", @onchange = "PopulateDoctorsList()" })
+                @Html.ValidationMessageFor(x => x.SpecialityId, "", new { @class = "text-danger" })
+            </div>
+            <div class="select-box">
+                <i class="fa fa-angle-down"></i>
+                @Html.DropDownListFor(x => Model.DoctorId, Enumerable.Empty<SelectListItem>(), htmlAttributes: new { @class = "form-control", @disabled = "disabled" })
+                @Html.ValidationMessageFor(x => x.DoctorId, "", new { @class = "text-danger" })
+            </div>
+            <div class="input-box">
+                <label for="popup-phone">Phone *</label>
+                @Html.TextBoxFor(s => s.AppointmentDate, new { @class = "form-control datetimepicker" })
+                @Html.ValidationMessageFor(s => s.AppointmentDate, null, new { @class = "text-danger" })
+            </div>
+            <button type="submit" class="btn btn-2_pink">send</button>
+        }
+    </div>
+</div>
+
+<script src="~/Content/assets/js/jquery.validate.min.js"></script>
+<script src="~/Content/assets/js/jquery.validate.unobtrusive.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#DoctorId").empty().append('<option value="" selected="selected">Select an Doctor</option>');
+        //For Date Picker
+        
+
+        //Begin Form Insert
+        $('form').submit(function (e) {
+            e.preventDefault();
+            var isValid = $(this).validate().form();
+            if (!isValid) return false;
+            else {
+                $.ajax({
+                    url: '/Appointment/SaveAppointment',
+                    data: $(this).serialize(),
+                    type: 'POST',
+                    beforeSend: function () {
+                    },
+                    complete: function () {
+                    },
+                    success: function (res) {
+                        if (res.Code == "1") {
+                            toastr.success(res.Message, 'success!');
+                            _SpecialityDetail();
+                        }
+                        else if (res.Code == "2")
+                        {
+                            toastr.warning(res.Message, 'warning!');
+                        }
+                        else {
+                            toastr.error(res.Message, 'error!');
+                        }
+                    },
+                    error: function (jqXHR, error, errorThrown) {
+                        toastr.error('Sorry Try again', 'error!');
+                    },
+                });
+            }
+        });
+
+    });
+
+    function PopulateDoctorsList() {
+        var SpecialityId = parseInt($('#SpecialityId').val());
+        debugger
+        if (SpecialityId == null || SpecialityId == 0)
+        {
+            toastr.info("Please Select Speciality!", "info");
+        }
+        else
+        {
+            $.ajax({
+                type: "POST",
+                url: "/Appointment/PopulateDoctorsList",
+                data: { SpecialityId: SpecialityId },
+                success: function (response) {
+                    console.log(response);
+                    if (response.length == 0) {
+                        toastr.info("there is no record found of this type!", "info");
+                    }
+                    $("#DoctorId").empty().append('<option value="" selected="selected">Select an Option</option>');
+                    for (var i in response) {
+                        $("#DoctorId").append('<option value="' + response[i].Value + '">' + response[i].Text + '</option>');
+                    }
+                    $("#DoctorId").attr("disabled", false);
+                },
+                complete: function () {
+                },
+                error: function (error) {
+                    toastr.info("there is no record found of this type!", "info");
+                }
+            });
+        }
+    }
+</script>

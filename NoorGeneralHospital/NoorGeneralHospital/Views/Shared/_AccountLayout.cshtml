@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
     <title>Noor Hospital</title>
-    <link rel="stylesheet" type="text/css" href="~/Content/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="~/Content/assets/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="~/Content/assets/css/style.css">
+    @Styles.Render("~/Content/css")
     <!--[if lt IE 9]>
         <script src="assets/js/html5shiv.min.js"></script>
         <script src="assets/js/respond.min.js"></script>
@@ -25,11 +23,9 @@
 
 <body>
     <div class="main-wrapper account-wrapper">
-                    @RenderBody() 
+        @RenderBody()
     </div>
-    <script src="~/Content/assets/js/jquery-3.2.1.min.js"></script>
-    <script src="~/Content/assets/js/popper.min.js"></script>
-    <script src="~/Content/assets/js/bootstrap.min.js"></script>
-    <script src="~/Content/assets/js/app.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<NoorGeneralHospital.Models.Doctor>
+﻿@model IEnumerable<NoorGeneralHospital.Models.Sp_Model.Doctor_GetDoctorDetails>
 
 @{
     ViewBag.Title = "Details";
@@ -14,30 +14,36 @@
     </div>
 </div>
 <div class="row doctor-grid">
-    <div class="col-md-4 col-sm-4  col-lg-3">
-        <div class="profile-widget">
-            <div class="doctor-img">
-                <a class="avatar" href="profile.html"><img alt="" src="assets/img/doctor-thumb-03.jpg"></a>
-            </div>
-            <div class="dropdown profile-action">
-                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="edit-doctor.html"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                    @*<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_doctor"><i class="fa fa-trash-o m-r-5"></i> Delete</a>*@
+    @foreach (var doc in Model)
+    {
+        <div class="col-md-4 col-sm-4  col-lg-3">
+            <div class="profile-widget">
+                <div class="doctor-img">
+                    @{
+                        if (string.IsNullOrEmpty(doc.ImagePath))
+                        {
+                            <a onclick="DoctorProfile('@doc.Id')" class="avatar" href="#"><img alt="" src="~/Content/assets/img/user.jpg"></a>
+                        }
+                        else
+                        {
+                            <a onclick="DoctorProfile('@doc.Id')" class="avatar" href="#"><img alt="" src="/../@doc.ImagePath"></a>
+                        }
+
+                    }
+                </div>
+                <div class="dropdown profile-action">
+                    <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#" onclick="_AddEditDoctor('@doc.Id')"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+                        <a class="dropdown-item" href="#" onclick="DeleteDoctor('@doc.Id')"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+                    </div>
+                </div>
+                <h4 class="doctor-name text-ellipsis"><a href="#" onclick="DoctorProfile(@doc.Id)">@doc.UserName</a></h4>
+                <div class="doc-prof">@doc.Speciality</div>
+                <div class="user-country">
+                    <i class="fa fa-map-marker"></i> Pakistan, @doc.Location
                 </div>
             </div>
-            <h4 class="doctor-name text-ellipsis"><a href="profile.html">Cristina Groves</a></h4>
-            <div class="doc-prof">Gynecologist</div>
-            <div class="user-country">
-                <i class="fa fa-map-marker"></i> United States, San Francisco
-            </div>
         </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm-12">
-        <div class="see-all">
-            <a class="see-all-btn" href="javascript:void(0);">Load More</a>
-        </div>
-    </div>
+    }
 </div>

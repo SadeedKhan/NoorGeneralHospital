@@ -1,0 +1,44 @@
+﻿@model IEnumerable<NoorGeneralHospital.Models.Sp_Model.Appointment_GetAppointmentDetails>
+
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title d-inline-block">Upcoming Appointments</h4> @Html.ActionLink("View all", "Index", "Appointment", null,new { @class = "btn btn-primary float-right" })
+    </div>
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table mb-0">
+                <thead >
+                    <tr>
+                        <th>Patient Name</th>
+                        <th>Doctor Name</th>
+                        <th>Timing</th>
+                        <th class="text-right">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var doc in Model)
+                    {
+                        <tr>
+                            <td style="min-width: 200px;">
+                                <h2> @doc.PatientName</h2>
+                            </td>
+                            <td>
+                                <h5 class="time-title p-0">Appointment With</h5>
+                                <p>Dr. @doc.Doctor</p>
+                            </td>
+                            <td>
+                                <h5 class="time-title p-0">Date</h5>
+                                <p>@doc.AppointmentDate</p>
+                            </td>
+                            <td class="text-right">
+                                @Html.ActionLink("Take up", "Index", "Appointment",null, new { @class = "btn btn-outline-primary take-btn" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

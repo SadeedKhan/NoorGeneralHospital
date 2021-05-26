@@ -1,0 +1,97 @@
+﻿@model NoorGeneralHospital.Models.InputDTO.AppointmentReportInput
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="~/Content/assets/css/dataTables.bootstrap4.min.css">
+<div class="content">
+    <div class="row">
+        <div class="col-sm-5 col-4">
+            <h4 class="page-title">Reports</h4>
+        </div>
+    </div>
+    <div class="row filter-row">
+        <div class="col-sm-6 col-md-3">
+            <div class="form-group form-focus">
+                <label class="focus-label">From</label>
+                <div class="cal-icon">
+                    @Html.TextBoxFor(s => s.FromDate, new { @class = "form-control floating datetimepicker" })
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <div class="form-group form-focus">
+                <label class="focus-label">To</label>
+                <div class="cal-icon">
+                    @Html.TextBoxFor(s => s.ToDate, new { @class = "form-control floating datetimepicker" })
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <div class="form-group form-focus select-focus">
+                <label class="focus-label">Status</label>
+                @Html.DropDownListFor(x => Model.StatusId, new SelectList(Model.GetStatus(), "Value", "Text"), htmlAttributes: new { @class = "select floating" })
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <input type="button" class="btn btn-success btn-block" onclick="GetAppointmentReport()" value="Search" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table id="_appointmentreport" class="table table-striped custom-table mb-0">
+                    <thead>
+                        <tr>
+                            <th>Patient Name</th>
+                            <th>Age</th>
+                            <th>Doctor Name</th>
+                            <th>Department</th>
+                            <th>Appointment Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    function GetAppointmentReport() {
+        var Statusid = $('#StatusId').val();
+        var FromDate = $('#FromDate').val();
+        var ToDate = $('#ToDate').val();
+        var f = new Date(FromDate.split('/').reverse().join('-'));
+        var t = new Date(ToDate.split('/').reverse().join('-'));
+        if (f >= t) {
+            toastr.warning("To date should be greater than From date", 'warning!');
+        }
+        else {
+            var data = {
+                FromDate: FromDate,
+                ToDate: ToDate,
+                StatusId: Statusid
+            };
+            $.ajax({
+                type: 'POST',
+                url: '/Report/Details',
+                data: data,
+                success: function (res) {
+                    $("#_appointmentreport tbody").empty().append(res);
+                },
+                error: function (res) {
+                    alert(res);
+                }
+            });
+        }
+    }
+
+</script>
+
+

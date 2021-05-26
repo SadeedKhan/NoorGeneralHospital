@@ -9,7 +9,10 @@ namespace NoorGeneralHospital
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Content/assets/js/jquery-3.2.1.min.js",
+                        "~/Content/assets/js/popper.min.js",
+                        "~/Content/assets/js/bootstrap.min.js",
+                        "~/Content/assets/js/app.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -20,11 +23,12 @@ namespace NoorGeneralHospital
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
+                      "~/Content/assets/js/bootstrap.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/assets/css/bootstrap.min.css",
+                      "~/Content/assets/css/font-awesome.min.css",
+                      "~/Content/assets/css/style.css"));
         }
     }
 }
