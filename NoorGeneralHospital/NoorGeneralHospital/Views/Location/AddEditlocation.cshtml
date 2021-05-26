@@ -1,0 +1,82 @@
+﻿@model NoorGeneralHospital.Models.Location
+@{
+    ViewBag.Title = "AddEditlocation";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-8 offset-lg-2">
+        <h4 class="page-title">Create/Update Location</h4>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-8 offset-lg-2">
+        @using (Html.BeginForm("SaveLocation", "Location", FormMethod.Post, new { enctype = "multpart/form-data" }))
+        {
+            @Html.HiddenFor(s => s.Id)
+            <div class="form-group">
+                <label>Speciality Name</label>
+                @Html.TextBoxFor(l => l.LocationName, new { @class = "form-control", @placeholder = "Enter Location" })
+                @Html.ValidationMessageFor(l => l.LocationName, null, new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label class="display-block">location Status</label>
+                <div class="form-check form-check-inline">
+                    @Html.RadioButtonFor(s => s.IsActive, true, new { @class = "form-check-input", @name = "status", @id = "location_active", @checked = true })
+                    <label class="form-check-label" for="location_active">
+                        Active
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    @Html.RadioButtonFor(l => l.IsActive, false, new { @class = "form-check-input", @name = "status", @id = "location_inactive" })
+                    <label class="form-check-label" for="location_inactive">
+                        Inactive
+                    </label>
+                </div>
+            </div>
+            <div class="m-t-20 text-center">
+                <button class="btn btn-primary submit-btn">Create</button>
+            </div>
+        }
+    </div>
+</div>
+<script src="~/Content/assets/js/jquery.validate.min.js"></script>
+<script src="~/Content/assets/js/jquery.validate.unobtrusive.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        $('form').submit(function (e) {
+            debugger
+            e.preventDefault();
+            var isValid = $(this).validate().form();
+            if (!isValid) return false;
+            else {
+                $.ajax({
+                    url: '/Location/SaveLocation',
+                    data: $(this).serialize(),
+                    type: 'POST',
+                    beforeSend: function () {
+                    },
+                    complete: function () {
+                    },
+                    success: function (res) {
+                        if (res.Code == "1") {
+                            toastr.success(res.Message, 'success!');
+                            _SpecialityDetail();
+                        }
+                        else if (res.Code == "2")
+                        {
+                            toastr.warning(res.Message, 'warning!');
+                        }
+                        else {
+                            toastr.error(res.Message, 'error!');
+                        }
+                    },
+                    error: function (jqXHR, error, errorThrown) {
+                        toastr.error('Sorry Try again', 'error!');
+                    },
+                });
+            }
+        });
+
+    });</script>
