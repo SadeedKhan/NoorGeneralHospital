@@ -236,6 +236,7 @@ E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneral
 E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.Owin.Security.OAuth.xml
 E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.csprojAssemblyReference.cache
 E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.InitialCreate.resources
 E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.IntialDb.resources
 E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.updateidspecial.resources
