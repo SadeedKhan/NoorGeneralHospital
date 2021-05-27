@@ -738,6 +738,8 @@
     <Content Include="Content\assets\plugins\summernote\dist\font\summernoted41d.eot" />
     <None Include="packages.config" />
     <Content Include="Views\Doctor\DoctorProfile.cshtml" />
+    <Content Include="Views\Dashboard\DashboardAppointmentDetails.cshtml" />
+    <Content Include="Views\Dashboard\DashboardDoctorsDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202105012209373_InitialCreate.resx">
