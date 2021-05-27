@@ -12,7 +12,7 @@ namespace NoorGeneralHospital.Models
         public int Id { get; set; }
         [Required(ErrorMessage = "Please Enter Location.")]
         public string LocationName { get; set; }
-        public string NLocationName { get; set; }
+        public string NormalizeLocationName { get; set; }
         public bool IsActive { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime? CreatedOn { get; set; }

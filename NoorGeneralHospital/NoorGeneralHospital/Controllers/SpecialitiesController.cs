@@ -16,7 +16,6 @@ namespace NoorGeneralHospital.Controllers
     public class SpecialitiesController : Controller
     {
         private readonly ApplicationDbContext db = new ApplicationDbContext();
-        private UserManager<ApplicationUser> userManager;
 
         // GET: Specialities
         public ActionResult Index()
@@ -46,7 +45,6 @@ namespace NoorGeneralHospital.Controllers
         {
             GeneralResponse _result = new GeneralResponse();
             string userId = User.Identity.GetUserId();
-            var res=0;
             int Exist;
             try
             {
@@ -118,37 +116,37 @@ namespace NoorGeneralHospital.Controllers
             return PartialView("AddEditSpeciality", speciality);
         }
 
-        [HttpPost]
-        public ActionResult Delete(int id)
-        {
-            GeneralResponse _result = new GeneralResponse();
-            string userId = User.Identity.GetUserId();
-            try
-            {
-                if (id > 0)
-                {
-                    Speciality speciality = db.Specialities.Find(id);
-                    speciality.UpdatedOn = DateTime.Now;
-                    speciality.UpdatedById = userId;
-                    speciality.IsActive = false;
-                    db.Entry(speciality).State = EntityState.Modified;
-                    db.SaveChanges();
-                    _result.Message = "Speciality Removed Successfully!";
-                    _result.Code = "1";
-                }
-                else
-                {
-                    _result.Message = "InValid Id!";
-                    _result.Code = "0";
-                }
-            }
-            catch (Exception e)
-            {
-                _result.Message = "An Internal Error!";
-                _result.Code = "0";
-            }
-                return Json(_result);
-        }
+        //[HttpPost]
+        //public ActionResult Delete(int id)
+        //{
+        //    GeneralResponse _result = new GeneralResponse();
+        //    string userId = User.Identity.GetUserId();
+        //    try
+        //    {
+        //        if (id > 0)
+        //        {
+        //            Speciality speciality = db.Specialities.Find(id);
+        //            speciality.UpdatedOn = DateTime.Now;
+        //            speciality.UpdatedById = userId;
+        //            speciality.IsActive = false;
+        //            db.Entry(speciality).State = EntityState.Modified;
+        //            db.SaveChanges();
+        //            _result.Message = "Speciality Removed Successfully!";
+        //            _result.Code = "1";
+        //        }
+        //        else
+        //        {
+        //            _result.Message = "InValid Id!";
+        //            _result.Code = "0";
+        //        }
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        _result.Message = "An Internal Error!";
+        //        _result.Code = "0";
+        //    }
+        //        return Json(_result);
+        //}
 
         protected override void Dispose(bool disposing)
         {

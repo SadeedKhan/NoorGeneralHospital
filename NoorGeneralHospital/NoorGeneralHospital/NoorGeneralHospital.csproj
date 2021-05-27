@@ -292,6 +292,10 @@
     <Compile Include="Migrations\202105231406334_dashboardstats.Designer.cs">
       <DependentUpon>202105231406334_dashboardstats.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105261653447_addloc.cs" />
+    <Compile Include="Migrations\202105261653447_addloc.Designer.cs">
+      <DependentUpon>202105261653447_addloc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Appointment.cs" />
@@ -330,22 +334,12 @@
     <Content Include="Content\assets\fonts\fontawesome-webfont3e6e.html" />
     <Content Include="Content\assets\fonts\fontawesome-webfont3e6e.svg" />
     <Content Include="Content\assets\img\attachment.png" />
-    <Content Include="Content\assets\img\blog\blog-01.jpg" />
-    <Content Include="Content\assets\img\blog\blog-02.jpg" />
-    <Content Include="Content\assets\img\blog\blog-03.jpg" />
-    <Content Include="Content\assets\img\blog\blog-04.jpg" />
-    <Content Include="Content\assets\img\blog\blog-thumb-01.jpg" />
-    <Content Include="Content\assets\img\blog\blog-thumb-02.jpg" />
-    <Content Include="Content\assets\img\blog\blog-thumb-03.jpg" />
-    <Content Include="Content\assets\img\blog\blog-thumb-04.jpg" />
     <Content Include="Content\assets\img\calander.png" />
     <Content Include="Content\assets\img\clock.png" />
-    <Content Include="Content\assets\img\doctor-03.jpg" />
     <Content Include="Content\assets\img\favicon.ico" />
     <Content Include="Content\assets\img\logo-dark.png" />
     <Content Include="Content\assets\img\logo.png" />
-    <Content Include="Content\assets\img\placeholder.jpg" />
-    <Content Include="Content\assets\img\sent.png" />
+    <Content Include="Content\assets\img\placeholder-thumb.jpg" />
     <Content Include="Content\assets\img\user.jpg" />
     <Content Include="Content\assets\js\app.js" />
     <Content Include="Content\assets\js\bootstrap-datetimepicker.min.js" />
@@ -355,21 +349,20 @@
     <Content Include="Content\assets\js\dataTables.bootstrap4.min.js" />
     <Content Include="Content\assets\js\fullcalendar.min.js" />
     <Content Include="Content\assets\js\jquery-3.2.1.min.js" />
-    <Content Include="Content\assets\js\jquery-3.4.1.min.js" />
     <Content Include="Content\assets\js\jquery-ui.min.html" />
     <Content Include="Content\assets\js\jquery.dataTables.min.js" />
     <Content Include="Content\assets\js\jquery.fullcalendar.js" />
     <Content Include="Content\assets\js\jquery.slimscroll.js" />
-    <Content Include="Content\assets\js\jquery.unobtrusive-ajax.js" />
-    <Content Include="Content\assets\js\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Content\assets\js\jquery.validate.min.js" />
     <Content Include="Content\assets\js\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Content\assets\js\modernizr-2.8.3.js" />
     <Content Include="Content\assets\js\moment.min.js" />
     <Content Include="Content\assets\js\popper.min.js" />
     <Content Include="Content\assets\js\select2.min.js" />
     <Content Include="Content\assets\js\SweetAlert2.min.js" />
     <Content Include="Content\assets\js\tagsinput.js" />
     <Content Include="Content\assets\js\toastr.min.js" />
+    <Content Include="Content\assets\LoginGif\loginbg.svg" />
     <Content Include="Content\assets\plugins\light-gallery\css\lightgallery.min.css" />
     <Content Include="Content\assets\plugins\light-gallery\fonts\lgd641.svg" />
     <Content Include="Content\assets\plugins\light-gallery\img\loading.gif" />
@@ -379,7 +372,6 @@
     <Content Include="Content\assets\plugins\light-gallery\js\lightgallery-all.min.js" />
     <Content Include="Content\assets\plugins\summernote\dist\summernote-bs4.css" />
     <Content Include="Content\assets\plugins\summernote\dist\summernote-bs4.min.js" />
-    <Content Include="Content\assets\svg\loginbg.svg" />
     <Content Include="Content\User\assets\css\animate.css" />
     <Content Include="Content\User\assets\css\bootstrap.min.css" />
     <Content Include="Content\User\assets\css\jquery.fancybox.min.css" />
@@ -565,20 +557,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Properties\serviceDependencies.local.json.user" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Content\assets\fonts\fontawesome-webfont3e6e.eot" />
-    <Content Include="Content\assets\fonts\fontawesome-webfont3e6e.ttf" />
-    <Content Include="Content\assets\fonts\fontawesome-webfont3e6e.woff" />
-    <Content Include="Content\assets\fonts\fontawesome-webfontd41d.eot" />
-    <Content Include="Content\assets\plugins\light-gallery\fonts\lgd41d.eot" />
-    <Content Include="Content\assets\plugins\light-gallery\fonts\lgd641.eot" />
-    <Content Include="Content\assets\plugins\light-gallery\fonts\lgd641.ttf" />
-    <Content Include="Content\assets\plugins\light-gallery\fonts\lgd641.woff" />
-    <Content Include="Content\assets\plugins\summernote\dist\font\summernote4c4d.eot" />
-    <Content Include="Content\assets\plugins\summernote\dist\font\summernote4c4d.ttf" />
-    <Content Include="Content\assets\plugins\summernote\dist\font\summernote4c4d.woff" />
-    <Content Include="Content\assets\plugins\summernote\dist\font\summernoted41d.eot" />
     <Content Include="Properties\serviceDependencies.json" />
     <Content Include="Properties\serviceDependencies.local.json" />
     <Content Include="Content\User\assets\css\main.css.map" />
@@ -680,17 +658,6 @@
     <Content Include="Content\User\assets\scss\_svg-icons.scss" />
     <Content Include="Content\User\assets\scss\_to-top.scss" />
     <Content Include="Content\User\assets\scss\_variables.scss" />
-    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.4.1.js" />
-    <Content Include="Scripts\jquery-3.4.1.min.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -756,9 +723,20 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont3e6e.eot" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont3e6e.ttf" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont3e6e.woff" />
+    <Content Include="Content\assets\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Content\assets\plugins\light-gallery\fonts\lgd41d.eot" />
+    <Content Include="Content\assets\plugins\light-gallery\fonts\lgd641.eot" />
+    <Content Include="Content\assets\plugins\light-gallery\fonts\lgd641.ttf" />
+    <Content Include="Content\assets\plugins\light-gallery\fonts\lgd641.woff" />
+    <Content Include="Content\assets\plugins\summernote\dist\font\summernote4c4d.eot" />
+    <Content Include="Content\assets\plugins\summernote\dist\font\summernote4c4d.ttf" />
+    <Content Include="Content\assets\plugins\summernote\dist\font\summernote4c4d.woff" />
+    <Content Include="Content\assets\plugins\summernote\dist\font\summernoted41d.eot" />
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Views\Doctor\DoctorProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202105012209373_InitialCreate.resx">
@@ -841,6 +819,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105231406334_dashboardstats.resx">
       <DependentUpon>202105231406334_dashboardstats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105261653447_addloc.resx">
+      <DependentUpon>202105261653447_addloc.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

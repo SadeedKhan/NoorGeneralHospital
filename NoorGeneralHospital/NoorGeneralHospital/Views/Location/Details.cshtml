@@ -1,10 +1,5 @@
 ﻿@model IEnumerable<NoorGeneralHospital.Models.Location>
-@{
-    ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
-}
 
-<h2>Details</h2>
 <div class="row">
     <div class="col-sm-5 col-5">
         <h4 class="page-title">Location Details</h4>
@@ -16,7 +11,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="table-responsive">
-            <table class="table table-striped custom-table mb-0 datatable">
+            <table id="example" class="table table-striped custom-table mb-0 datatable">
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -44,8 +39,7 @@
                                 }
                             </td>
                             <td class="text-right">
-                                <a class="btn btn-outline-primary take-btn" onclick="_AddEditSpeciality('@cur.Id')"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                @*<a class="dropdown-item" onclick="DeleteSpeciality('@cur.Id')"><i class="fa fa-trash-o m-r-5"></i> Delete</a>*@
+                                <a class="btn btn-outline-primary take-btn" onclick="_AddEditLocation('@cur.Id')"><i class="fa fa-pencil m-r-5"></i> Edit</a>
                             </td>
                         </tr>
                     }

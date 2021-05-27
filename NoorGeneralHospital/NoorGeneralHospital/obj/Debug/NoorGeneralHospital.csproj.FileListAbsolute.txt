@@ -270,3 +270,4 @@ C:\salalhamza\Sadeed\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHo
 C:\salalhamza\Sadeed\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\System.Web.WebPages.dll
 C:\salalhamza\Sadeed\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\System.Web.WebPages.Razor.dll
 C:\salalhamza\Sadeed\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\WebGrease.dll
+E:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.addloc.resources

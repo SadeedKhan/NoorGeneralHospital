@@ -10,15 +10,17 @@ using System.Web.Mvc;
 
 namespace NoorGeneralHospital.Controllers
 {
+    [Authorize]
     public class LocationController : Controller
     {
         private readonly ApplicationDbContext db = new ApplicationDbContext();
-        private UserManager<ApplicationUser> userManager;
+
         // GET: Location
         public ActionResult Index()
         {
             return View();
         }
+
         [HttpGet]
         public ActionResult Details()
         {
@@ -34,14 +36,11 @@ namespace NoorGeneralHospital.Controllers
             return PartialView("Details", list);
         }
 
-
-        // POST: Specialities/CreateUpdateSpeciality
         [HttpPost]
         public ActionResult SaveLocation(Location location)
         {
             GeneralResponse _result = new GeneralResponse();
-            string userId = "1";
-            var res = 0;
+            string userId = User.Identity.GetUserId();
             int Exist;
             try
             {
@@ -61,6 +60,7 @@ namespace NoorGeneralHospital.Controllers
                         {
                             db.Entry(local).State = EntityState.Detached;
                         }
+                        location.NormalizeLocationName = location.LocationName.ToUpper();
                         location.UpdatedOn = DateTime.Now;
                         location.UpdatedById = userId;
                         db.Entry(location).State = EntityState.Modified;
@@ -79,6 +79,7 @@ namespace NoorGeneralHospital.Controllers
                     }
                     else
                     {
+                        location.NormalizeLocationName = location.LocationName.ToUpper();
                         location.CreatedOn = DateTime.Now;
                         location.CreatedById = userId;
                         db.Locations.Add(location);
@@ -111,36 +112,37 @@ namespace NoorGeneralHospital.Controllers
             return PartialView("AddEditLocation", location);
         }
 
-        [HttpPost]
-        public ActionResult Delete(int id)
-        {
-            GeneralResponse _result = new GeneralResponse();
-            try
-            {
-                if (id > 0)
-                {
-                    Location location = db.Locations.Find(id);
-                    location.UpdatedOn = DateTime.Now;
-                    location.UpdatedById = "";
-                    location.IsActive = false;
-                    db.Entry(location).State = EntityState.Modified;
-                    db.SaveChanges();
-                    _result.Message = "Speciality Removed Successfully!";
-                    _result.Code = "1";
-                }
-                else
-                {
-                    _result.Message = "InValid Id!";
-                    _result.Code = "0";
-                }
-            }
-            catch (Exception e)
-            {
-                _result.Message = "An Internal Error!";
-                _result.Code = "0";
-            }
-            return Json(_result);
-        }
+        //[HttpPost]
+        //public ActionResult Delete(int id)
+        //{
+        //    GeneralResponse _result = new GeneralResponse();
+        //    string userId = User.Identity.GetUserId();
+        //    try
+        //    {
+        //        if (id > 0)
+        //        {
+        //            Location location = db.Locations.Find(id);
+        //            location.UpdatedOn = DateTime.Now;
+        //            location.UpdatedById = userId;
+        //            location.IsActive = false;
+        //            db.Entry(location).State = EntityState.Modified;
+        //            db.SaveChanges();
+        //            _result.Message = "Location Removed Successfully!";
+        //            _result.Code = "1";
+        //        }
+        //        else
+        //        {
+        //            _result.Message = "InValid Id!";
+        //            _result.Code = "0";
+        //        }
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        _result.Message = "An Internal Error!";
+        //        _result.Code = "0";
+        //    }
+        //    return Json(_result);
+        //}
 
         protected override void Dispose(bool disposing)
         {
