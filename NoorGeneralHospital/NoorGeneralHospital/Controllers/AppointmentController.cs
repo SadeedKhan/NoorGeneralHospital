@@ -214,6 +214,38 @@ namespace NoorGeneralHospital.Controllers
         }
 
         [HttpPost]
+        public ActionResult AttendAppointment(int id)
+        {
+            string userId = User.Identity.GetUserId();
+            GeneralResponse _result = new GeneralResponse();
+            try
+            {
+                if (id > 0)
+                {
+                    Appointment ap = db.Appointments.Find(id);
+                    ap.UpdatedOn = DateTime.Now;
+                    ap.UpdatedById = userId;
+                    ap.StatusId = 3;
+                    db.Entry(ap).State = EntityState.Modified;
+                    db.SaveChanges();
+                    _result.Message = "Appointment Attend Successfully!";
+                    _result.Code = "1";
+                }
+                else
+                {
+                    _result.Message = "InValid Id!";
+                    _result.Code = "0";
+                }
+            }
+            catch (Exception e)
+            {
+                _result.Message = "An Internal Error!";
+                _result.Code = "0";
+            }
+            return Json(_result);
+        }
+
+        [HttpPost]
         public ActionResult RejectAppointmentPartialView(int Id)
         {
             RejectionInput obj = new RejectionInput();

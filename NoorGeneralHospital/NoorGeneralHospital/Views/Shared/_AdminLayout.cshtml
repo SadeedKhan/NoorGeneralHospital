@@ -22,9 +22,9 @@
     <![endif]-->
 </head>
 <body>
-    <div   class="preloader">
-        <div class="loader"></div>
-        <h6 class="preloader-text ">Noor<br>Hospital</h6>
+    <div class="preloader-admin" style="display: none;">
+        <div class="loader-admin"></div>
+        @*<h6 class="preloader-text ">Noor<br>Hospital</h6>*@
     </div>
     <!-- End of .preloader -->
     <div class="main-wrapper">
@@ -33,7 +33,7 @@
         <div class="header">
             <div class="header-left">
                 <a href="#" class="logo">
-                    <span   class="test">Noor General Hospital</span>
+                    <span class="test">Noor General Hospital</span>
                 </a>
             </div>
             <a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
@@ -53,8 +53,7 @@
                             @Html.AntiForgeryToken()
                             <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()" title="Logout">
                                 Logout
-                            </a>
-                        }
+                            </a>}
                     </div>
                 </li>
             </ul>
@@ -101,7 +100,20 @@
         </div>
     </div>
     <div class="sidebar-overlay" data-reff=""></div>
-    <script src="~/Content/assets/js/jquery-3.4.1.min.js"></script>
+    <script src="~/Content/assets/js/jquery-3.2.1.min.js"></script>
+
+    <script>
+        var $loading = $('#loading').hide();
+        //Attach the event handler to any element
+        $(document)
+            .ajaxStart(function () {
+                document.querySelector('.preloader-admin').style.display = "flex";
+            })
+            .ajaxStop(function () {
+                document.querySelector('.preloader-admin').style.display = "none";
+            });
+    </script>
+
     <script src="~/Content/assets/js/popper.min.js"></script>
     <script src="~/Content/assets/js/bootstrap.min.js"></script>
     <script src="~/Content/assets/js/select2.min.js"></script>
@@ -111,7 +123,7 @@
     <script src="~/Content/assets/js/bootstrap-datetimepicker.min.js"></script>
     <script src="~/Content/assets/js/jquery.slimscroll.js"></script>
     <script src="~/Content/assets/js/Chart.bundle.js"></script>
-    <script src="~/Content/assets/js/chart.js"></script>
+    @*<script src="~/Content/assets/js/chart.js"></script>*@
     <script src="~/Content/assets/js/app.js"></script>
     <script src="~/Content/assets/js/toastr.min.js"></script>
     <script src="~/Content/assets/js/SweetAlert2.min.js"></script>

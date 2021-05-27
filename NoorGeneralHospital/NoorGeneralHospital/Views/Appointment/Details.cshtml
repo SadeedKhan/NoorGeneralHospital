@@ -61,7 +61,7 @@
                                     }
                                     else if (doc.StatusId == 3)
                                     {
-                                        <span class="custom-badge status-grey">@doc.Status</span>
+                                        <span class="custom-badge status-blue">@doc.Status</span>
                                     }
                                     else
                                     {
@@ -77,17 +77,20 @@
                                         {
                                             <a class="dropdown-item" href="#" onclick="AcceptAppointment(@doc.Id)"><i class="fa fa-pencil m-r-5"></i> Accept</a>
                                         }
+                                        @if (doc.StatusId != 1 && doc.StatusId != 3 && doc.StatusId != 4)
+                                        {
+                                            <a class="dropdown-item" href="#" onclick="AttendAppointment(@doc.Id)"><i class="fa fa-pencil m-r-5"></i> Attend</a>
+                                        }
 
                                         @if (doc.StatusId != 4)
                                         {
                                             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#reject_appointment" onclick="RejectAppointment(@doc.Id)"><i class="fa fa-trash-o m-r-5"></i> Reject</a>
                                         }
-                                        <a class="dropdown-item" onclick="DeleteAppointment('@doc.Id')"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
                                     </div>
                                 </div>
                             </td>
                         </tr>
-                                    }
+                    }
                 </tbody>
             </table>
         </div>
