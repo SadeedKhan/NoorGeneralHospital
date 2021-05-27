@@ -193,7 +193,6 @@ C:\salalhamza\Sadeed\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHo
 C:\salalhamza\Sadeed\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\salalhamza\Sadeed\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.Owin.Security.OAuth.xml
 C:\salalhamza\Sadeed\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\salalhamza\Sadeed\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.csprojAssemblyReference.cache
 C:\salalhamza\Sadeed\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.InitialCreate.resources
 C:\salalhamza\Sadeed\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.IntialDb.resources
 C:\salalhamza\Sadeed\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.updateidspecial.resources
