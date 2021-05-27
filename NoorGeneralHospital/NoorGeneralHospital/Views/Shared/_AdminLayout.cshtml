@@ -11,20 +11,29 @@
     <link rel="stylesheet" type="text/css" href="~/Content/assets/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="~/Content/assets/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="~/Content/assets/css/select2.min.css">
-    <link rel="stylesheet" type="text/css" href="~/Content/assets/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/css/bootstrap-datetimepicker.min.css"> 
+    <link rel="stylesheet" type="text/css" href="~/Content/User/assets/css/main.css">
     <link rel="stylesheet" type="text/css" href="~/Content/assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="~/Content/assets/css/toastr.min.css">
+   
     <!--[if lt IE 9]>
         <script src="~/Content/assets/js/html5shiv.min.js"></script>
         <script src="~/Content/assets/js/respond.min.js"></script>
     <![endif]-->
 </head>
 <body>
+    <div   class="preloader">
+        <div class="loader"></div>
+        <h6 class="preloader-text ">Noor<br>Hospital</h6>
+    </div>
+    <!-- End of .preloader -->
     <div class="main-wrapper">
+        <!-- Start of .preloader -->
+
         <div class="header">
             <div class="header-left">
                 <a href="#" class="logo">
-                     <span>Noor General Hospital</span>
+                    <span   class="test">Noor General Hospital</span>
                 </a>
             </div>
             <a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
@@ -42,9 +51,9 @@
                         @using (Html.BeginForm("Logoff", "Account", FormMethod.Post, new { id = "logoutForm" }))
                         {
                             @Html.AntiForgeryToken()
-                        <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()" title="Logout">
-                            Logout
-                        </a>
+                            <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()" title="Logout">
+                                Logout
+                            </a>
                         }
                     </div>
                 </li>
@@ -79,7 +88,7 @@
                         <li>
                             <a href='@Url.Action("Index", "DoctorSchedule")'><i class="fa fa-calendar-check-o"></i> <span>Doctor Schedule</span></a>
                         </li>
-                       
+
                         <li>
                             <a href='@Url.Action("Index", "Report")'><i class="fa fa-flag-o"></i> <span>Reports</span></a>
                         </li>
@@ -92,7 +101,7 @@
         </div>
     </div>
     <div class="sidebar-overlay" data-reff=""></div>
-    <script src="~/Content/assets/js/jquery-3.2.1.min.js"></script>
+    <script src="~/Content/assets/js/jquery-3.4.1.min.js"></script>
     <script src="~/Content/assets/js/popper.min.js"></script>
     <script src="~/Content/assets/js/bootstrap.min.js"></script>
     <script src="~/Content/assets/js/select2.min.js"></script>

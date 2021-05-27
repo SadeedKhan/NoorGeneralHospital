@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*---------- IbnSino HTML Template ------*/
 /*---------- TABLE OF CONTENTS ----------*/
 /*
@@ -157,7 +157,7 @@ These are css styles, others're attached
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #1f3d9d;
+    background-color: #f22283;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -3825,7 +3825,7 @@ a:hover {
   left: 0;
   top: 0;
   z-index: 999999999999999999;
-  background-color: #fff;
+  background-color: transparent !important;
   height: 100vh;
   width: 100%;
   display: -webkit-box;
@@ -3841,8 +3841,8 @@ a:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-transition-delay: 1s;
-          transition-delay: 1s;
+  -webkit-transition-delay: 5s;
+          transition-delay: 5s;
 }
 
 .loader {
