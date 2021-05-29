@@ -109,7 +109,7 @@
                     success: function (res) {
                         if (res.Code == "1") {
                             toastr.success(res.Message, 'success!');
-                            _SpecialityDetail();
+                            _AppointmentDetail();
                         }
                         else if (res.Code == "2") {
                             toastr.warning(res.Message, 'warning!');

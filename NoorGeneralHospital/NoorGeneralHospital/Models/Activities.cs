@@ -10,6 +10,6 @@ namespace NoorGeneralHospital.Models
         public int Id { get; set; }
         public string PatientName { get; set; }
         public string PatientPhone { get; set; }
-        public DateTime AppointmentDate { get; set; }
+        public string AppointmentDate { get; set; }
     }
 }

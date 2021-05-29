@@ -414,3 +414,13 @@ D:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneral
 D:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
 D:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
 D:\Personal\Angular Practice\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.addactivities.resources
+C:\salalhamza\Sadeed\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\salalhamza\Sadeed\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\salalhamza\Sadeed\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.AspNet.SignalR.Core.pdb
+C:\salalhamza\Sadeed\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\salalhamza\Sadeed\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+C:\salalhamza\Sadeed\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\salalhamza\Sadeed\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.csprojAssemblyReference.cache
+C:\salalhamza\Sadeed\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.addloc.resources
+C:\salalhamza\Sadeed\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.addactivities.resources
+C:\salalhamza\Sadeed\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.intu.resources

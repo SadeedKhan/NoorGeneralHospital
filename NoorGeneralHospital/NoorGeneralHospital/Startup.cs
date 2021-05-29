@@ -2,6 +2,7 @@
 using Owin;
 
 [assembly: OwinStartupAttribute(typeof(NoorGeneralHospital.Startup))]
+
 namespace NoorGeneralHospital
 {
     public partial class Startup

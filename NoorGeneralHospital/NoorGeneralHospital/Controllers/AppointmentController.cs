@@ -6,9 +6,7 @@ using NoorGeneralHospital.Models.Sp_Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.SqlClient;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace NoorGeneralHospital.Controllers
@@ -91,15 +89,17 @@ namespace NoorGeneralHospital.Controllers
                     res = db.SaveChanges();
                     _result.Message = "Record Created Successfully!";
                     _result.Code = "1";
-
-                    //Add Appointment For Activities
-                    Activities activities = new Activities();
-                    activities.PatientName = ap.PatientName;
-                    appointment.PatientEmail = ap.PatientEmail;
-                    activities.PatientPhone = ap.PatientPhone;
-                    activities.AppointmentDate = Convert.ToDateTime(ap.AppointmentDate);
-                    db.activities.Add(activities);
-                    var result = db.SaveChanges();
+                    if(res>0)
+                    {
+                        //Add Appointment For Activities
+                        Activities activities = new Activities();
+                        activities.PatientName = ap.PatientName;
+                        appointment.PatientEmail = ap.PatientEmail;
+                        activities.PatientPhone = ap.PatientPhone;
+                        activities.AppointmentDate = ap.AppointmentDate; 
+                        db.activities.Add(activities);
+                        var result = db.SaveChanges();
+                    }
                 }
             }
             catch (Exception e)

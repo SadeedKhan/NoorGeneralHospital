@@ -307,6 +307,10 @@
     <Compile Include="Migrations\202105282211423_addactivities.Designer.cs">
       <DependentUpon>202105282211423_addactivities.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105291311520_intu.cs" />
+    <Compile Include="Migrations\202105291311520_intu.Designer.cs">
+      <DependentUpon>202105291311520_intu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Activities.cs" />
@@ -845,6 +849,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105282211423_addactivities.resx">
       <DependentUpon>202105282211423_addactivities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105291311520_intu.resx">
+      <DependentUpon>202105291311520_intu.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
