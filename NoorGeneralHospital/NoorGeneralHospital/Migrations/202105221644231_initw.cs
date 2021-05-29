@@ -8,7 +8,6 @@ namespace NoorGeneralHospital.Migrations
         public override void Up()
         {
             AddColumn("dbo.Specialities", "NormalizeSpecialityName", c => c.String());
-            DropColumn("dbo.Specialities", "NSpecialityName");
         }
         
         public override void Down()

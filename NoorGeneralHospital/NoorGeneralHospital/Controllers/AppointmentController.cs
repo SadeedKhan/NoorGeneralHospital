@@ -91,6 +91,15 @@ namespace NoorGeneralHospital.Controllers
                     res = db.SaveChanges();
                     _result.Message = "Record Created Successfully!";
                     _result.Code = "1";
+
+                    //Add Appointment For Activities
+                    Activities activities = new Activities();
+                    activities.PatientName = ap.PatientName;
+                    appointment.PatientEmail = ap.PatientEmail;
+                    activities.PatientPhone = ap.PatientPhone;
+                    activities.AppointmentDate = Convert.ToDateTime(ap.AppointmentDate);
+                    db.activities.Add(activities);
+                    var result = db.SaveChanges();
                 }
             }
             catch (Exception e)

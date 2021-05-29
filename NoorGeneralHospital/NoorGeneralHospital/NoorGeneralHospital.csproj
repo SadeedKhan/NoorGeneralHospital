@@ -45,10 +45,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.4.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.4.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.4.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.4.2\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -296,8 +303,13 @@
     <Compile Include="Migrations\202105261653447_addloc.Designer.cs">
       <DependentUpon>202105261653447_addloc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105282211423_addactivities.cs" />
+    <Compile Include="Migrations\202105282211423_addactivities.Designer.cs">
+      <DependentUpon>202105282211423_addactivities.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Activities.cs" />
     <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Days.cs" />
     <Compile Include="Models\Doctor.cs" />
@@ -318,6 +330,7 @@
     <Compile Include="Models\Sp_Model\DoctorSchedule_GetDoctorScheduleDetails.cs" />
     <Compile Include="Models\Sp_Model\Doctor_GetDoctorDetails.cs" />
     <Compile Include="Models\Status.cs" />
+    <Compile Include="NotificationHub.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -553,6 +566,7 @@
     <Content Include="CustomScripts\Doctor\Doctor.js" />
     <Content Include="CustomScripts\Location\Location.js" />
     <Content Include="CustomScripts\Report\Report.js" />
+    <Content Include="CustomScripts\Signalr\site.js" />
     <Content Include="CustomScripts\Speciality\Speciality.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -659,6 +673,8 @@
     <Content Include="Content\User\assets\scss\_svg-icons.scss" />
     <Content Include="Content\User\assets\scss\_to-top.scss" />
     <Content Include="Content\User\assets\scss\_variables.scss" />
+    <Content Include="Scripts\jquery.signalR-2.4.2.js" />
+    <Content Include="Scripts\jquery.signalR-2.4.2.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -740,6 +756,7 @@
     <Content Include="Views\Doctor\DoctorProfile.cshtml" />
     <Content Include="Views\Dashboard\DashboardAppointmentDetails.cshtml" />
     <Content Include="Views\Dashboard\DashboardDoctorsDetails.cshtml" />
+    <Content Include="Views\Shared\_NotificationPartialView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202105012209373_InitialCreate.resx">
@@ -825,6 +842,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105261653447_addloc.resx">
       <DependentUpon>202105261653447_addloc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105282211423_addactivities.resx">
+      <DependentUpon>202105282211423_addactivities.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
