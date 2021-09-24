@@ -353,6 +353,28 @@
     <Content Include="Content\assets\img\attachment.png" />
     <Content Include="Content\assets\img\calander.png" />
     <Content Include="Content\assets\img\clock.png" />
+    <Content Include="Content\assets\img\doctors\Dr  Amna Ali.jpeg" />
+    <Content Include="Content\assets\img\doctors\Dr  Mohib Ur Rehman.jpeg" />
+    <Content Include="Content\assets\img\doctors\Dr  Umer Younas.jpeg" />
+    <Content Include="Content\assets\img\doctors\Dr Ismail Mattar.jpeg" />
+    <Content Include="Content\assets\img\doctors\Dr Khawar Sultan.jpeg" />
+    <Content Include="Content\assets\img\doctors\Dr Muhammad Zahid.jpeg" />
+    <Content Include="Content\assets\img\doctors\Dr NanTara.jpeg" />
+    <Content Include="Content\assets\img\doctors\Dr Uzma Ali.jpeg" />
+    <Content Include="Content\assets\img\doctors\Dr Yousaf Sultani.jpeg" />
+    <Content Include="Content\assets\img\doctors\Dr Zanaib Maqsood.jpeg" />
+    <Content Include="Content\assets\img\doctors\specialist-1.jpg" />
+    <Content Include="Content\assets\img\doctors\specialist-10.jpg" />
+    <Content Include="Content\assets\img\doctors\specialist-2.jpg" />
+    <Content Include="Content\assets\img\doctors\specialist-3.jpg" />
+    <Content Include="Content\assets\img\doctors\specialist-4.jpg" />
+    <Content Include="Content\assets\img\doctors\specialist-5.jpg" />
+    <Content Include="Content\assets\img\doctors\specialist-6.jpg" />
+    <Content Include="Content\assets\img\doctors\specialist-7.jpg" />
+    <Content Include="Content\assets\img\doctors\specialist-8.jpg" />
+    <Content Include="Content\assets\img\doctors\specialist-9.jpg" />
+    <Content Include="Content\assets\img\doctors\WhatsApp Image 2021-07-05 at 10.35.06 PM.jpeg" />
+    <Content Include="Content\assets\img\doctors\WhatsApp Image 2021-07-05 at 10.35.42 PM.jpeg" />
     <Content Include="Content\assets\img\favicon.ico" />
     <Content Include="Content\assets\img\logo-dark.png" />
     <Content Include="Content\assets\img\logo.png" />
@@ -679,7 +701,9 @@
     <Content Include="Content\User\assets\scss\_variables.scss" />
     <Content Include="Scripts\jquery.signalR-2.4.2.js" />
     <Content Include="Scripts\jquery.signalR-2.4.2.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -761,6 +785,7 @@
     <Content Include="Views\Dashboard\DashboardAppointmentDetails.cshtml" />
     <Content Include="Views\Dashboard\DashboardDoctorsDetails.cshtml" />
     <Content Include="Views\Shared\_NotificationPartialView.cshtml" />
+    <Content Include="Views\Home\SingleDoctor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202105012209373_InitialCreate.resx">

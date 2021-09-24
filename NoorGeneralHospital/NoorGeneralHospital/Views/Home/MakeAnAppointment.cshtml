@@ -1,5 +1,5 @@
 ﻿@model NoorGeneralHospital.Models.InputDTO.AppointmentInput
-
+<link rel="stylesheet" type="text/css" href="~/Content/assets/css/bootstrap-datetimepicker.min.css">
 <!-- Popup Form -->
 <div class="popup-form">
     <div class="inner-block">
@@ -9,46 +9,51 @@
         </div>
         @using (Html.BeginForm("SaveAppointment", "Appointment", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
-            @Html.HiddenFor(x => x.Id)
-            <h1 class="section-title">make an appointment</h1>
-            <div class="input-box">
-                <label for="popup-name">Name *</label>
-                @Html.TextBoxFor(s => s.PatientName, new { @class = "form-control" })
-                @Html.ValidationMessageFor(s => s.PatientName, null, new { @class = "text-danger" })
-            </div>
-            <div class="input-box">
-                <label for="popup-name">Age *</label>
-                @Html.TextBoxFor(s => s.PatientAge, new { @type = "number", @class = "form-control", @Value = "" })
-                @Html.ValidationMessageFor(s => s.PatientAge, null, new { @class = "text-danger" })
-            </div>
-            <div class="input-box">
-                <label for="popup-email">Email *</label>
-                @Html.TextBoxFor(s => s.PatientEmail, new { @type = "Email", @class = "form-control" })
-                @Html.ValidationMessageFor(s => s.PatientEmail, null, new { @class = "text-danger" })
-            </div>
+        @Html.HiddenFor(x => x.Id)
+        <h1 class="section-title">make an appointment</h1>
+        <div class="input-box">
+            <label for="popup-name">Name *</label>
+            @Html.TextBoxFor(s => s.PatientName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(s => s.PatientName, null, new { @class = "text-danger" })
+        </div>
+        <div class="input-box">
+            <label for="popup-name">Age *</label>
+            @Html.TextBoxFor(s => s.PatientAge, new { @type = "number", @class = "form-control", @Value = "" })
+            @Html.ValidationMessageFor(s => s.PatientAge, null, new { @class = "text-danger" })
+        </div>
+        <div class="input-box">
+            <label for="popup-email">Email *</label>
+            @Html.TextBoxFor(s => s.PatientEmail, new { @type = "Email", @class = "form-control" })
+            @Html.ValidationMessageFor(s => s.PatientEmail, null, new { @class = "text-danger" })
+        </div>
 
-            <div class="input-box">
-                <label for="popup-phone">Phone *</label>
-                @Html.TextBoxFor(s => s.PatientPhone, new { @type = "tel", @class = "form-control" })
-                @Html.ValidationMessageFor(s => s.PatientPhone, null, new { @class = "text-danger" })
-            </div>
+        <div class="input-box">
+            <label for="popup-phone">Phone *</label>
+            @Html.TextBoxFor(s => s.PatientPhone, new { @type = "tel", @class = "form-control" })
+            @Html.ValidationMessageFor(s => s.PatientPhone, null, new { @class = "text-danger" })
+        </div>
 
-            <div class="select-box">
-                <i class="fa fa-angle-down"></i>
-                @Html.DropDownListFor(x => Model.SpecialityId, new SelectList(Model.GetSpeciality(), "Value", "Text"), htmlAttributes: new { @class = "form-control", @onchange = "PopulateDoctorsList()" })
-                @Html.ValidationMessageFor(x => x.SpecialityId, "", new { @class = "text-danger" })
-            </div>
-            <div class="select-box">
-                <i class="fa fa-angle-down"></i>
-                @Html.DropDownListFor(x => Model.DoctorId, Enumerable.Empty<SelectListItem>(), htmlAttributes: new { @class = "form-control", @disabled = "disabled" })
+        <div class="select-box">
+            <i class="fa fa-angle-down"></i>
+            @Html.DropDownListFor(x => Model.SpecialityId, new SelectList(Model.GetSpeciality(), "Value", "Text"), htmlAttributes: new { @class = "form-control", @onchange = "PopulateDoctorsList()" })
+            @Html.ValidationMessageFor(x => x.SpecialityId, "", new { @class = "text-danger" })
+        </div>
+        <div class="select-box">
+            <i class="fa fa-angle-down"></i>
+            @Html.DropDownListFor(x => Model.DoctorId, Enumerable.Empty<SelectListItem>
+                (), htmlAttributes: new { @class = "form-control", @disabled = "disabled" })
                 @Html.ValidationMessageFor(x => x.DoctorId, "", new { @class = "text-danger" })
-            </div>
-            <div class="input-box">
-                <label for="popup-phone">Phone *</label>
-                @Html.TextBoxFor(s => s.AppointmentDate, new { @class = "form-control datetimepicker" })
-                @Html.ValidationMessageFor(s => s.AppointmentDate, null, new { @class = "text-danger" })
-            </div>
-            <button type="submit" class="btn btn-2_pink">send</button>
+        </div>
+        <div class="cal-icon">
+            <input class="form-control datetimepicker valid" data-val="true" data-val-required="Please Select Doctor." id="AppointmentDate" name="AppointmentDate" placeholder="Select Date" type="text" value="" aria-describedby="AppointmentDate-error" aria-invalid="false">
+            <span class="text-danger field-validation-valid" data-valmsg-for="AppointmentDate" data-valmsg-replace="true"></span>
+        </div>
+        <div class="input-box">
+            <label for="popup-phone">Message</label>
+            @Html.TextBoxFor(s => s.AppointmentDate, new { @class = "form-control datetimepicker" })
+            @Html.ValidationMessageFor(s => s.AppointmentDate, null, new { @class = "text-danger" })
+        </div>
+        <button type="submit" class="btn btn-2_pink">send</button>
         }
     </div>
 </div>

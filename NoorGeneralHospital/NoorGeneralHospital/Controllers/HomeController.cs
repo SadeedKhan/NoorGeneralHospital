@@ -19,6 +19,10 @@ namespace NoorGeneralHospital.Controllers
         {
             return View();
         }
+        public ActionResult SingleDoctor()
+        {
+            return View();
+        }
         public ActionResult Services()
         {
             return View();
