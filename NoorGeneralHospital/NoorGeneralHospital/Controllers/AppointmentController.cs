@@ -30,7 +30,7 @@ namespace NoorGeneralHospital.Controllers
             {
                 list = db.Database.SqlQuery<Appointment_GetAppointmentDetails>("dbo.Appointment_GetAppointmentDetails").ToList();
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
                 list = new List<Appointment_GetAppointmentDetails>();
             }
