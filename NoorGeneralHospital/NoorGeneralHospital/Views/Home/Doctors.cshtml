@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<NoorGeneralHospital.Models.Sp_Model.Doctor_GetDoctorDetails>
+@{
     Layout = "~/Views/shared/_Layout.cshtml";
 }
 
@@ -14,9 +15,8 @@
     <div class="container">
         <h1 class="section-title">Our <span>Doctors</span></h1>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item"><a href="index.html">Our Doctors</a></li>
-            <li class="breadcrumb-item active">Details</li>
+            <li class="breadcrumb-item">@Html.ActionLink("Home", "Index")</li>
+            <li class="breadcrumb-item">@Html.ActionLink("Our Doctors", "Doctors")</li>
         </ol>
     </div>
 </header>
@@ -32,617 +32,636 @@
         </div>
     </div>
     <div class="container">
-
-     
         <div class="departments-3__item-1">
+            @foreach (var d in Model)
+            {
+                <!--   naintara started -->
+                <a href="/Home/SingleDoctor/@d.Id" class="item">
+                    <div class="img">
+                        <img src="~/@d.ImagePath">
+                    </div>
+                    <div class="content">
+                        <span class="departments-3__item-bg-text">     </span>
+                        <h1 class="title">@d.UserName  </h1>
+                        <h5 class="  pt-1">
+                            @d.Services
+                        </h5>
+                        <p class="text">
+                            @d.ShortBioGraphy
+                        </p>
+                        <!-- <!--<span class="read-more-2">read more</span> -->
+                    </div>
+                </a>
+                <!--   naintara ended -->
+            }
             <!--   naintara started -->
-            <a href="departments-details.html" class="item">
-                <div class="img">
-                    <img src="~/Content/assets/img/doctors/Dr NanTara.jpeg">
-                </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">     </span>
-                    <h1 class="title">Dr Naintara  </h1>
-                    <h5 class="  pt-1">
-                        Dental Services at NGH
-                    </h5>
-                    <p class="text">
-                        Cosmetic Dentistry,
-                        Crowns & Bridges,
-                        Excessive or uneven Gums,
-                        Veneers,
-                        Emergency Dental care,
-                        Preventive Dentisry,
-                        Oral Surgery,
-                        Sealants,
-                        Root Canals,
-                        Extractions,
-                        Scaling & Root planning,
-                        Dentures,
-                        Jaw/TMJ,
-                        Braces/Invisalign,
-                        Pediatric Specialty care,
-                        Dentures,
-                        Tooth Whitening,
-                        Night time appliances
+            <!--<a href="departments-details.html" class="item">
+        <div class="img">
+            <img src="~/Content/assets/img/doctors/Dr NanTara.jpeg">
+        </div>
+        <div class="content">
+            <span class="departments-3__item-bg-text">     </span>
+            <h1 class="title">Dr Naintara  </h1>
+            <h5 class="  pt-1">
+                Dental Services at NGH
+            </h5>
+            <p class="text">
+                Cosmetic Dentistry,
+                Crowns & Bridges,
+                Excessive or uneven Gums,
+                Veneers,
+                Emergency Dental care,
+                Preventive Dentisry,
+                Oral Surgery,
+                Sealants,
+                Root Canals,
+                Extractions,
+                Scaling & Root planning,
+                Dentures,
+                Jaw/TMJ,
+                Braces/Invisalign,
+                Pediatric Specialty care,
+                Dentures,
+                Tooth Whitening,
+                Night time appliances
 
-                    </p>
-                    <!-- <!--<span class="read-more-2">read more</span> -->
-                </div>
-            </a>
+            </p>-->
+            <!-- <!--<span class="read-more-2">read more</span> -->
+            <!--</div>
+    </a>-->
             <!--   naintara ended -->
             <!--   Dr. Khawar Sultan  started -->
-            <a href="departments-details.html" class="item">
+            <!--<a href="departments-details.html" class="item">
 
-                <div class="img"> 
-                    <img src="~/Content/assets/img/doctors/Dr Khawar Sultan.jpeg">
-                </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">    </span>
-                    <h1 class="title">Dr. Khawar Sultan</h1>
-                     
-                    <h5 class=" pt-1 ">
-                        Nephrology Services at NGH
+        <div class="img">
+            <img src="~/Content/assets/img/doctors/Dr Khawar Sultan.jpeg">
+        </div>
+        <div class="content">
+            <span class="departments-3__item-bg-text">    </span>
+            <h1 class="title">Dr. Khawar Sultan</h1>
 
-                    </h5>
-                    <p class="text">
-                        Nephrotic Syndrome,
-                        Polycystic kidney disease,
-                        Renal Artery Stenosis,
-                        Swelling feet, face or eyes,
-                        Metabolic Abnormality,
-                        Kidney infections,
-                        Kidney stones,
-                        Hypertension,
-                        High Blood Pressure,
-                        Shortness of breath,
-                        Decreased appetite
+            <h5 class=" pt-1 ">
+                Nephrology Services at NGH
+
+            </h5>
+            <p class="text">
+                Nephrotic Syndrome,
+                Polycystic kidney disease,
+                Renal Artery Stenosis,
+                Swelling feet, face or eyes,
+                Metabolic Abnormality,
+                Kidney infections,
+                Kidney stones,
+                Hypertension,
+                High Blood Pressure,
+                Shortness of breath,
+                Decreased appetite
 
 
-                    </p>
-                    <!-- <!--<span class="read-more-2">read more</span> -->
-                </div>
-            </a>
+            </p>-->
+            <!-- <!--<span class="read-more-2">read more</span> -->
+            <!--</div>
+    </a>-->
             <!--   Dr. Khawar Sultan  ended -->
             <!--   Dr. Zainab Maqsood started -->
-            <a href="departments-details.html" class="item">
-                <div class="img">
-                    <img src="~/Content/assets/img/doctors/Dr Zanaib Maqsood.jpeg">
-                </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">          </span>
-                    <h1 class="title">Dr. Zainab Maqsood    </h1>
-                    <h5 class=" pt-1 ">
-                        Gynae/Obs services at NGH
+            <!--<a href="departments-details.html" class="item">
+        <div class="img">
+            <img src="~/Content/assets/img/doctors/Dr Zanaib Maqsood.jpeg">
+        </div>
+        <div class="content">
+            <span class="departments-3__item-bg-text">          </span>
+            <h1 class="title">Dr. Zainab Maqsood    </h1>
+            <h5 class=" pt-1 ">
+                Gynae/Obs services at NGH
 
 
-                    </h5>
-                    <p class="text">
-                        Infertility/Melasma,
-                        Gynaecological Problems,
-                        Menstrual Problems,
-                        Ovarian Cysts,
-                        Endometriosis,
-                        Uterine Fibroids,
-                        PCOS & PMS,
-                        Hormonal Disorders.
+            </h5>
+            <p class="text">
+                Infertility/Melasma,
+                Gynaecological Problems,
+                Menstrual Problems,
+                Ovarian Cysts,
+                Endometriosis,
+                Uterine Fibroids,
+                PCOS & PMS,
+                Hormonal Disorders.
 
 
 
-                    </p>
-                    <!-- <!--<span class="read-more-2">read more</span> -->
-                </div>
-            </a>
+            </p>-->
+            <!-- <!--<span class="read-more-2">read more</span> -->
+            <!--</div>
+    </a>-->
             <!--    Dr. Zainab Maqsood      ended -->
             <!--   Dr. Uzma Nayyar     started -->
-            <a href="departments-details.html" class="item">
-                <div class="img">
-                    <img src="~/Content/assets/img/doctors/specialist-2.jpg">
-                </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">              </span>
-                    <h1 class="title">Dr. Uzma Nayyar       </h1>
-                    <h5 class=" pt-1 ">
-                        Gynae/Obs services at NGH
+            <!--<a href="departments-details.html" class="item">
+        <div class="img">
+            <img src="~/Content/assets/img/doctors/specialist-2.jpg">
+        </div>
+        <div class="content">
+            <span class="departments-3__item-bg-text">              </span>
+            <h1 class="title">Dr. Uzma Nayyar       </h1>
+            <h5 class=" pt-1 ">
+                Gynae/Obs services at NGH
 
-                    </h5>
-                    <p class="text">
-                        Infertility/Melasma,
-                        Gynaecological Problems,
-                        Menstrual Problems,
-                        Ovarian Cysts,
-                        Endometriosis,
-                        Uterine Fibroids,
-                        PCOS & PMS,
-                        Hormonal Disorders,
-                    </p>
-                    <!-- <!--<span class="read-more-2">read more</span> -->
-                </div>
-            </a>
+            </h5>
+            <p class="text">
+                Infertility/Melasma,
+                Gynaecological Problems,
+                Menstrual Problems,
+                Ovarian Cysts,
+                Endometriosis,
+                Uterine Fibroids,
+                PCOS & PMS,
+                Hormonal Disorders,
+            </p>-->
+            <!-- <!--<span class="read-more-2">read more</span> -->
+            <!--</div>
+    </a>-->
             <!--   Dr. Uzma Nayyar       ended -->
             <!--   Dr. Amna Ali        started -->
-            <a href="departments-details.html" class="item">
-                <div class="img">
-                    <img src="~/Content/assets/img/doctors/Dr  Amna Ali.jpeg">
-                </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">              </span>
-                    <h1 class="title">Dr. Amna Ali           </h1>
-                    <h5 class=" pt-1 ">
-                        Derma services at NGH
+            <!--<a href="departments-details.html" class="item">
+        <div class="img">
+            <img src="~/Content/assets/img/doctors/Dr  Amna Ali.jpeg">
+        </div>
+        <div class="content">
+            <span class="departments-3__item-bg-text">              </span>
+            <h1 class="title">Dr. Amna Ali           </h1>
+            <h5 class=" pt-1 ">
+                Derma services at NGH
 
-                    </h5>
-                    <p class="text">
-                        Acne & Acne Scat treatment,
-                        Hirsutism,
-                        Melasma,
-                        Wrinkles,
-                        Alopecia,
-                        PRP,
-                        Contagious Skin Diseases,
-                        Pigmentation.
+            </h5>
+            <p class="text">
+                Acne & Acne Scat treatment,
+                Hirsutism,
+                Melasma,
+                Wrinkles,
+                Alopecia,
+                PRP,
+                Contagious Skin Diseases,
+                Pigmentation.
 
-                    </p>
-                    <!-- <!--<span class="read-more-2">read more</span> -->
-                </div>
-            </a>
+            </p>-->
+            <!-- <!--<span class="read-more-2">read more</span> -->
+            <!--</div>
+    </a>-->
             <!--  Dr. Amna Ali        ended -->
             <!--   Dr. Asema Qamar          started -->
-            <a href="departments-details.html" class="item">
-                <div class="img">
-                    <img src="~/Content/assets/img/doctors/">
-                </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">              </span>
-                    <h1 class="title">Dr. Asema Qamar              </h1>
-                    <h5 class=" pt-1 ">
-                        Gynae/Obs services at NGH
+            <!--<a href="departments-details.html" class="item">
+        <div class="img">
+            <img src="~/Content/assets/img/doctors/">
+        </div>
+        <div class="content">
+            <span class="departments-3__item-bg-text">              </span>
+            <h1 class="title">Dr. Asema Qamar              </h1>
+            <h5 class=" pt-1 ">
+                Gynae/Obs services at NGH
 
-                    </h5>
-                    <p class="text">
-                        Infertility/Melasma,
-                        Gynaecological Problems,
-                        Menstrual Problems,
-                        Ovarian Cysts,
-                        Endometriosis,
-                        Uterine Fibroids,
-                        PCOS & PMS,
-                        Hormonal Disorders.
+            </h5>
+            <p class="text">
+                Infertility/Melasma,
+                Gynaecological Problems,
+                Menstrual Problems,
+                Ovarian Cysts,
+                Endometriosis,
+                Uterine Fibroids,
+                PCOS & PMS,
+                Hormonal Disorders.
 
 
-                    </p>
-                    <!-- <!--<span class="read-more-2">read more</span> -->
-                </div>
-            </a>
+            </p>-->
+            <!-- <!--<span class="read-more-2">read more</span> -->
+            <!--</div>
+    </a>-->
             <!-- Dr. Asema Qamar          ended -->
             <!--   Dr. Muhammad Zahid             started -->
-            <a href="departments-details.html" class="item">
-                <div class="img">
-                    <img src="~/Content/assets/img/doctors/Dr Muhammad Zahid.jpeg">
-                </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">              </span>
-                    <h1 class="title"> Dr. Muhammad Zahid               </h1>
-                    <h5 class=" pt-1 ">
-                        Paeds services at NGH
+            <!--<a href="departments-details.html" class="item">
+        <div class="img">
+            <img src="~/Content/assets/img/doctors/Dr Muhammad Zahid.jpeg">
+        </div>
+        <div class="content">
+            <span class="departments-3__item-bg-text">              </span>
+            <h1 class="title"> Dr. Muhammad Zahid               </h1>
+            <h5 class=" pt-1 ">
+                Paeds services at NGH
 
-                    </h5>
-                    <p class="text">
-                        Upper respiratory tract infection,
-                        Hyperactive Airway Disease,
-                        Asthma,
-                        Pneumonia,
-                        Bronchiolitis,
-                        Acute Gastroenteritis,
-                        Celiac Disease,
-                        Constipation,
-                        Urinary Tract Infection,
-                        Malnutrition,
-                        Development Delay.
+            </h5>
+            <p class="text">
+                Upper respiratory tract infection,
+                Hyperactive Airway Disease,
+                Asthma,
+                Pneumonia,
+                Bronchiolitis,
+                Acute Gastroenteritis,
+                Celiac Disease,
+                Constipation,
+                Urinary Tract Infection,
+                Malnutrition,
+                Development Delay.
 
 
 
-                    </p>
-                    <!-- <!--<span class="read-more-2">read more</span> -->
-                </div>
-            </a>
+            </p>-->
+            <!-- <!--<span class="read-more-2">read more</span> -->
+            <!--</div>
+    </a>-->
             <!--Dr. Muhammad Zahid      ended -->
             <!--  Dr.Sher khan               started -->
-            <a href="departments-details.html" class="item">
-                <div class="img">
-                    <img src="~/Content/assets/img/doctors/">
-                </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">              </span>
-                    <h1 class="title"> Dr.Sher khan                </h1>
-                    <h5 class=" pt-1 ">
-                        Lung care at NGH
+            <!--<a href="departments-details.html" class="item">
+        <div class="img">
+            <img src="~/Content/assets/img/doctors/">
+        </div>
+        <div class="content">
+            <span class="departments-3__item-bg-text">              </span>
+            <h1 class="title"> Dr.Sher khan                </h1>
+            <h5 class=" pt-1 ">
+                Lung care at NGH
 
-                    </h5>
-                    <p class="text">
-                        Chest diseases,
-                        Covid 19 patient management,
-                        Allegy,
-                        TB [ Tuberculosis],
-                        Asthma,
-                        Smoking cessation,
-                        Sleep apnea,
-                        Lung cancer,
-                        Critical care.
+            </h5>
+            <p class="text">
+                Chest diseases,
+                Covid 19 patient management,
+                Allegy,
+                TB [ Tuberculosis],
+                Asthma,
+                Smoking cessation,
+                Sleep apnea,
+                Lung cancer,
+                Critical care.
 
 
-                    </p>
-                    <!-- <!--<span class="read-more-2">read more</span> -->
-                </div>
-            </a>
+            </p>-->
+            <!-- <!--<span class="read-more-2">read more</span> -->
+            <!--</div>
+    </a>-->
             <!--Dr.Sher khan       ended -->
             <!-- Dr. Zain Sattar               started -->
-            <a href="departments-details.html" class="item">
-                <div class="img">
-                    <img src="~/Content/assets/img/doctors/">
-                </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">              </span>
-                    <h1 class="title"> Dr. Zain Sattar                  </h1>
-                    <h5 class=" pt-1 ">
-                        Sexologist at NGH
+            <!--<a href="departments-details.html" class="item">
+        <div class="img">
+            <img src="~/Content/assets/img/doctors/">
+        </div>
+        <div class="content">
+            <span class="departments-3__item-bg-text">              </span>
+            <h1 class="title"> Dr. Zain Sattar                  </h1>
+            <h5 class=" pt-1 ">
+                Sexologist at NGH
 
-                    </h5>
-                    <p class="text">
-                        Premature Ejaculation,
-                        Erectile Dysfunction,
-                        Premarital Sex Assessment,
-                        Sex therapy & Pre marital counseling,
-                        Incontinence,
-                        Male Infertility,
-                        Azoospermia,
-                        Oligospermia,
-                        Prostrate Diseases,
-                        Urinary tract infections,
-                        Kidney Stones,
-                        Bladder & Kidney Mass.
+            </h5>
+            <p class="text">
+                Premature Ejaculation,
+                Erectile Dysfunction,
+                Premarital Sex Assessment,
+                Sex therapy & Pre marital counseling,
+                Incontinence,
+                Male Infertility,
+                Azoospermia,
+                Oligospermia,
+                Prostrate Diseases,
+                Urinary tract infections,
+                Kidney Stones,
+                Bladder & Kidney Mass.
 
 
 
-                    </p>
-                    <!-- <!--<span class="read-more-2">read more</span> -->
-                </div>
-            </a>
+            </p>-->
+            <!-- <!--<span class="read-more-2">read more</span> -->
+            <!--</div>
+    </a>-->
             <!--Dr. Zain Sattar     ended -->
             <!-- Dr.Ismail Younis Hamdan                started -->
-            <a href="departments-details.html" class="item">
-                <div class="img">
-                    <img src="~/Content/assets/img/doctors/Dr Ismail Mattar.jpeg">
-                </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">              </span>
-                    <h1 class="title"> Dr.Ismail Younis Hamdan                    </h1>
-                    <h5 class=" pt-1 ">
-                        ENT services at NGH
+            <!--<a href="departments-details.html" class="item">
+        <div class="img">
+            <img src="~/Content/assets/img/doctors/Dr Ismail Mattar.jpeg">
+        </div>
+        <div class="content">
+            <span class="departments-3__item-bg-text">              </span>
+            <h1 class="title"> Dr.Ismail Younis Hamdan                    </h1>
+            <h5 class=" pt-1 ">
+                ENT services at NGH
 
-                    </h5>
-                    <p class="text">
-                        Ear Infection,
-                        Hearing Disorder,
-                        Nasal Allergies,
-                        Tonsillitis,
-                        Pharyngitis,
-                        Adenoids,
-                        Tongue Disorder,
-                        Nose Infections,
-                        Nasal Trauma & Fracture,
-                        Deviated Nasal Septum,
-
-
+            </h5>
+            <p class="text">
+                Ear Infection,
+                Hearing Disorder,
+                Nasal Allergies,
+                Tonsillitis,
+                Pharyngitis,
+                Adenoids,
+                Tongue Disorder,
+                Nose Infections,
+                Nasal Trauma & Fracture,
+                Deviated Nasal Septum,
 
 
-                    </p>
-                    <!-- <!--<span class="read-more-2">read more</span> -->
-                </div>
-            </a>
+
+
+            </p>-->
+            <!-- <!--<span class="read-more-2">read more</span> -->
+            <!--</div>
+    </a>-->
             <!--Dr.Ismail Younis Hamdan      ended -->
             <!-- Dr.Shahid Ahmad     started -->
-            <a href="departments-details.html" class="item">
-                <div class="img">
-                    <img src="~/Content/assets/img/doctors/">
-                </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">              </span>
-                    <h1 class="title">Dr.Shahid Ahmad                       </h1>
-                    <h5 class=" pt-1 ">
-                        Ortho at NGH
+            <!--<a href="departments-details.html" class="item">
+        <div class="img">
+            <img src="~/Content/assets/img/doctors/">
+        </div>
+        <div class="content">
+            <span class="departments-3__item-bg-text">              </span>
+            <h1 class="title">Dr.Shahid Ahmad                       </h1>
+            <h5 class=" pt-1 ">
+                Ortho at NGH
 
-                    </h5>
-                    <p class="text">
-                        Backache issue,
-                        Knee Joint Pain,
-                        Fracture POP & Fixation,
-                        Joint pain,
-                        Arthroplasty,
-                        Arthroscopy.
-                    </p>
-                    <!-- <!--<span class="read-more-2">read more</span> -->
-                </div>
-            </a>
+            </h5>
+            <p class="text">
+                Backache issue,
+                Knee Joint Pain,
+                Fracture POP & Fixation,
+                Joint pain,
+                Arthroplasty,
+                Arthroscopy.
+            </p>-->
+            <!-- <!--<span class="read-more-2">read more</span> -->
+            <!--</div>
+    </a>-->
             <!--Dr.Shahid Ahmad          ended -->
             <!-- Dr.Mohib ur Rehman    started -->
-            <a href="departments-details.html" class="item">
-                <div class="img">
-                    <img src="~/Content/assets/img/doctors/Dr  Mohib Ur Rehman.jpeg">
-                </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">              </span>
-                    <h1 class="title">Dr.Mohib ur Rehman                         </h1>
-                    <h5 class=" pt-1 ">
-                        Neurosurgical services at NGH
+            <!--<a href="departments-details.html" class="item">
+        <div class="img">
+            <img src="~/Content/assets/img/doctors/Dr  Mohib Ur Rehman.jpeg">
+        </div>
+        <div class="content">
+            <span class="departments-3__item-bg-text">              </span>
+            <h1 class="title">Dr.Mohib ur Rehman                         </h1>
+            <h5 class=" pt-1 ">
+                Neurosurgical services at NGH
 
-                    </h5>
-                    <p class="text">
-                        Lower Backache,
-                        Headache,
-                        Migraine,
-                        Dementia,
-                        Parkinsonism,
-                        Bell’s Palsy,
-                        Muscular Weakness,
-                        Alzheimeres,
-                        Epilepsy,
-                        Spine fixation.
+            </h5>
+            <p class="text">
+                Lower Backache,
+                Headache,
+                Migraine,
+                Dementia,
+                Parkinsonism,
+                Bell’s Palsy,
+                Muscular Weakness,
+                Alzheimeres,
+                Epilepsy,
+                Spine fixation.
 
-                    </p>
-                    <!-- <!--<span class="read-more-2">read more</span> -->
-                </div>
-            </a>
+            </p>-->
+            <!-- <!--<span class="read-more-2">read more</span> -->
+            <!--</div>
+    </a>-->
             <!--Dr.Mohib ur Rehman             ended -->
             <!-- Dr.Umar Younas    started -->
-            <a href="departments-details.html" class="item">
-                <div class="img">
-                    <img src="~/Content/assets/img/doctors/Dr  Umer Younas.jpeg">
-                </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">              </span>
-                    <h1 class="title">Dr.Umar Younas                        </h1>
-                    <h5 class=" pt-1 ">
-                        Dental Services at NGH
+            <!--<a href="departments-details.html" class="item">
+        <div class="img">
+            <img src="~/Content/assets/img/doctors/Dr  Umer Younas.jpeg">
+        </div>
+        <div class="content">
+            <span class="departments-3__item-bg-text">              </span>
+            <h1 class="title">Dr.Umar Younas                        </h1>
+            <h5 class=" pt-1 ">
+                Dental Services at NGH
 
-                    </h5>
-                    <p class="text">
-                        provide all kind of treatment which includes,
-                        Dental filling (compensatory & esthetics),
-                        Root canal (Endomotor),
-                        Gingiva care,
-                        Bone Grafting,
-                        Scalling & polishing,
-                        Whiting (Bleaching),
-                        Extraction ( impaction & surgical extraction ),
-                        Dentures and bridge,
-                        Crown , veneer, zirconia and Emax,
-                        Braces ( teeth crowding correction),
-                        Retainers & night guard,
-                        TMJ Problems.
+            </h5>
+            <p class="text">
+                provide all kind of treatment which includes,
+                Dental filling (compensatory & esthetics),
+                Root canal (Endomotor),
+                Gingiva care,
+                Bone Grafting,
+                Scalling & polishing,
+                Whiting (Bleaching),
+                Extraction ( impaction & surgical extraction ),
+                Dentures and bridge,
+                Crown , veneer, zirconia and Emax,
+                Braces ( teeth crowding correction),
+                Retainers & night guard,
+                TMJ Problems.
 
 
-                    </p>
-                    <!-- <!--<span class="read-more-2">read more</span> -->
-                </div>
-            </a>
+            </p>-->
+            <!-- <!--<span class="read-more-2">read more</span> -->
+            <!--</div>
+    </a>-->
             <!--Dr.Umar Younas             ended -->
             <!--Dr.Muhammad Iqbal    started -->
-            <a href="departments-details.html" class="item">
-                <div class="img">
-                    <img src="~/Content/assets/img/doctors/">
-                </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">              </span>
-                    <h1 class="title">Dr.Muhammad Iqbal                          </h1>
-                    <h5 class=" pt-1 ">
-                        Psychiatry Services at NGH
+            <!--<a href="departments-details.html" class="item">
+        <div class="img">
+            <img src="~/Content/assets/img/doctors/">
+        </div>
+        <div class="content">
+            <span class="departments-3__item-bg-text">              </span>
+            <h1 class="title">Dr.Muhammad Iqbal                          </h1>
+            <h5 class=" pt-1 ">
+                Psychiatry Services at NGH
 
-                    </h5>
-                    <p class="text">
-                        Mood Disorders,
-                        Sleep Disorders,
-                        Depression,
-                        Bi-polar Disorder,
-                        OCD,
-                        Social Phobia.
-                        Anxiety
+            </h5>
+            <p class="text">
+                Mood Disorders,
+                Sleep Disorders,
+                Depression,
+                Bi-polar Disorder,
+                OCD,
+                Social Phobia.
+                Anxiety
 
 
-                    </p>
-                    <!-- <!--<span class="read-more-2">read more</span> -->
-                </div>
-            </a>
+            </p>-->
+            <!-- <!--<span class="read-more-2">read more</span> -->
+            <!--</div>
+    </a>-->
             <!--Dr.Muhammad Iqbal  ended -->
             <!--Dr.Zainab Ahmed      started -->
-            <a href="departments-details.html" class="item">
-                <div class="img">
-                    <img src="~/Content/assets/img/doctors/Dr Zanaib Maqsood.jpeg">
-                </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">              </span>
-                    <h1 class="title">Dr.Zainab Ahmed                         </h1>
-                    <h5 class=" pt-1 ">
-                        Psychiatry Services at NGH
+            <!--<a href="departments-details.html" class="item">
+        <div class="img">
+            <img src="~/Content/assets/img/doctors/Dr Zanaib Maqsood.jpeg">
+        </div>
+        <div class="content">
+            <span class="departments-3__item-bg-text">              </span>
+            <h1 class="title">Dr.Zainab Ahmed                         </h1>
+            <h5 class=" pt-1 ">
+                Psychiatry Services at NGH
 
-                    </h5>
-                    <p class="text">
-                        Social Anxiety Disorder,
-                        Personal Grooming,
-                        Psychological Testing,
-                        Acute Stress Disorder,
-                        Attachment Disorder,
-                        Bipolar Disorder,
-                        Delusional Disorder,
-                        Eating Disorder,
-                        Insomnia Disorder,
-                        Nightmare Disorder,
-                        Panic Attacks,
-                        PhobiasPostpartum,
-                        Depression,
-                        All Women Issues,
-                        Anger Management,
-                        Anxiety Disorders.
+            </h5>
+            <p class="text">
+                Social Anxiety Disorder,
+                Personal Grooming,
+                Psychological Testing,
+                Acute Stress Disorder,
+                Attachment Disorder,
+                Bipolar Disorder,
+                Delusional Disorder,
+                Eating Disorder,
+                Insomnia Disorder,
+                Nightmare Disorder,
+                Panic Attacks,
+                PhobiasPostpartum,
+                Depression,
+                All Women Issues,
+                Anger Management,
+                Anxiety Disorders.
 
 
 
-                    </p>
-                    <!-- <!--<span class="read-more-2">read more</span> -->
-                </div>
-            </a>
+            </p>-->
+            <!-- <!--<span class="read-more-2">read more</span> -->
+            <!--</div>
+    </a>-->
             <!--Dr.Zainab Ahmed   ended -->
             <!--Dr. Saima Hussain   started -->
-            <a href="departments-details.html" class="item">
-                <div class="img">
-                    <img src="~/Content/assets/img/doctors/">
-                </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">              </span>
-                    <h1 class="title">Dr. Saima Hussain                         </h1>
-                    <h5 class=" pt-1 ">
-                        Gynae/Obs services at NGH
+            <!--<a href="departments-details.html" class="item">
+        <div class="img">
+            <img src="~/Content/assets/img/doctors/">
+        </div>
+        <div class="content">
+            <span class="departments-3__item-bg-text">              </span>
+            <h1 class="title">Dr. Saima Hussain                         </h1>
+            <h5 class=" pt-1 ">
+                Gynae/Obs services at NGH
 
-                    </h5>
-                    <p class="text">
-                        Infertility/Melasma,
-                        Gynaecological Problems,
-                        Menstrual Problems,
-                        Ovarian Cysts,
-                        Endometriosis,
-                        Uterine Fibroids,
-                        PCOS & PMS,
-                        Hormonal Disorders.
+            </h5>
+            <p class="text">
+                Infertility/Melasma,
+                Gynaecological Problems,
+                Menstrual Problems,
+                Ovarian Cysts,
+                Endometriosis,
+                Uterine Fibroids,
+                PCOS & PMS,
+                Hormonal Disorders.
 
 
 
-                    </p>
-                    <!-- <!--<span class="read-more-2">read more</span> -->
-                </div>
-            </a>
+            </p>-->
+            <!-- <!--<span class="read-more-2">read more</span> -->
+            <!--</div>
+    </a>-->
             <!--Dr. Saima Hussain ended -->
             <!--Dr.Nadeem Abbas  started -->
-            <a href="departments-details.html" class="item">
-                <div class="img">
-                    <img src="~/Content/assets/img/doctors/">
-                </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">              </span>
-                    <h1 class="title">Dr.Nadeem Abbas</h1>
-                    <h5 class=" pt-1 ">
-                        General Surgical services at NGH
+            <!--<a href="departments-details.html" class="item">
+        <div class="img">
+            <img src="~/Content/assets/img/doctors/">
+        </div>
+        <div class="content">
+            <span class="departments-3__item-bg-text">              </span>
+            <h1 class="title">Dr.Nadeem Abbas</h1>
+            <h5 class=" pt-1 ">
+                General Surgical services at NGH
 
-                    </h5>
-                    <p class="text">
-                        Abdomen Colorectal Surgery (پیٹ اور آنتون کی سرجری),
-                        Abdominal Surgery (پیٹ کی سرجری),
-                        Abdominal Surgery (پیٹ کی سرجری),
-                        Appendectomy (پیٹ کی سرجری),
-                        Appendectomy (پیٹ کی سرجری),
-                        Biopsy (بایپسی),
-                        Breast Surgery (چھاتی کی سرجری),
-                        Cholecystectomy (کولیسسٹکومی),
-                        Cholecystectomy (کولیسسٹکومی),
-                        Circumcision (ختنہ),
-                        Colostomy (کولسٹومی),
-                        Emergency Surgery (ایمرجنسی سرجری).
+            </h5>
+            <p class="text">
+                Abdomen Colorectal Surgery (پیٹ اور آنتون کی سرجری),
+                Abdominal Surgery (پیٹ کی سرجری),
+                Abdominal Surgery (پیٹ کی سرجری),
+                Appendectomy (پیٹ کی سرجری),
+                Appendectomy (پیٹ کی سرجری),
+                Biopsy (بایپسی),
+                Breast Surgery (چھاتی کی سرجری),
+                Cholecystectomy (کولیسسٹکومی),
+                Cholecystectomy (کولیسسٹکومی),
+                Circumcision (ختنہ),
+                Colostomy (کولسٹومی),
+                Emergency Surgery (ایمرجنسی سرجری).
 
-                    </p>
-                    <!-- <!--<span class="read-more-2">read more</span> -->
-                </div>
-            </a>
+            </p>-->
+            <!-- <!--<span class="read-more-2">read more</span> -->
+            <!--</div>
+    </a>-->
             <!--Dr.Nadeem Abbas ended -->
             <!--Dr.Saima Hussain  started -->
-            <a href="departments-details.html" class="item">
-                <div class="img">
-                    <img src="~/Content/assets/img/doctors/">
-                </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">              </span>
-                    <h1 class="title">Dr.Saima Hussain </h1>
-                    <h5 class=" pt-1 ">
-                        Radiological services at NGH
-                    </h5>
-                    <p class="text">
-                        Abdomen Ultrasound,
-                        Anomaly Ultrasound,
-                        Breast Ultrasound,
-                        Cranial ultrasound,
-                        Doppler Ultrasound,
-                        KUB Ultrasound,
-                        Obstetric Ultrasound,
-                        Obstetrical Ultrasound (پرسوتی الٹراسائونڈ),
-                        Pelvic Ultrasound,
-                        Thyroid Ultrasound,
-                        Ultrasound,
-                        Ultrasound Abdomen,
-                        Ultrasound for Breast Pathologies.
+            <!--<a href="departments-details.html" class="item">
+        <div class="img">
+            <img src="~/Content/assets/img/doctors/">
+        </div>
+        <div class="content">
+            <span class="departments-3__item-bg-text">              </span>
+            <h1 class="title">Dr.Saima Hussain </h1>
+            <h5 class=" pt-1 ">
+                Radiological services at NGH
+            </h5>
+            <p class="text">
+                Abdomen Ultrasound,
+                Anomaly Ultrasound,
+                Breast Ultrasound,
+                Cranial ultrasound,
+                Doppler Ultrasound,
+                KUB Ultrasound,
+                Obstetric Ultrasound,
+                Obstetrical Ultrasound (پرسوتی الٹراسائونڈ),
+                Pelvic Ultrasound,
+                Thyroid Ultrasound,
+                Ultrasound,
+                Ultrasound Abdomen,
+                Ultrasound for Breast Pathologies.
 
 
-                    </p>
-                    <!-- <!--<span class="read-more-2">read more</span> -->
-                </div>
-            </a>
+            </p>-->
+            <!-- <!--<span class="read-more-2">read more</span> -->
+            <!--</div>
+    </a>-->
             <!--Dr.Saima Hussain ended -->
             <!--Dr.Ishtiaq ur Rehman  started -->
-            <a href="departments-details.html" class="item">
-                <div class="img">
-                    <img src="~/Content/assets/img/doctors/">
-                </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">              </span>
-                    <h1 class="title">Dr.Ishtiaq ur Rehman  </h1>
-                    <h5 class=" pt-1 ">
-                        Plastic Surgery  services at NGH
-                    </h5>
-                    <p class="text">
-                        Hair Transplantation,
-                        Keloid Treatment,
-                        Liposuction Without Anesthesia,
-                        Non Surgical Skin Tightening,
-                        Skin Care Products,
-                        Skin Rejuvenation,
-                        Skin, Hair & Nail Diseases.
+            <!--<a href="departments-details.html" class="item">
+        <div class="img">
+            <img src="~/Content/assets/img/doctors/">
+        </div>
+        <div class="content">
+            <span class="departments-3__item-bg-text">              </span>
+            <h1 class="title">Dr.Ishtiaq ur Rehman  </h1>
+            <h5 class=" pt-1 ">
+                Plastic Surgery  services at NGH
+            </h5>
+            <p class="text">
+                Hair Transplantation,
+                Keloid Treatment,
+                Liposuction Without Anesthesia,
+                Non Surgical Skin Tightening,
+                Skin Care Products,
+                Skin Rejuvenation,
+                Skin, Hair & Nail Diseases.
 
 
 
-                    </p>
-                    <!-- <!--<span class="read-more-2">read more</span> -->
-                </div>
-            </a>
+            </p>-->
+            <!-- <!--<span class="read-more-2">read more</span> -->
+            <!--</div>
+    </a>-->
             <!--Dr.Ishtiaq ur Rehman ended -->
             <!--Dr.Sadaf Batool  started -->
-            <a href="departments-details.html" class="item">
-                <div class="img">
-                    <img src="~/Content/assets/img/doctors/">
-                </div>
-                <div class="content">
-                    <span class="departments-3__item-bg-text">              </span>
-                    <h1 class="title">Dr.Sadaf Batool  </h1>
-                    <h5 class=" pt-1 ">
-                        General Surgical services at NGH
-                    </h5>
-                    <p class="text">
-                        	Abdomen Colorectal Surgery (پیٹ اور آنتون کی سرجری),
-                         	 Abdominal Surgery (پیٹ کی سرجری),
-                       	 Abdominal Surgery (پیٹ کی سرجری),
-                        	 Appendectomy (پیٹ کی سرجری),
-                         	 Appendectomy (پیٹ کی سرجری),
-                        	 Biopsy (بایپسی),
-                         	 Breast Surgery (چھاتی کی سرجری),
-                         	 Cholecystectomy (کولیسسٹکومی),
-                        	 Cholecystectomy (کولیسسٹکومی),
-                         	 Circumcision (ختنہ),
-                        	 Colostomy (کولسٹومی),
-                        	 Emergency Surgery (ایمرجنسی سرجری),
-                        Female Breast Examination.
+            <!--<a href="departments-details.html" class="item">
+        <div class="img">
+            <img src="~/Content/assets/img/doctors/">
+        </div>
+        <div class="content">
+            <span class="departments-3__item-bg-text">              </span>
+            <h1 class="title">Dr.Sadaf Batool  </h1>
+            <h5 class=" pt-1 ">
+                General Surgical services at NGH
+            </h5>
+            <p class="text">
+                Abdomen Colorectal Surgery (پیٹ اور آنتون کی سرجری),
+                Abdominal Surgery (پیٹ کی سرجری),
+                Abdominal Surgery (پیٹ کی سرجری),
+                Appendectomy (پیٹ کی سرجری),
+                Appendectomy (پیٹ کی سرجری),
+                Biopsy (بایپسی),
+                Breast Surgery (چھاتی کی سرجری),
+                Cholecystectomy (کولیسسٹکومی),
+                Cholecystectomy (کولیسسٹکومی),
+                Circumcision (ختنہ),
+                Colostomy (کولسٹومی),
+                Emergency Surgery (ایمرجنسی سرجری),
+                Female Breast Examination.
 
 
 
 
-                    </p>
-                    <!-- <!--<span class="read-more-2">read more</span> -->
-                </div>
-            </a>
+            </p>-->
+            <!-- <!--<span class="read-more-2">read more</span> -->
+            <!--</div>
+    </a>-->
             <!--Dr.Sadaf Batool ended -->
         </div>
     </div>

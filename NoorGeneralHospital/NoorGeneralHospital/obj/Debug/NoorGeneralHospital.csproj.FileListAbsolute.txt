@@ -584,7 +584,9 @@ D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bi
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.Owin.Host.SystemWeb.dll
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.Owin.Security.Cookies.dll
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.Owin.Security.dll
+D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.Owin.Security.OAuth.dll
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.Web.Infrastructure.dll
+D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Newtonsoft.Json.dll
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Owin.dll
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\System.Web.Helpers.dll
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\System.Web.Mvc.dll
@@ -594,8 +596,6 @@ D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bi
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\System.Web.WebPages.dll
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\System.Web.WebPages.Razor.dll
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\WebGrease.dll
-D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Newtonsoft.Json.dll
-D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.Owin.Security.OAuth.dll
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\EntityFramework.xml
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\EntityFramework.SqlServer.xml
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.AspNet.SignalR.Core.pdb
@@ -605,6 +605,9 @@ D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bi
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.Owin.xml
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.Owin.Host.SystemWeb.xml
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.Owin.Security.xml
+D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Newtonsoft.Json.xml
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\System.Web.Helpers.xml
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\System.Web.Mvc.xml
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\System.Web.Optimization.xml
@@ -616,9 +619,6 @@ D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bi
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.AspNet.Identity.Core.xml
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.AspNet.Identity.Owin.xml
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.Owin.Security.Cookies.xml
-D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Newtonsoft.Json.xml
-D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.Owin.Security.OAuth.xml
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.csproj.AssemblyReference.cache
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.InitialCreate.resources
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.IntialDb.resources
@@ -658,3 +658,4 @@ D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\ob
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.csproj.CopyComplete
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.dll
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.pdb
+D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.addservices.resources

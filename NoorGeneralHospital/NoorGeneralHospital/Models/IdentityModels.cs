@@ -32,7 +32,9 @@ namespace NoorGeneralHospital.Models
         }
 
         public virtual DbSet<Doctor> Doctors { get; set; }
+        public virtual DbSet<Services> Services { get; set; }
         public virtual DbSet<Doctor_GetDoctorDetails> Sp_Doctor_GetDoctorDetails { get; set; }
+        public virtual DbSet<Doctor_GetDoctorDetailsByID> Sp_Doctor_GetDoctorDetailsByID { get; set; }
         public virtual DbSet<Speciality> Specialities { get; set; }
         public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<Status> Statuses { get; set; }

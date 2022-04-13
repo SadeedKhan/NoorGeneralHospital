@@ -30,6 +30,5 @@ namespace NoorGeneralHospital.Models
         public string UpdatedById { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime? UpdatedOn { get; set; }
-
     }
 }

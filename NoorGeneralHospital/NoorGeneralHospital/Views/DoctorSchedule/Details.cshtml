@@ -23,32 +23,43 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach(var docsch in Model)
-                {
-                    <tr>
-                        <td>@docsch.DoctorName</td>
-                        <td>@docsch.Speciality</td>
-                        <td>@docsch.AvailableDays</td>
-                        <td>@docsch.AvailableTime</td>
-                        <td>
-                            @{
-                                if (docsch.IsActive == true)
-                                {
-                                    <span class="custom-badge status-green">Active</span>
-                                }
-                                else
-                                {
-                                    <span class="custom-badge status-red">InActive</span>
-                                }
+                    @foreach (var docsch in Model)
+                    {
+                        {
+                            List<string> list = new List<string>();
+                            string[] val = docsch.AvailableDay.Split(',');
+                            string res = "";
+                            foreach (var day in val)
+                            {
+                                res =  Enum.Parse(typeof(NoorGeneralHospital.Helper.Enum.WeekDays), day).ToString();
+                                list.Add(res);
                             }
-                        </td>
-                        <td class="text-right">
-                            <a class="btn btn-outline-primary" onclick="_AddEditDoctorSchedule('@docsch.Id')"><i class="fa fa-pencil"></i> </a>
-                            <a class="btn btn-outline-danger" onclick="DeleteDoctorSchedule('@docsch.Id')"><i class="fa fa-trash-o"></i> </a>
-                        </td>
-                    </tr>
+                            docsch.AvailableDays = string.Join(",", list);
+                        }
+                        <tr>
+                            <td>@docsch.DoctorName</td>
+                            <td>@docsch.Speciality</td>
+                            <td>@docsch.AvailableDays</td>
+                            <td>@docsch.AvailableTime</td>
+                            <td>
+                                @{
+                                    if (docsch.IsActive == true)
+                                    {
+                                        <span class="custom-badge status-green">Active</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="custom-badge status-red">InActive</span>
+                                    }
+                                }
+                            </td>
+                            <td class="text-right">
+                                <a class="btn btn-outline-primary" onclick="_AddEditDoctorSchedule('@docsch.Id')"><i class="fa fa-pencil"></i> </a>
+                                <a class="btn btn-outline-danger" onclick="DeleteDoctorSchedule('@docsch.Id')"><i class="fa fa-trash-o"></i> </a>
+                            </td>
+                        </tr>
                     }
-                    
+
                 </tbody>
             </table>
         </div>

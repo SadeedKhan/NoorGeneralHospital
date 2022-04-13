@@ -6,14 +6,14 @@ using System.Web;
 namespace NoorGeneralHospital.Helper.Enum
 {
 
-    enum WeekDays
+    public enum WeekDays
     {
-        Monday = 0,
-        Tuesday = 1,
-        Wednesday = 2,
-        Thursday = 3,
-        Friday = 4,
-        Saturday = 5,
-        Sunday = 6
+        Mon = 1,
+        Tue = 2,
+        Wed = 3,
+        Thu = 4,
+        Fri = 5,
+        Sat = 6,
+        Sun = 7
     }
 }

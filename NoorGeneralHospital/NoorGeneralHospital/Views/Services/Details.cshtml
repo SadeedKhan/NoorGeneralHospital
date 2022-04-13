@@ -1,0 +1,50 @@
+﻿@model IEnumerable<NoorGeneralHospital.Models.Services>
+
+<div class="row">
+    <div class="col-sm-4 col-3">
+        <h4 class="page-title">Services</h4>
+    </div>
+    <div class="col-sm-8 col-9 text-right m-b-20">
+        <a href="#" onclick="_AddEditServices(0)" class="btn btn btn-primary btn-rounded float-right"><i class="fa fa-plus"></i> Add Services</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <table class="table table-border table-striped custom-table" id="ServiceTable">
+                <thead>
+                    <tr>
+                        <th> Service Title</th>
+                        <th> Status</th>
+                        <th class="text-right">Action(s)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var sersch in Model)
+                    {
+                        <tr>
+                            <td>@sersch.ServiceTitle</td>
+                            <td>
+                                @{
+                                    if (sersch.IsActive == true)
+                                    {
+                                        <span class="custom-badge status-green">Active</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="custom-badge status-red">InActive</span>
+                                    }
+                                }
+                            </td>
+                            <td class="text-right">
+                                <a class="btn btn-outline-primary" onclick="_AddEditServices('@sersch.Id')"><i class="fa fa-pencil"></i> </a>
+                                <a class="btn btn-outline-danger" onclick="DeleteServices('@sersch.Id')"><i class="fa fa-trash-o"></i> </a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -32,7 +32,7 @@ namespace NoorGeneralHospital.Controllers
             IEnumerable<DoctorSchedule_GetDoctorScheduleDetails> list;
             try
             {
-                list = db.Database.SqlQuery<DoctorSchedule_GetDoctorScheduleDetails>("dbo.DoctorSchedule_GetDoctorScheduleDetails").ToList();
+                list = db.Database.SqlQuery<DoctorSchedule_GetDoctorScheduleDetails>("dbo.Sp_GetDoctorScheduleDetails").ToList();
             }
             catch (Exception e)
             {
@@ -68,6 +68,8 @@ namespace NoorGeneralHospital.Controllers
                     doctorseh.EndTime = docseh.StartTime.ToString();
                     doctorseh.Description = docseh.Description;
                     doctorseh.IsActive = docseh.IsActive;
+                    doctorseh.CreatedById = doctorseh.CreatedById;
+                    doctorseh.CreatedOn = doctorseh.CreatedOn;
                     doctorseh.UpdatedOn = DateTime.Now;
                     doctorseh.UpdatedById = userId;
                     db.Entry(doctorseh).State = EntityState.Modified;

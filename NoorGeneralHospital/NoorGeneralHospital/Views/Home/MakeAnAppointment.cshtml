@@ -22,21 +22,9 @@
             @Html.ValidationMessageFor(s => s.PatientAge, null, new { @class = "text-danger" })
         </div>
         <div class="input-box">
-            <label for="popup-email">Email *</label>
-            @Html.TextBoxFor(s => s.PatientEmail, new { @type = "Email", @class = "form-control" })
-            @Html.ValidationMessageFor(s => s.PatientEmail, null, new { @class = "text-danger" })
-        </div>
-
-        <div class="input-box">
             <label for="popup-phone">Phone *</label>
             @Html.TextBoxFor(s => s.PatientPhone, new { @type = "tel", @class = "form-control" })
             @Html.ValidationMessageFor(s => s.PatientPhone, null, new { @class = "text-danger" })
-        </div>
-
-        <div class="select-box">
-            <i class="fa fa-angle-down"></i>
-            @Html.DropDownListFor(x => Model.SpecialityId, new SelectList(Model.GetSpeciality(), "Value", "Text"), htmlAttributes: new { @class = "form-control", @onchange = "PopulateDoctorsList()" })
-            @Html.ValidationMessageFor(x => x.SpecialityId, "", new { @class = "text-danger" })
         </div>
         <div class="select-box">
             <i class="fa fa-angle-down"></i>
@@ -104,7 +92,6 @@
 
     function PopulateDoctorsList() {
         var SpecialityId = parseInt($('#SpecialityId').val());
-        debugger
         if (SpecialityId == null || SpecialityId == 0)
         {
             toastr.info("Please Select Speciality!", "info");

@@ -44,8 +44,8 @@ namespace NoorGeneralHospital.Controllers
             int Exist;
             try
             {
-                var Id = db.Locations.Where(x => x.Id == location.Id).FirstOrDefault();
-                if (Id != null)
+                Location loc = db.Locations.Where(x => x.Id == location.Id).FirstOrDefault();
+                if (loc != null)
                 {
                     Exist = db.Locations.Where(a => a.LocationName == location.LocationName && a.Id != location.Id && a.IsActive == true).Count();
                     if (Exist > 0)
@@ -63,6 +63,8 @@ namespace NoorGeneralHospital.Controllers
                         location.NormalizeLocationName = location.LocationName.ToUpper();
                         location.UpdatedOn = DateTime.Now;
                         location.UpdatedById = userId;
+                        location.CreatedOn = loc.CreatedOn;
+                        location.CreatedById = loc.CreatedById;
                         db.Entry(location).State = EntityState.Modified;
                         db.SaveChanges();
                         _result.Message = "Record Updated Successfully!";

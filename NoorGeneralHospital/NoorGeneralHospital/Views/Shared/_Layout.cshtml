@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ibn Sino Html-5 Template | Home-1</title>
+    <title>Noor General Hospital</title>
     <link rel="icon" href="~/Content/User/assets/images/icon.png">
 
     <!-- wow animation style -->
@@ -144,10 +144,10 @@
                             @Html.ActionLink("Contacts", "Contact", "Home", null, new { @class = "navbar__menu-link  " })
 
                         </li>
-                        <li class="navbar__menu-item">
-                            @Html.ActionLink("Single Doctor", "SingleDoctor", "Home", null, new { @class = "navbar__menu-link  " })
+                        @*<li class="navbar__menu-item">
+                                @Html.ActionLink("Single Doctor", "SingleDoctor", "Home", null, new { @class = "navbar__menu-link  " })
 
-                        </li> 
+                            </li>*@
                     </ul>
                     <div class="navbar__right">
                         <div class="navbar__search searchBox-open">
@@ -157,7 +157,7 @@
                                       transform="translate(-1127.88 -427.438)" />
                             </svg>
                         </div>
-                        <a href="#" class="btn btn_pink" id="popup-form-open">MAKE AN APPOINTMENT</a>
+                        <a href="#" class="btn btn_pink" id="popup-form-open" onclick="MakeAnAppointment();">MAKE AN APPOINTMENT</a>
                     </div>
                 </div>
 
@@ -191,7 +191,6 @@
                                         </svg>
                                     </div>
                                     <div class="text">
-                                        <a href="tel:+051-236231">051-2362315</a>
                                         <a href="tel:+051-236231">051-2362315</a>
                                     </div>
                                 </div>
@@ -313,8 +312,10 @@
             </button>
         </form>
     </div>
+    <div>
+        <div id="_MakeAnAppointment"></div>
+    </div>
 
-    
 
     <!-- Scripts + Jquery plagins -->
     <!-- .preloader  -->
@@ -341,5 +342,8 @@
 
     <!-- customer js -->
     <script src="~/Content/User/assets/js/index.js"></script>
+
+    <!-- Custom js -->
+    <script src="~/CustomScripts/Home/MakeAnAppoinment.js"></script>
 </body>
 </html>

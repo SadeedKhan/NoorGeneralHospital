@@ -48,8 +48,8 @@ namespace NoorGeneralHospital.Controllers
             int Exist;
             try
             {
-                var Id = db.Specialities.Where(x => x.Id == speciality.Id).FirstOrDefault();
-                if (Id != null)
+                Speciality spec = db.Specialities.Where(x => x.Id == speciality.Id).FirstOrDefault();
+                if (spec != null)
                 {
                     Exist = db.Specialities.Where(a => a.NormalizeSpecialityName == speciality.SpecialityName.ToUpper() && a.Id != speciality.Id && a.IsActive == true).Count();
                     if (Exist > 0)
@@ -65,6 +65,8 @@ namespace NoorGeneralHospital.Controllers
                             db.Entry(local).State = EntityState.Detached;
                         }
                         speciality.NormalizeSpecialityName = speciality.SpecialityName.ToUpper();
+                        speciality.CreatedOn = spec.CreatedOn;
+                        speciality.CreatedById = spec.CreatedById;
                         speciality.UpdatedOn = DateTime.Now;
                         speciality.UpdatedById = userId;
                         db.Entry(speciality).State = EntityState.Modified;

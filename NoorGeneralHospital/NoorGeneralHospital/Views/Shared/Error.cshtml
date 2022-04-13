@@ -1,9 +1,19 @@
 ﻿@model System.Web.Mvc.HandleErrorInfo
 
 @{
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
     ViewBag.Title = "Error";
 }
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
 
+<div class="text-center">
+    <h2>Error Details</h2>
+</div>
+<br />
+<p>
+    @Html.ActionLink("Back to Login", "Login", null, new { @class = "btn btn-secondary" })
+</p>
+
+<div class="alert alert-danger" role="alert">
+    @ViewBag.ErrorMessage
+</div>

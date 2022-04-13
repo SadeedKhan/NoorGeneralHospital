@@ -24,7 +24,7 @@ function _AddEditDoctor(id) {
 
 function DoctorProfile(id) {
     $.ajax({
-        type: "POST",
+        type: "Get",
         url: "/Doctor/DoctorProfile",
         data: { Id: id },
         success: function (res) {

@@ -33,11 +33,13 @@ namespace NoorGeneralHospital.Controllers
             IEnumerable<Doctor_GetDoctorDetails> list;
             try
             {
-                list  = db.Database.SqlQuery<Doctor_GetDoctorDetails>("Doctor_GetDoctorDetails @Id", new SqlParameter("@Id",(object)0)).ToList();
+                list  = db.Database.SqlQuery<Doctor_GetDoctorDetails>("Sp_GetDoctorDetails @Id", new SqlParameter("@Id",(object)0)).ToList();
             }
             catch (Exception e)
             {
-                list = new List<Doctor_GetDoctorDetails>();
+                ViewBag.ErrorMessage = e.Message;
+                return View("Error"); ;
+                //list = new List<Doctor_GetDoctorDetails>();
             }
             return PartialView("Details", list);
         }
@@ -74,6 +76,8 @@ namespace NoorGeneralHospital.Controllers
                     doct.Address = doc.Address;
                     doct.ShortBioGraphy = doc.ShortBioGraphy;
                     doct.IsActive = doc.IsActive;
+                    doct.CreatedById = doctor.CreatedById;
+                    doct.CreatedOn = doctor.CreatedOn;
                     doct.UpdatedOn = DateTime.Now;
                     doct.UpdatedById = userId;
                     if (doc.file != null)
@@ -216,17 +220,21 @@ namespace NoorGeneralHospital.Controllers
             return Json(_result);
         }
 
-        [HttpPost]
+        [HttpGet]
         public ActionResult DoctorProfile(int Id)
         {
-            Doctor_GetDoctorDetails Doc;
+            Doctor_GetDoctorDetailsByID Doc;
             try
             {
-                Doc = db.Database.SqlQuery<Doctor_GetDoctorDetails>("Doctor_GetDoctorDetails @Id", new SqlParameter("@Id", (object)Id)).SingleOrDefault();
+                Doc = db.Database.SqlQuery<Doctor_GetDoctorDetailsByID>("Sp_GetDoctorDetailsByID @Id", new SqlParameter("@Id", (object)Id)).SingleOrDefault();
+                if(Doc==null)
+                {
+                    Doc = new Doctor_GetDoctorDetailsByID();
+                }
             }
             catch (Exception e)
             {
-                Doc = new Doctor_GetDoctorDetails();
+                Doc = new Doctor_GetDoctorDetailsByID();
             }
             return PartialView("DoctorProfile", Doc);
         }

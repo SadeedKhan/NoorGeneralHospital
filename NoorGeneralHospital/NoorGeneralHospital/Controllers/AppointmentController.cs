@@ -28,9 +28,9 @@ namespace NoorGeneralHospital.Controllers
             IEnumerable<Appointment_GetAppointmentDetails> list;
             try
             {
-                list = db.Database.SqlQuery<Appointment_GetAppointmentDetails>("dbo.Appointment_GetAppointmentDetails").ToList();
+                list = db.Database.SqlQuery<Appointment_GetAppointmentDetails>("dbo.Sp_GetAppointmentDetails").ToList();
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
                 list = new List<Appointment_GetAppointmentDetails>();
             }
@@ -63,6 +63,8 @@ namespace NoorGeneralHospital.Controllers
                     appoint.DoctorId = ap.DoctorId;
                     appoint.AppointmentDate = ap.AppointmentDate;
                     appoint.Description = ap.Description;
+                    appoint.CreatedById = appointment.CreatedById;
+                    appoint.CreatedOn = appointment.CreatedOn;
                     appoint.UpdatedOn = DateTime.Now;
                     appoint.UpdatedById = userId;
                     db.Entry(appoint).State = EntityState.Modified;
@@ -174,7 +176,7 @@ namespace NoorGeneralHospital.Controllers
         {
             if (SpecialityId > 0)
             {
-                var lst = db.Doctors.Where(x => x.Id == SpecialityId && x.IsActive == true).AsNoTracking()
+                var lst = db.Doctors.Where(x => x.SpecialityId == SpecialityId && x.IsActive == true).AsNoTracking()
                    .OrderBy(n => n.UserName)
                        .Select(n =>
                        new SelectListItem
