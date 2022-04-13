@@ -1,4 +1,7 @@
-﻿function MakeAnAppointment() {
+﻿$(document).ready(function () {
+});
+
+function MakeAnAppointment() {
     $.ajax({
         type: "Get",
         url: "/Home/MakeAnAppointment",

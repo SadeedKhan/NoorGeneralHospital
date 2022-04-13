@@ -619,7 +619,6 @@ D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bi
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.AspNet.Identity.Core.xml
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.AspNet.Identity.Owin.xml
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.csproj.AssemblyReference.cache
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.InitialCreate.resources
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.IntialDb.resources
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.updateidspecial.resources
@@ -653,9 +652,10 @@ D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\ob
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.addloc.resources
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.addactivities.resources
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.intu.resources
+D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.addservices.resources
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.csproj.GenerateResource.cache
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.csproj.CoreCompileInputs.cache
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.csproj.CopyComplete
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.dll
 D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.pdb
-D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.addservices.resources
+D:\Personal\Repos\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.csproj.AssemblyReference.cache

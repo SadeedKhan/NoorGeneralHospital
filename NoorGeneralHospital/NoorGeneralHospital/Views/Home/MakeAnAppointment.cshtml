@@ -9,39 +9,40 @@
         </div>
         @using (Html.BeginForm("SaveAppointment", "Appointment", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
-        @Html.HiddenFor(x => x.Id)
-        <h1 class="section-title">make an appointment</h1>
-        <div class="input-box">
-            <label for="popup-name">Name *</label>
-            @Html.TextBoxFor(s => s.PatientName, new { @class = "form-control" })
-            @Html.ValidationMessageFor(s => s.PatientName, null, new { @class = "text-danger" })
-        </div>
-        <div class="input-box">
-            <label for="popup-name">Age *</label>
-            @Html.TextBoxFor(s => s.PatientAge, new { @type = "number", @class = "form-control", @Value = "" })
-            @Html.ValidationMessageFor(s => s.PatientAge, null, new { @class = "text-danger" })
-        </div>
-        <div class="input-box">
-            <label for="popup-phone">Phone *</label>
-            @Html.TextBoxFor(s => s.PatientPhone, new { @type = "tel", @class = "form-control" })
-            @Html.ValidationMessageFor(s => s.PatientPhone, null, new { @class = "text-danger" })
-        </div>
-        <div class="select-box">
-            <i class="fa fa-angle-down"></i>
-            @Html.DropDownListFor(x => Model.DoctorId, Enumerable.Empty<SelectListItem>
-                (), htmlAttributes: new { @class = "form-control", @disabled = "disabled" })
+            @Html.HiddenFor(x => x.Id)
+            <h1 class="section-title">make an appointment</h1>
+            <div class="input-box">
+                <label for="popup-name">Name *</label>
+                @Html.TextBoxFor(s => s.PatientName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(s => s.PatientName, null, new { @class = "text-danger" })
+            </div>
+            <div class="input-box">
+                <label for="popup-name">Age *</label>
+                @Html.TextBoxFor(s => s.PatientAge, new { @type = "number", @class = "form-control", @Value = "" })
+                @Html.ValidationMessageFor(s => s.PatientAge, null, new { @class = "text-danger" })
+            </div>
+            <div class="input-box">
+                <label for="popup-phone">Phone *</label>
+                @Html.TextBoxFor(s => s.PatientPhone, new { @type = "tel", @class = "form-control" })
+                @Html.ValidationMessageFor(s => s.PatientPhone, null, new { @class = "text-danger" })
+            </div>
+            <div class="select-box">
+                <i class="fa fa-angle-down"></i>
+                @Html.DropDownListFor(x => Model.DoctorId, Enumerable.Empty<SelectListItem>
+                    (), htmlAttributes: new { @class = "form-control", @disabled = "disabled" })
                 @Html.ValidationMessageFor(x => x.DoctorId, "", new { @class = "text-danger" })
-        </div>
-        <div class="cal-icon">
-            <input class="form-control datetimepicker valid" data-val="true" data-val-required="Please Select Doctor." id="AppointmentDate" name="AppointmentDate" placeholder="Select Date" type="text" value="" aria-describedby="AppointmentDate-error" aria-invalid="false">
-            <span class="text-danger field-validation-valid" data-valmsg-for="AppointmentDate" data-valmsg-replace="true"></span>
-        </div>
-        <div class="input-box">
-            <label for="popup-phone">Message</label>
-            @Html.TextBoxFor(s => s.AppointmentDate, new { @class = "form-control datetimepicker" })
-            @Html.ValidationMessageFor(s => s.AppointmentDate, null, new { @class = "text-danger" })
-        </div>
-        <button type="submit" class="btn btn-2_pink">send</button>
+            </div>
+            <div class="input-box">
+                <label for="popup-phone">Date</label>
+                @Html.TextBoxFor(s => s.AppointmentDate, new { @class = "form-control datetimepicker" })
+                @Html.ValidationMessageFor(s => s.AppointmentDate, null, new { @class = "text-danger" })
+            </div>
+            <div class="input-box">
+                <label for="popup-phone">Message</label>
+                @Html.TextBoxFor(s => s.Description, new { @class = "form-control" })
+                @Html.ValidationMessageFor(s => s.Description, null, new { @class = "text-danger" })
+            </div>
+            <button type="submit" class="btn btn-2_pink">send</button>
         }
     </div>
 </div>
@@ -52,7 +53,8 @@
     $(document).ready(function () {
         $("#DoctorId").empty().append('<option value="" selected="selected">Select an Doctor</option>');
         //For Date Picker
-        
+
+        PopulateDoctorsList()
 
         //Begin Form Insert
         $('form').submit(function (e) {
@@ -69,9 +71,9 @@
                     complete: function () {
                     },
                     success: function (res) {
+                        debugger
                         if (res.Code == "1") {
                             toastr.success(res.Message, 'success!');
-                            _SpecialityDetail();
                         }
                         else if (res.Code == "2")
                         {
@@ -91,17 +93,9 @@
     });
 
     function PopulateDoctorsList() {
-        var SpecialityId = parseInt($('#SpecialityId').val());
-        if (SpecialityId == null || SpecialityId == 0)
-        {
-            toastr.info("Please Select Speciality!", "info");
-        }
-        else
-        {
             $.ajax({
-                type: "POST",
+                type: "Get",
                 url: "/Appointment/PopulateDoctorsList",
-                data: { SpecialityId: SpecialityId },
                 success: function (response) {
                     console.log(response);
                     if (response.length == 0) {
@@ -120,5 +114,4 @@
                 }
             });
         }
-    }
 </script>

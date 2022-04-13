@@ -27,7 +27,7 @@ namespace NoorGeneralHospital.Controllers
             IEnumerable<Services> list;
             try
             {
-                list = db.Services.ToList();
+                list = db.Services.Where(x=>x.IsActive==true).ToList();
             }
             catch (Exception e)
             {
