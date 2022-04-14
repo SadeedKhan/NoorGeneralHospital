@@ -95,7 +95,7 @@
     function PopulateDoctorsList() {
             $.ajax({
                 type: "Get",
-                url: "/Appointment/PopulateDoctorsList",
+                url: "/Home/PopulateDoctorsList",
                 success: function (response) {
                     console.log(response);
                     if (response.length == 0) {

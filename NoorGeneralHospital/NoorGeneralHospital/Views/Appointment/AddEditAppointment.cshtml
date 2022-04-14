@@ -136,7 +136,7 @@
         else {
             $.ajax({
                 type: "POST",
-                url: "/Appointment/PopulateDoctorsList",
+                url: "/Appointment/PopulateDoctorsListBySpecialityId",
                 data: { SpecialityId: SpecialityId },
                 success: function (response) {
                     console.log(response);

@@ -3,6 +3,7 @@ using NoorGeneralHospital.Models.InputDTO;
 using NoorGeneralHospital.Models.Sp_Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web.Mvc;
@@ -71,6 +72,21 @@ namespace NoorGeneralHospital.Controllers
         public ActionResult MakeAnAppointment()
         {
             return PartialView("MakeAnAppointment", new AppointmentInput());
+        }
+
+        //Update Doctor Dropdown
+        [HttpGet]
+        public JsonResult PopulateDoctorsList()
+        {
+            var lst = db.Doctors.Where(x => x.IsActive == true).AsNoTracking()
+                               .OrderBy(n => n.UserName)
+                                   .Select(n =>
+                                   new SelectListItem
+                                   {
+                                       Value = n.Id.ToString(),
+                                       Text = n.UserName
+                                   }).ToList();
+            return Json(lst,JsonRequestBehavior.AllowGet);
         }
     }
 }

@@ -172,18 +172,25 @@ namespace NoorGeneralHospital.Controllers
         }
 
         //Update Doctor Dropdown
-        [HttpGet]
-        public JsonResult PopulateDoctorsList()
+        [HttpPost]
+        public JsonResult PopulateDoctorsListBySpecialityId(int SpecialityId)
         {
-                var lst = db.Doctors.Where(x=>x.IsActive == true).AsNoTracking()
-                   .OrderBy(n => n.UserName)
-                       .Select(n =>
-                       new SelectListItem
-                       {
-                           Value = n.Id.ToString(),
-                           Text = n.UserName
-                       }).ToList();
-                return Json(lst,JsonRequestBehavior.AllowGet);
+            if(SpecialityId>0)
+            {
+                var lst = db.Doctors.Where(x => x.IsActive == true && x.SpecialityId == SpecialityId).AsNoTracking()
+                                   .OrderBy(n => n.UserName)
+                                       .Select(n =>
+                                       new SelectListItem
+                                       {
+                                           Value = n.Id.ToString(),
+                                           Text = n.UserName
+                                       }).ToList();
+                return Json(lst);
+            }
+                else
+            {
+                return Json(null);
+            }
         }
 
         [HttpPost]

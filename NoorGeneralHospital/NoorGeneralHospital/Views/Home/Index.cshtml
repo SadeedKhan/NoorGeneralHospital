@@ -807,26 +807,4 @@
         </div>
     </div>
 </section>
-<!-- End of .specialists -->
-<div id="MakeAnAppointmentPartialView"></div>
 
-<!-- jQuery -->
-<script src="~/Content/User/assets/js/jQuery-3.4.1.js"></script>
-<script>
-    $(document).ready(function () {
-        _MakeAnAppointmentPartialView();
-    });
-
-    function _MakeAnAppointmentPartialView() {
-        $.ajax({
-            type: "Get",
-            url: "/Home/MakeAnAppointment",
-            success: function (res) {
-                $('#MakeAnAppointmentPartialView').empty().html(res);
-            },
-            error: function (res) {
-                alert(res);
-            }
-        });
-    }
-</script>

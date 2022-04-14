@@ -7,7 +7,7 @@
     //Custom
 
     List<string> list = new List<string>();
-    if(!string.IsNullOrEmpty(Model.AvailableDay))
+    if (!string.IsNullOrEmpty(Model.AvailableDay))
     {
         string[] val = Model.AvailableDay.Split(',');
         string res = "";
@@ -74,7 +74,7 @@
                             <tr>
                                 <th>Areas of Expertise:</th>
                                 <td>
-                                   @Model.Education
+                                    @Model.Education
                                 </td>
                             </tr>
                             <tr>
@@ -99,9 +99,9 @@
                                 <td>
                                     <a href="tel:051-2362315">@Model.Phone </a><br>
                                     @*<a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                    <a href="#"><i class="fa fa-share-alt"></i></a>*@
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                        <a href="#"><i class="fa fa-instagram"></i></a>
+                                        <a href="#"><i class="fa fa-share-alt"></i></a>*@
                                 </td>
                             </tr>
                         </tbody>
@@ -155,15 +155,15 @@
                             <span class="time">@Model.AvailableTime</span>
                         </li>
                         @*<li class="list-item">
-                            <span class="date">Sunday</span>
-                            <span class="time">Off</span>
-                        </li>*@
+                                <span class="date">Sunday</span>
+                                <span class="time">Off</span>
+                            </li>*@
                     </ul>
                 </div>
                 <div class="appointment">
                     <h1 class="title">Book an appointment</h1>
                     <div class="d-flex justify-content-center ">
-                        <button type="submit" class="btn btn_pink">book now</button>
+                        <button type="button" class="btn btn_pink" id="popup-form-open" data-toggle="modal" data-target="#exampleModal">book now</button>
                     </div>
                 </div>
             </div>
@@ -171,3 +171,4 @@
     </div>
 </section>
 <!-- End of .doctors -->
+<!-- jQuery -->
