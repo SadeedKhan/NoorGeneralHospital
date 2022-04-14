@@ -38,6 +38,7 @@ namespace NoorGeneralHospital.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult SaveAppointment(AppointmentInput ap)
         {
             GeneralResponse _result = new GeneralResponse();

@@ -1,7 +1,7 @@
 ﻿@model NoorGeneralHospital.Models.InputDTO.AppointmentInput
 
 <!-- Popup Form -->
-<div class="popup-form">
+<div class="popup-form" id="model-popup">
     <div class="inner-block">
         <button type="button" id="popup-form-close" class="close" data-dismiss="modal">&times;</button>
         <div class="img">
@@ -70,6 +70,12 @@
                         debugger
                         if (res.Code == "1") {
                             toastr.success(res.Message, 'success!');
+
+                            $('.modal').remove();
+                            $('.modal-backdrop').remove();
+                            $('body').removeClass("modal-open");
+                            //$('#exampleModal').removeClass('show');
+                            //$('.modal-backdrop').remove();
                         }
                         else if (res.Code == "2")
                         {
