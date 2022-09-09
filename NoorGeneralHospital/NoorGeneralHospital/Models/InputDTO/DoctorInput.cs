@@ -36,6 +36,7 @@ namespace NoorGeneralHospital.Models.InputDTO
         public string Address { get; set; }
         public string ShortBioGraphy { get; set; }
         public bool IsActive { get; set; }
+
         [AllowHtml]
         public HttpPostedFileWrapper file { get; set; }
 
