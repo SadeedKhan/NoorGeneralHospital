@@ -11,7 +11,7 @@ using System.Web.Mvc;
 namespace NoorGeneralHospital.Controllers
 {
     [Authorize]
-    public class DashboardController : Controller
+    public class DashboardController : AdminController
     {
         private readonly ApplicationDbContext db = new ApplicationDbContext();
         // GET: Dashboard

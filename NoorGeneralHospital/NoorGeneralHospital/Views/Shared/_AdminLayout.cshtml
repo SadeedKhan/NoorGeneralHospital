@@ -11,11 +11,11 @@
     <link rel="stylesheet" type="text/css" href="~/Content/assets/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="~/Content/assets/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="~/Content/assets/css/select2.min.css">
-    <link rel="stylesheet" type="text/css" href="~/Content/assets/css/bootstrap-datetimepicker.min.css"> 
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" type="text/css" href="~/Content/User/assets/css/main.css">
     <link rel="stylesheet" type="text/css" href="~/Content/assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="~/Content/assets/css/toastr.min.css">
-   
+
     <!--[if lt IE 9]>
         <script src="~/Content/assets/js/html5shiv.min.js"></script>
         <script src="~/Content/assets/js/respond.min.js"></script>
@@ -40,7 +40,7 @@
             <a id="mobile_btn" class="mobile_btn float-left" href="#sidebar"><i class="fa fa-bars"></i></a>
             <ul class="nav user-menu float-right">
                 <li class="nav-item dropdown">
-                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" id="notificationCount" aria-expanded="false"><i class="fa fa-bell-o"></i> <span class="badge badge-pill bg-danger float-right" >1</span></a>
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" id="notificationCount" aria-expanded="false"><i class="fa fa-bell-o"></i> <span class="badge badge-pill bg-danger float-right">1</span></a>
                     <div class="dropdown-menu notifications" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 50px, 0px);">
                         <div class="topnav-dropdown-header">
                             <span>Notifications</span>
@@ -59,10 +59,11 @@
                     <div class="dropdown-menu">
                         @using (Html.BeginForm("Logoff", "Account", FormMethod.Post, new { id = "logoutForm" }))
                         {
-            @Html.AntiForgeryToken()
+                            @Html.AntiForgeryToken()
                             <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()" title="Logout">
                                 Logout
-                            </a>}
+                            </a>
+                        }
                     </div>
                 </li>
             </ul>
@@ -95,9 +96,9 @@
                         <li>
                             <a href='@Url.Action("Index", "Appointment")'><i class="fa fa-calendar"></i> <span>Appointments</span></a>
                         </li>
-                        <li>
-                            <a href='@Url.Action("Index", "DoctorSchedule")'><i class="fa fa-calendar-check-o"></i> <span>Doctor Schedule</span></a>
-                        </li>
+                        @*<li>
+                                <a href='@Url.Action("Index", "DoctorSchedule")'><i class="fa fa-calendar-check-o"></i> <span>Doctor Schedule</span></a>
+                            </li>*@
 
                         <li>
                             <a href='@Url.Action("Index", "Report")'><i class="fa fa-flag-o"></i> <span>Reports</span></a>

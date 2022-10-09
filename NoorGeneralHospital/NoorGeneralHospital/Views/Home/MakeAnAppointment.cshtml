@@ -1,118 +1,139 @@
 ﻿@model NoorGeneralHospital.Models.InputDTO.AppointmentInput
 
-<!-- Popup Form -->
-<div class="popup-form" id="model-popup">
-    <div class="inner-block">
-        <button type="button" id="popup-form-close" class="close" data-dismiss="modal">&times;</button>
-        <div class="img">
-            <img src="~/Content/User/assets/images/jpg/popup-form.jpg">
+@{
+    ViewBag.Title = "MakeAnAppointment";
+    Layout = "~/Views/shared/_Layout.cshtml";
+}
+
+<link href="~/Content/User/assets/css/date-picker.css" rel="stylesheet" />
+<!-- Start of .header-bottom-4 -->
+<header class="header-bottom-4">
+    <img src="~/Content/User/assets/images/banner/banner5.jpg">
+    <div class="header-bottom-4__bg">
+        <div class="icon">
+            <img src="~/Content/User/assets/images/banner/banner-shape.png">
         </div>
-        @using (Html.BeginForm("SaveAppointment", "Appointment", FormMethod.Post, new { enctype = "multipart/form-data" }))
-        {
-            @Html.HiddenFor(x => x.Id)
-            <h1 class="section-title">make an appointment</h1>
-            <div class="input-box">
-                <label for="popup-name">Name *</label>
-                @Html.TextBoxFor(s => s.PatientName, new { @class = "form-control" })
-                @Html.ValidationMessageFor(s => s.PatientName, null, new { @class = "text-danger" })
-            </div>
-            <div class="input-box">
-                <label for="popup-name">Age *</label>
-                @Html.TextBoxFor(s => s.PatientAge, new { @type = "number", @class = "form-control", @Value = "" })
-                @Html.ValidationMessageFor(s => s.PatientAge, null, new { @class = "text-danger" })
-            </div>
-            <div class="input-box">
-                <label for="popup-phone">Phone *</label>
-                @Html.TextBoxFor(s => s.PatientPhone, new { @type = "tel", @class = "form-control" })
-                @Html.ValidationMessageFor(s => s.PatientPhone, null, new { @class = "text-danger" })
-            </div>
-            <div class="select-box">
-                <i class="fa fa-angle-down"></i>
-                @Html.DropDownListFor(x => Model.DoctorId, Enumerable.Empty<SelectListItem>
-                    (), htmlAttributes: new { @class = "form-control", @disabled = "disabled" })
-                @Html.ValidationMessageFor(x => x.DoctorId, "", new { @class = "text-danger" })
-            </div>
-            <div class="input-box">
-                <label for="popup-phone">Date</label>
-                @Html.TextBoxFor(s => s.AppointmentDate, new { @type="date", @class = "form-control" })
-                @Html.ValidationMessageFor(s => s.AppointmentDate, null, new { @class = "text-danger" })
-            </div>
-            <div class="input-box">
-                <label for="popup-phone">Message</label>
-                @Html.TextBoxFor(s => s.Description, new { @class = "form-control" })
-                @Html.ValidationMessageFor(s => s.Description, null, new { @class = "text-danger" })
-            </div>
-            <button type="submit" class="btn btn-2_pink">send</button>
-        }
     </div>
-</div>
+    <div class="container">
+        <h1 class="section-title">Book An Appointment</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">@Html.ActionLink("Home", "Index")</li>
+            <li class="breadcrumb-item">@Html.ActionLink("Our Services", "MakeAnAppointment")</li>
+        </ol>
+    </div>
+</header>
+<!-- End of .header-bottom-4 -->
+<section class="medical-center">
+    <div class="bl-right">
+        <div class="content">
+            <h1 class="section-title section-title_60">
+                <span></span>Make an <br />
+                <span>Appointment</span> Now
+            </h1>
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="sidebar">
+                        <div class="blog-sidebar mt-5">
+                            <div class="instagram">
+                                <h1 class="blog-sidebar-title dark-color">Available Slots</h1>
 
-<script src="~/Content/assets/js/jquery.validate.min.js"></script>
-<script src="~/Content/assets/js/jquery.validate.unobtrusive.min.js"></script>
+                                <input class="appointment-date" id="datechange" data-format="dd-MM-yyyy" type="date" />
+                                <div class="items">
+                                    <span class="item"> 9:00AM </span>
 
-<script>
-    $(document).ready(function () {
-        $("#DoctorId").empty().append('<option value="" selected="selected">Select an Doctor</option>');
+                                    <span class="item"> 9:30AM </span>
 
-        PopulateDoctorsList();
+                                    <span class="item"> 10:00AM </span>
 
-        //Begin Form Insert
-        $('form').submit(function (e) {
-            e.preventDefault();
-            var isValid = $(this).validate().form();
-            if (!isValid) return false;
-            else {
-                $.ajax({
-                    url: '/Appointment/SaveAppointment',
-                    data: $(this).serialize(),
-                    type: 'POST',
-                    success: function (res) {
-                        debugger
-                        if (res.Code == "1") {
-                            toastr.success(res.Message, 'success!');
+                                    <span class="item"> 11:00AM </span>
 
-                            $('.modal').remove();
-                            $('.modal-backdrop').remove();
-                            $('body').removeClass("modal-open");
-                            //$('#exampleModal').removeClass('show');
-                            //$('.modal-backdrop').remove();
-                        }
-                        else if (res.Code == "2")
-                        {
-                            toastr.warning(res.Message, 'warning!');
-                        }
-                        else {
-                            toastr.error(res.Message, 'error!');
-                        }
-                    },
-                    error: function (jqXHR, error, errorThrown) {
-                        toastr.error('Sorry Try again', 'error!');
-                    },
+                                    <span class="item"> 12:00PM </span>
+
+                                    <span class="item"> 3:00PM </span>
+
+                                    <span class="item"> 3:30PM </span>
+
+                                    <span class="item"> 4:00PM </span>
+
+                                    <span class="item"> 5:00PM </span>
+                                    <span class="item"> 5:30PM </span>
+
+                                    <span class="item"> 6:00PM </span>
+
+                                    <span class="item"> 6:30PM </span>
+
+                                    <span class="item"> 7:00PM </span>
+
+                                    <span class="item"> 7:30PM </span>
+                                    <span class="item"> 8:00PM </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12  col-xl-6 justify-content-center align-items-center">
+                    @using (Html.BeginForm("MakeAnAppointment", "Home", FormMethod.Post, new { @class = "medical-center__form d-flex flex-column align-items-center", enctype = "multipart/form-data" }))
+                    {
+                        @Html.HiddenFor(x => x.SpecialityId)
+                        @Html.HiddenFor(x => x.DoctorId)
+
+                        <div class="input-box">
+                            <label for="form-name">Doctor*</label>
+                            <input type="text" id="form-name" required value="@ViewBag.UserName" readonly />
+                        </div>
+                        <div class="input-box">
+                            <label for="form-email">Speciality*</label>
+                            <input class="form-control" id="form-email" value="@ViewBag.Speciality" readonly>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="form-email">Address*</label>
+                            <input class="form-control" id="form-email" value="Al Rehman Mall Basment G11 Markez Islamabad" readonly>
+                        </div>
+                        <div class="input-box">
+                            <div id="selectedDate" asp-for="@Model.AppointmentDate" class="form-control" hidden></div>
+                            <label for="form-tel">Date*</label>
+                            @Html.TextBoxFor(x => x.AppointmentDate, "dd-mm-yyyy", new { @type = "text", @class = "form-control datechange", @required = "required", @readonly = "readonly" })
+                            <span>@Html.ValidationMessageFor(s => s.AppointmentDate, null, new { @class = "text-danger" })</span>
+                        </div>
+
+                        <div class="input-box">
+                            <div id="selectedTime" asp-for="@Model.AppointmentTime" class="form-control" hidden></div>
+                            <label for="form-tel">Time*</label>
+                            @Html.TextBoxFor(x => x.AppointmentTime, new { @type = "text", @class = "form-control", @required = "required", @readonly = "readonly" })
+                            <span>@Html.ValidationMessageFor(s => s.AppointmentTime, null, new { @class = "text-danger" })</span>
+                        </div>
+
+                        <div>
+                            <button type="submit" class="btn btn-2_pink">
+                                Make an Appointment
+                            </button>
+                            @*<button type="submit" class="btn btn-2_pink">Cancel</button>*@
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="~/Content/User/assets/js/jQuery-3.4.1.js"></script>
+<script type="text/javascript">
+            $(document).ready(function () {
+              
+                $('.item').click(function () {
+                    $('.cell').removeClass('select');
+                    $(this).addClass('select');
+                    $("#selectedTime").text(this.innerHTML);
+                    console.log(this.innerHTML)
+                    $("#AppointmentTime").val(this.innerHTML);
                 });
-            }
-        });
-    });
 
-    function PopulateDoctorsList() {
-            $.ajax({
-                type: "Get",
-                url: "/Home/PopulateDoctorsList",
-                complete: function () {
-                },
-                error: function (error) {
-                    toastr.info("there is no record found of this type!", "info");
-                },
-                success: function (response) {
-                    console.log(response);
-                    if (response.length == 0) {
-                        toastr.info("there is no record found of this type!", "info");
-                    }
-                    $("#DoctorId").empty().append('<option value="" selected="selected">Select an Option</option>');
-                    for (var i in response) {
-                        $("#DoctorId").append('<option value="' + response[i].Value + '">' + response[i].Text + '</option>');
-                    }
-                    $("#DoctorId").attr("disabled", false);
-                }
+                $('#datechange').change(function () {
+                    console.log(this.value);
+                    $("#selectedDate").text(this.value);
+                    $("#AppointmentDate").val(this.value);
+                });
+
             });
-        }
 </script>

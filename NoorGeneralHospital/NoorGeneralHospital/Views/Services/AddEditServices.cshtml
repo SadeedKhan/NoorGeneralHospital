@@ -40,13 +40,13 @@
             <div class="form-group">
                 <label class="display-block">Service Status</label>
                 <div class="form-check form-check-inline">
-                    @Html.RadioButtonFor(s => s.IsActive, true, new { @class = "form-check-input", @name = "status", @checked = true })
+                    @Html.RadioButtonFor(s => s.IsActive, true, new { @class = "form-check-input", @name = "status", @checked = "checked" })
                     <label class="form-check-label">
                         Active
                     </label>
                 </div>
                 <div class="form-check form-check-inline">
-                    @Html.RadioButtonFor(s => s.IsActive, false, new { @class = "form-check-input", @name = "status" })
+                    @Html.RadioButtonFor(s => s.IsActive,  new { @class = "form-check-input", @name = "status" })
                     <label class="form-check-label">
                         Inactive
                     </label>

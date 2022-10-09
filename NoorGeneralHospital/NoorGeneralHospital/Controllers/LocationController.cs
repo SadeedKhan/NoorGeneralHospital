@@ -11,7 +11,7 @@ using System.Web.Mvc;
 namespace NoorGeneralHospital.Controllers
 {
     [Authorize]
-    public class LocationController : Controller
+    public class LocationController : AdminController
     {
         private readonly ApplicationDbContext db = new ApplicationDbContext();
 

@@ -9,76 +9,52 @@
     <div class="col-lg-8 offset-lg-2">
         @using (Html.BeginForm("SaveAppointment", "Appointment", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
-@Html.HiddenFor(x => x.Id)
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Name</label>
-                            @Html.TextBoxFor(s => s.PatientName, new { @class = "form-control", @placeholder = "Enter  Name" })
-                            @Html.ValidationMessageFor(s => s.PatientName, null, new { @class = "text-danger" })
-                        </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Select Speciality</label>
+                        @Html.DropDownListFor(x => Model.SpecialityId, new SelectList(Model.GetSpeciality(), "Value", "Text"), htmlAttributes: new { @class = "form-control", @onchange = "PopulateDoctorsList()" })
+                        @Html.ValidationMessageFor(x => x.SpecialityId, "", new { @class = "text-danger" })
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Age</label>
-                            @Html.TextBoxFor(s => s.PatientAge, new { @type = "number", @class = "form-control", @placeholder = "Enter  Age", @Value = "" })
-                            @Html.ValidationMessageFor(s => s.PatientAge, null, new { @class = "text-danger" })
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Select Doctor</label>
+                        @Html.DropDownListFor(x => Model.DoctorId, Enumerable.Empty<SelectListItem>(), htmlAttributes: new { @class = "form-control", @disabled = "disabled" })
+                        @Html.ValidationMessageFor(x => x.DoctorId, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Date</label>
+                        <div class="cal-icon">
+                            @Html.TextBoxFor(s => s.AppointmentDate, new { @class = "form-control datetimepicker", @placeholder = "Select Date" })
+                            @Html.ValidationMessageFor(s => s.AppointmentDate, null, new { @class = "text-danger" })
                         </div>
                     </div>
                 </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Email</label>
-                                            @Html.TextBoxFor(s => s.PatientEmail, new { @type = "Email", @class = "form-control", @placeholder = "Enter Email" })
-                                            @Html.ValidationMessageFor(s => s.PatientEmail, null, new { @class = "text-danger" })
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Phone</label>
-                                            @Html.TextBoxFor(s => s.PatientPhone, new { @type = "number", @class = "form-control", @placeholder = "Enter Phone Number" })
-                                            @Html.ValidationMessageFor(s => s.PatientPhone, null, new { @class = "text-danger" })
-                                        </div>
-                                    </div>
-                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>Select Speciality</label>
-                                                            @Html.DropDownListFor(x => Model.SpecialityId, new SelectList(Model.GetSpeciality(), "Value", "Text"), htmlAttributes: new { @class = "form-control", @onchange = "PopulateDoctorsList()" })
-                                                            @Html.ValidationMessageFor(x => x.SpecialityId, "", new { @class = "text-danger" })
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>Select Doctor</label>
-                                                            @Html.DropDownListFor(x => Model.DoctorId, Enumerable.Empty<SelectListItem>(), htmlAttributes: new { @class = "form-control", @disabled = "disabled" })
-                                                            @Html.ValidationMessageFor(x => x.DoctorId, "", new { @class = "text-danger" })
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Time</label>
+                        <div class="time-icon">
+                            @Html.TextBoxFor(s => s.AppointmentTime, new { @class = "form-control timepicker", @placeholder = "Select Time" })
+                            @Html.ValidationMessageFor(s => s.AppointmentDate, null, new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Message</label>
+                @Html.TextAreaFor(s => s.Description, new { @class = "form-control", @cols = "30", @rows = "4" })
+                @Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
+            </div>
 
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group">
-                                                                            <label>Date</label>
-                                                                            <div class="cal-icon">
-                                                                                @Html.TextBoxFor(s => s.AppointmentDate, new { @class = "form-control datetimepicker", @placeholder = "Select Date" })
-                                                                                @Html.ValidationMessageFor(s => s.AppointmentDate, null, new { @class = "text-danger" })
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                                <div class="form-group">
-                                                                                    <label>Message</label>
-                                                                                    @Html.TextAreaFor(s => s.Description, new { @class = "form-control", @cols = "30", @rows = "4" })
-                                                                                    @Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
-                                                                                </div>
-
-                                                                                                <div class="m-t-20 text-center">
-                                                                                                    <button class="btn btn-primary submit-btn">Create Appointment</button>
-                                                                                                </div>}
+            <div class="m-t-20 text-center">
+                <button class="btn btn-primary submit-btn">Create Appointment</button>
+            </div>}
     </div>
 </div>
 
@@ -89,7 +65,11 @@
     $(document).ready(function () {
         //For Date Picker
         $('#AppointmentDate').datetimepicker({
-            format: 'DD/MM/YYYY',
+            format: 'DD-MM-YYYY',
+        });
+
+        $('.timepicker').datetimepicker({
+            format: 'LT'
         });
 
         //Begin Form Insert

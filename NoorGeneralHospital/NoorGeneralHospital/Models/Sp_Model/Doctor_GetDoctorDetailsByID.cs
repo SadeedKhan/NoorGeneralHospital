@@ -21,8 +21,8 @@ namespace NoorGeneralHospital.Models.Sp_Model
             public string DOB { get; set; }
             public string Address { get; set; }
             public string ShortBioGraphy { get; set; }
-            public string AvailableTime { get; set; }
-            public string AvailableDay { get; set; }
-            public string AvailableDays { get; set; }
+            //public string AvailableTime { get; set; }
+            //public string AvailableDay { get; set; }
+            //public string AvailableDays { get; set; }
     }
 }

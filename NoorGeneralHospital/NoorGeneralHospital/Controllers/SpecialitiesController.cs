@@ -13,7 +13,7 @@ using NoorGeneralHospital.Models.OutputDTO;
 namespace NoorGeneralHospital.Controllers
 {
     [Authorize]
-    public class SpecialitiesController : Controller
+    public class SpecialitiesController : AdminController
     {
         private readonly ApplicationDbContext db = new ApplicationDbContext();
 

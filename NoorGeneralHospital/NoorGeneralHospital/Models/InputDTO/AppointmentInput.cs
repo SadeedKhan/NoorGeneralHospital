@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NoorGeneralHospital.Helper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
@@ -10,21 +11,16 @@ namespace NoorGeneralHospital.Models.InputDTO
 {
     public class AppointmentInput
     {
-        public int Id { get; set; }
-        [Required(ErrorMessage = "Please Enter Patient Name.")]
-        public string PatientName { get; set; }
-        [Required(ErrorMessage = "Please Enter Patient Age.")]
-        public int PatientAge { get; set; }
-        [Required(ErrorMessage = "Please Enter Patient Email.")]
-        public string PatientEmail { get; set; }
-        [Required(ErrorMessage = "Please Enter Patient Phone.")]
-        public string PatientPhone { get; set; }
-        [Required(ErrorMessage = "Please Select Speciality")]
+        [Required]
         public int SpecialityId { get; set; }
         [Required(ErrorMessage = "Please Select Doctor.")]
         public int DoctorId { get; set; }
-        [Required(ErrorMessage = "Please Select Doctor.")]
+
+        [Required(ErrorMessage = "Please Select Appoinment Date.")]
         public string AppointmentDate { get; set; }
+
+        [Required(ErrorMessage = "Please Select Appoinment Time.")]
+        public string AppointmentTime { get; set; }
         public string Description { get; set; }
 
         public IEnumerable<SelectListItem> GetSpeciality()

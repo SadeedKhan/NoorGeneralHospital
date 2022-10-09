@@ -22,15 +22,11 @@ namespace NoorGeneralHospital.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("DefaultConnection")
         {
         }
 
-        public static ApplicationDbContext Create()
-        {
-            return new ApplicationDbContext();
-        }
-
+      
         public virtual DbSet<Doctor> Doctors { get; set; }
         public virtual DbSet<Services> Services { get; set; }
         public virtual DbSet<Doctor_GetDoctorDetails> Sp_Doctor_GetDoctorDetails { get; set; }
@@ -43,5 +39,14 @@ namespace NoorGeneralHospital.Models
         public virtual DbSet<DoctorSchedule> DoctorSchedules { get; set; }
         public virtual DbSet<Appointment> Appointments { get; set; }
         public virtual DbSet<Activities> activities { get; set; }
+
+        public static ApplicationDbContext Create()
+        {
+            return new ApplicationDbContext();
+        }
+
+
     }
+
+
 }

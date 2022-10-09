@@ -11,7 +11,7 @@ using NoorGeneralHospital.Models;
 namespace NoorGeneralHospital.Controllers
 {
     [Authorize]
-    public class ManageController : Controller
+    public class ManageController : AdminController
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;

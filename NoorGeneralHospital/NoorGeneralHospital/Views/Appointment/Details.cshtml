@@ -19,7 +19,7 @@
                 <thead>
                     <tr>
                         <th>Patient Name</th>
-                        <th>Age</th>
+                        <th>Phone</th>
                         <th>Doctor Name</th>
                         <th>Department</th>
                         <th>Appointment Date</th>
@@ -34,7 +34,7 @@
                             <td>
                                 @doc.PatientName
                             </td>
-                            <td>@doc.PatientAge</td>
+                            <td>@doc.PatientPhone</td>
                             <td>
                                 @{ if (string.IsNullOrEmpty(doc.ImagePath))
                                     {

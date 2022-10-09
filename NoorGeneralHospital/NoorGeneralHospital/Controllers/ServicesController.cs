@@ -12,7 +12,7 @@ using System.Web.Mvc;
 
 namespace NoorGeneralHospital.Controllers
 {
-    public class ServicesController : Controller
+    public class ServicesController : AdminController
     {
         private readonly ApplicationDbContext db = new ApplicationDbContext();
         // GET: Services

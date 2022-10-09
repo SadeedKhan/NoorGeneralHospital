@@ -16,7 +16,7 @@ using System.Web.Mvc;
 namespace NoorGeneralHospital.Controllers
 {
     [Authorize]
-    public class DoctorController : Controller
+    public class DoctorController : AdminController
     {
         private readonly ApplicationDbContext db = new ApplicationDbContext();
         // GET: Doctor
@@ -32,7 +32,7 @@ namespace NoorGeneralHospital.Controllers
             IEnumerable<Doctor_GetDoctorDetails> list;
             try
             {
-                list  = db.Database.SqlQuery<Doctor_GetDoctorDetails>("Sp_GetDoctorDetails @Id", new SqlParameter("@Id",(object)0)).ToList();
+                list  = db.Database.SqlQuery<Doctor_GetDoctorDetails>("Doctor_GetDoctorDetails @Id", new SqlParameter("@Id",(object)0)).ToList();
             }
             catch (Exception e)
             {

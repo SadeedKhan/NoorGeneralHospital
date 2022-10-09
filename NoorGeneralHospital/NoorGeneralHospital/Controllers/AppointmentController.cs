@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using NoorGeneralHospital.Helper;
 using NoorGeneralHospital.Models;
 using NoorGeneralHospital.Models.InputDTO;
 using NoorGeneralHospital.Models.OutputDTO;
@@ -6,18 +8,24 @@ using NoorGeneralHospital.Models.Sp_Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web.Mvc;
 
 namespace NoorGeneralHospital.Controllers
 {
-    [Authorize]
-    public class AppointmentController : Controller
+    public class AppointmentController : AdminController
     {
-        private readonly ApplicationDbContext db = new ApplicationDbContext();
+        private static readonly ApplicationDbContext db = new ApplicationDbContext();
+        private static UserManager<ApplicationUser> _UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
 
         // GET: Appointment
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult MakeAnAppointment()
         {
             return View();
         }
@@ -28,7 +36,7 @@ namespace NoorGeneralHospital.Controllers
             IEnumerable<Appointment_GetAppointmentDetails> list;
             try
             {
-                list = db.Database.SqlQuery<Appointment_GetAppointmentDetails>("dbo.Sp_GetAppointmentDetails").ToList();
+                list = db.Database.SqlQuery<Appointment_GetAppointmentDetails>("dbo.Sp_GetAppointmentDashboardDetail").ToList();
             }
             catch (Exception e)
             {
@@ -43,117 +51,109 @@ namespace NoorGeneralHospital.Controllers
         {
             GeneralResponse _result = new GeneralResponse();
             string userId = User.Identity.GetUserId();
-            var res = 0;
+            ap.AppointmentTime = ap.AppointmentTime.Replace(" ", string.Empty);
             try
             {
-                Appointment appointment = db.Appointments.Where(x => x.Id == ap.Id).FirstOrDefault();
-                if (appointment != null)
+                DateTime dateTime;
+                dateTime = DateTimeFormats.ConvertStrings(ap.AppointmentDate, ap.AppointmentTime);
+                db.Appointments.Add(new Appointment
                 {
-                    var local = db.Set<Appointment>().Local.FirstOrDefault(f => f.Id == appointment.Id);
-                    if (local != null)
-                    {
-                        db.Entry(local).State = EntityState.Detached;
-                    }
-                    Appointment appoint = new Appointment();
-                    appoint.Id = ap.Id;
-                    appoint.PatientAge = ap.PatientAge;
-                    appoint.PatientName = ap.PatientName;
-                    appoint.PatientEmail = ap.PatientEmail;
-                    appoint.PatientPhone = ap.PatientPhone;
-                    appoint.SpecialityId = ap.SpecialityId;
-                    appoint.DoctorId = ap.DoctorId;
-                    appoint.AppointmentDate = ap.AppointmentDate;
-                    appoint.Description = ap.Description;
-                    appoint.CreatedById = appointment.CreatedById;
-                    appoint.CreatedOn = appointment.CreatedOn;
-                    appoint.UpdatedOn = DateTime.Now;
-                    appoint.UpdatedById = userId;
-                    db.Entry(appoint).State = EntityState.Modified;
-                    res = db.SaveChanges();
-                    _result.Message = "Record Updated Successfully!";
-                    _result.Code = "1";
-                }
-                else
-                {
-                    appointment = new Appointment();
-                    appointment.PatientName = ap.PatientName;
-                    appointment.PatientAge = ap.PatientAge;
-                    appointment.PatientEmail = ap.PatientEmail;
-                    appointment.PatientPhone = ap.PatientPhone;
-                    appointment.SpecialityId = ap.SpecialityId;
-                    appointment.DoctorId = ap.DoctorId;
-                    appointment.AppointmentDate = ap.AppointmentDate;
-                    appointment.Description = ap.Description;
-                    appointment.IsActive = true;
-                    appointment.StatusId = 1;
-                    appointment.CreatedOn = DateTime.Now;
-                    appointment.CreatedById = userId;
-                    db.Appointments.Add(appointment);
-                    res = db.SaveChanges();
-                    _result.Message = "Record Created Successfully!";
-                    _result.Code = "1";
-                    if(res>0)
-                    {
-                        //Add Appointment For Activities
-                        Activities activities = new Activities();
-                        activities.PatientName = ap.PatientName;
-                        appointment.PatientEmail = ap.PatientEmail;
-                        activities.PatientPhone = ap.PatientPhone;
-                        activities.AppointmentDate = ap.AppointmentDate; 
-                        db.activities.Add(activities);
-                        var result = db.SaveChanges();
-                    }
-                }
+                    AppointmentDate = dateTime,
+                    UserId = userId,
+                    StatusId=1,
+                    SpecialityId = ap.SpecialityId,
+                    DoctorId = ap.DoctorId,
+                    CreatedById=userId,
+                    CreatedOn = DateTime.Now,
+                });
+                db.SaveChanges();
+                _result.Message = "Record Created Successfully!";
+                _result.Code = "1";
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                _result.Message = "An Internal Error!";
+                _result.Message = ex.Message;
                 _result.Code = "0";
             }
             return Json(_result);
+
+
+
+
+            //try
+            //{
+            //    Appointment appointment = db.Appointments.Where(x => x.Id == ap.Id).FirstOrDefault();
+            //    if (appointment != null)
+            //    {
+            //        var local = db.Set<Appointment>().Local.FirstOrDefault(f => f.Id == appointment.Id);
+            //        if (local != null)
+            //        {
+            //            db.Entry(local).State = EntityState.Detached;
+            //        }
+            //        Appointment appoint = new Appointment();
+            //        appoint.Id = ap.Id;
+            //        appoint.SpecialityId = ap.SpecialityId;
+            //        appoint.DoctorId = ap.DoctorId;
+            //        appoint.AppointmentDate = ap.AppointmentDate;
+            //        appoint.Description = ap.Description;
+            //        appoint.CreatedById = appointment.CreatedById;
+            //        appoint.CreatedOn = appointment.CreatedOn;
+            //        appoint.UpdatedOn = DateTime.Now;
+            //        appoint.UpdatedById = userId;
+            //        db.Entry(appoint).State = EntityState.Modified;
+            //        res = db.SaveChanges();
+            //        _result.Message = "Record Updated Successfully!";
+            //        _result.Code = "1";
+            //    }
+            //    else
+            //    {
+            //        appointment = new Appointment();
+            //        appointment.SpecialityId = ap.SpecialityId;
+            //        appointment.DoctorId = ap.DoctorId;
+            //        appointment.AppointmentDate = ap.AppointmentDate;
+            //        appointment.Description = ap.Description;
+            //        appointment.IsActive = true;
+            //        appointment.StatusId = 1;
+            //        appointment.CreatedOn = DateTime.Now;
+            //        appointment.CreatedById = userId;
+            //        db.Appointments.Add(appointment);
+            //        res = db.SaveChanges();
+            //        _result.Message = "Record Created Successfully!";
+            //        _result.Code = "1";
+            //        if(res>0)
+            //        {
+            //            //Add Appointment For Activities
+            //            Activities activities = new Activities();
+            //            activities.AppointmentDate = ap.AppointmentDate; 
+            //            db.activities.Add(activities);
+            //            var result = db.SaveChanges();
+            //        }
+            //    }
+            //}
+            //catch (Exception e)
+            //{
+            //    _result.Message = "An Internal Error!";
+            //    _result.Code = "0";
+            //}
         }
 
 
         [HttpPost]
-        public ActionResult AddEditAppointment(int? id)
+        public ActionResult AddEditAppointment()
         {
-            AppointmentInput api;
-            if (id > 0)
-            {
-                Appointment ap = db.Appointments.Find(id);
-                api = new AppointmentInput();
-                api.PatientName = ap.PatientName;
-                api.PatientAge = ap.PatientAge;
-                api.PatientEmail = ap.PatientEmail;
-                api.PatientPhone = ap.PatientPhone;
-                api.SpecialityId = ap.SpecialityId;
-                api.DoctorId = ap.DoctorId;
-                api.AppointmentDate = ap.AppointmentDate;
-                api.Description = ap.Description;
-                api.Id = ap.Id;
-            }
-            else
-            {
-                api = new AppointmentInput();
-            }
-            return PartialView("AddEditAppointment", api);
+            return PartialView("AddEditAppointment", new AppointmentInput());
         }
 
         [HttpPost]
         public ActionResult Delete(int id)
         {
             GeneralResponse _result = new GeneralResponse();
-            string userId = User.Identity.GetUserId();
             try
             {
                 if (id > 0)
                 {
                     Appointment ap = db.Appointments.Find(id);
-                    ap.UpdatedOn = DateTime.Now;
-                    ap.UpdatedById = userId;
-                    ap.IsActive = false;
-                    ap.StatusId = 4;
-                    db.Entry(ap).State = EntityState.Modified;
+                    db.Appointments.Remove(ap);
                     db.SaveChanges();
                     _result.Message = "Appointment Removed Successfully!";
                     _result.Code = "1";
@@ -307,13 +307,6 @@ namespace NoorGeneralHospital.Controllers
             return Json(_result);
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+      
     }
 }

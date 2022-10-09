@@ -1,4 +1,4 @@
-﻿@charset "UTF-8";
+@charset "UTF-8";
 /*---------- IbnSino HTML Template ------*/
 /*---------- TABLE OF CONTENTS ----------*/
 /*
@@ -157,7 +157,7 @@ These are css styles, others're attached
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #f22283;
+  background-color: #1f3d9d;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -366,7 +366,7 @@ a:hover {
 }
 
 .btn_pink, .btn-2_pink {
-  padding: 20px 26px 20px 27px;
+  padding: 15px 20px 15px 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: #f22283;
@@ -3825,7 +3825,7 @@ a:hover {
   left: 0;
   top: 0;
   z-index: 999999999999999999;
-  background-color: transparent !important;
+  background-color: #fff;
   height: 100vh;
   width: 100%;
   display: -webkit-box;
@@ -3841,8 +3841,8 @@ a:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-transition-delay: 5s;
-          transition-delay: 5s;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
 }
 
 .loader {
@@ -4120,7 +4120,7 @@ a:hover {
   height: 100%;
   width: 100%;
   height: 500px;
-  background-color: rgba(51, 51, 51, 0.7);
+  background-color: white;
   overflow-y: auto;
   z-index: 99999;
   display: -webkit-box;
@@ -10340,11 +10340,7 @@ a:hover {
   max-width: 570px;
 }
 
-.medical-center > .bl-right > .content > .section-title > span {
-  color: #ffffff;
-}
-
-.medical-center > .bl-right > .content > .medical-center__form {
+ .medical-center__form {
   margin-top: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10356,9 +10352,9 @@ a:hover {
           justify-content: space-between;
 }
 
-.medical-center > .bl-right > .content > .medical-center__form > .input-box {
+ .medical-center__form > .input-box {
   position: relative;
-  width: 235px;
+  width: 82%;
   height: 42px;
   margin-bottom: 40px;
   -webkit-transition: all .3s linear;
@@ -10366,7 +10362,7 @@ a:hover {
   border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 }
 
-.medical-center > .bl-right > .content > .medical-center__form > .input-box > label {
+  .medical-center__form > .input-box > label {
   position: absolute;
   top: 50%;
   left: 0;
@@ -10378,7 +10374,7 @@ a:hover {
   transition: all .3s linear;
 }
 
-.medical-center > .bl-right > .content > .medical-center__form > .input-box > input {
+ .medical-center__form > .input-box > input {
   height: 100%;
   width: 100%;
   position: absolute;
@@ -10391,18 +10387,18 @@ a:hover {
   color: #ffffff;
 }
 
-.medical-center > .bl-right > .content > .medical-center__form > .input-box:hover {
+ .medical-center__form > .input-box:hover {
   border-bottom-color: white;
 }
 
-.medical-center > .bl-right > .content > .medical-center__form > .input-box:hover > label {
+  .medical-center__form > .input-box:hover > label {
   top: -10px;
   font-size: 14px;
 }
 
-.medical-center > .bl-right > .content > .medical-center__form > .select-box {
+  .medical-center__form > .select-box {
   position: relative;
-  width: 235px;
+  width: 82%;
   height: 42px;
   margin-bottom: 50px;
   -webkit-transition: all .3s linear;
@@ -10410,7 +10406,7 @@ a:hover {
   border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 }
 
-.medical-center > .bl-right > .content > .medical-center__form > .select-box > .fa {
+  .medical-center__form > .select-box > .fa {
   position: absolute;
   right: 0;
   top: 50%;
@@ -10421,7 +10417,7 @@ a:hover {
   line-height: 10px;
 }
 
-.medical-center > .bl-right > .content > .medical-center__form > .select-box > select {
+  .medical-center__form > .select-box > select {
   height: 100%;
   width: 100%;
   position: absolute;
@@ -10438,12 +10434,12 @@ a:hover {
   padding-right: 20px;
 }
 
-.medical-center > .bl-right > .content > .medical-center__form > .select-box > select > option {
+ .medical-center__form > .select-box > select > option {
   line-height: 2;
   background-color: #1f3d9d;
 }
 
-.medical-center > .bl-right > .content > .medical-center__form > .select-box:hover {
+  .medical-center__form > .select-box:hover {
   border-bottom-color: white;
 }
 
@@ -11817,6 +11813,9 @@ a:hover {
   text-transform: capitalize;
 }
 
+.dark-color{
+  color:#f22283 !important;
+}
 .sidebar > .blog-sidebar > div {
   width: 100%;
   padding: 40px 50px;
@@ -11824,8 +11823,14 @@ a:hover {
   margin-bottom: 50px;
   border-radius: 8px;
   background-color: #ffffff;
+} 
+.appointment-date{
+  width: 50%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #f22283;
+    margin-bottom: 5px;
 }
-
 .sidebar > .blog-sidebar > div:last-child {
   margin-bottom: 0;
 }
@@ -11847,11 +11852,13 @@ a:hover {
   font-weight: 600;
   padding-bottom: 15px;
   text-transform: capitalize;
+
 }
 
 .sidebar > .blog-sidebar > .categories > .lists > .item.active > a,
 .sidebar > .blog-sidebar > .categories > .lists > .item:hover > a {
   color: #f22283;
+
 }
 
 .sidebar > .blog-sidebar > .categories > .lists > .item:last-child > a {
@@ -11879,6 +11886,15 @@ a:hover {
   transition: all .3s linear;
   margin-bottom: 20px;
   border: 2px solid transparent;
+ background-color: #f22283;
+ color: white;
+ display: flex;
+ justify-content: center;
+ text-align: center;
+ align-items: center;
+ margin:5px;
+ border-radius: 3px;
+ cursor: pointer;
 }
 
 .sidebar > .blog-sidebar > .instagram > .items > .item > img {
@@ -11892,6 +11908,7 @@ a:hover {
 
 .sidebar > .blog-sidebar > .instagram > .items > .item:hover {
   border-color: #f22283;
+  border: 3px solid white;
 }
 
 .sidebar > .blog-sidebar > .follow > .socials {

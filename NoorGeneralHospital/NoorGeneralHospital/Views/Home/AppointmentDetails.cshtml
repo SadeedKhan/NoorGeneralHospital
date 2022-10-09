@@ -1,0 +1,106 @@
+﻿@model IEnumerable<NoorGeneralHospital.Models.Sp_Model.Appointment_GetAppointmentDetails>
+
+@{
+    ViewBag.Title = "AppointmentDetails";
+    Layout = "~/Views/shared/_Layout.cshtml";
+}
+<style>
+    .table th {
+        color: white !important;
+    }
+</style>
+
+<!-- Start of .header-bottom-4 -->
+<header class="header-bottom-4">
+    <img src="~/Content/User/assets/images/banner/banner5.jpg">
+    <div class="header-bottom-4__bg">
+        <div class="icon">
+            <img src="~/Content/User/assets/images/banner/banner-shape.png">
+        </div>
+    </div>
+    <div class="container">
+        <h1 class="section-title">Book An Appointment</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">@Html.ActionLink("Home", "Index")</li>
+            <li class="breadcrumb-item">@Html.ActionLink("Oppointments", "AppointmentDeatils")</li>
+        </ol>
+    </div>
+</header>
+<!-- End of .header-bottom-4 -->
+<section class="medical-center">
+    <div class="bl-right">
+        <div class="content">
+            <h1 class="section-title section-title_60">
+                <span></span>Make an <br />
+                <span>Appointment</span> Now
+            </h1>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                        <table class="table table-striped custom-table dataTable" id="example" style="background-color:white">
+                            <thead>
+                                <tr>
+                                    <th>Patient Name</th>
+                                    <th>Phone</th>
+                                    <th>Doctor Name</th>
+                                    <th>Department</th>
+                                    <th>Appointment Date</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var doc in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @doc.PatientName
+                                        </td>
+                                        <td>@doc.PatientPhone</td>
+                                        <td>
+                                            @{ if (string.IsNullOrEmpty(doc.ImagePath))
+                                                {
+                                                    <img width="28" height="28" class="rounded-circle m-r-5" src="~/Content/assets/img/user.jpg" alt="">@doc.Doctor
+                                                }
+                                                else
+                                                {
+                                                    <img width="28" height="28" class="rounded-circle m-r-5" alt="" src="/../@doc.ImagePath"> @doc.Doctor
+                                                }
+                                            }
+                                        </td>
+                                        <td>@doc.Speciality</td>
+                                        <td>@doc.AppointmentDate</td>
+                                        <td>
+                                            @{
+
+                                                if (doc.StatusId == 1)
+                                                {
+                                                    <span class="custom-badge status-orange">@doc.Status</span>
+                                                }
+                                                else if (doc.StatusId == 2)
+                                                {
+                                                    <span class="custom-badge status-green">@doc.Status</span>
+                                                }
+                                                else if (doc.StatusId == 3)
+                                                {
+                                                    <span class="custom-badge status-blue">@doc.Status</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="custom-badge status-red">@doc.Status</span>
+                                                }
+                                            }
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Cancel","CancelAppointment", new { Id=doc.Id }, new { @class="btn btn-danger"})
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

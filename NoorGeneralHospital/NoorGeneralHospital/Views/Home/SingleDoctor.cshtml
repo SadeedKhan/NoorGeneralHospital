@@ -5,170 +5,166 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 
     //Custom
-
-    List<string> list = new List<string>();
-    if (!string.IsNullOrEmpty(Model.AvailableDay))
+    if (Model != null)
     {
-        string[] val = Model.AvailableDay.Split(',');
-        string res = "";
-        foreach (var day in val)
-        {
-            res = Enum.Parse(typeof(NoorGeneralHospital.Helper.Enum.WeekDays), day).ToString();
-            list.Add(res);
-        }
-        Model.AvailableDays = string.Join(",", list);
-    }
-}
+        //List<string> list = new List<string>();
+        //if (!string.IsNullOrEmpty(Model.AvailableDay))
+        //{
+        //    string[] val = Model.AvailableDay.Split(',');
+        //    string res = "";
+        //    foreach (var day in val)
+        //    {
+        //        res = Enum.Parse(typeof(NoorGeneralHospital.Helper.Enum.WeekDays), day).ToString();
+        //        list.Add(res);
+        //    }
+        //    Model.AvailableDays = string.Join(",", list);
+        //}
 
-<!-- Start of .header-bottom-4 -->
-<header class="header-bottom-4">
-    <img src="~/Content/User//assets/images/banner/banner5.jpg">
-    <div class="header-bottom-4__bg">
-        <div class="icon">
-            <img src="~/Content/User/assets/images/banner/banner-shape.png">
-        </div>
-    </div>
-    <div class="container">
-        <h1 class="section-title">  <span>@Model.UserName </span></h1>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">@Html.ActionLink("Home", "Index")</li>
-            <li class="breadcrumb-item">@Html.ActionLink("Our Doctors", "Doctors")</li>
-            <li class="breadcrumb-item active">Details</li>
-        </ol>
-    </div>
-</header>
-<!-- End of .header-bottom-4 -->
-<!-- Start of .doctors -->
-<section class="doctors main-blog">
-    <div class="main-blog__bg">
-        <div class="icon">
-            <img src="~/Content/User/assets/images/png-shapes/form-shape.png">
-        </div>
-        <div class="icon">
-            <img src="~/Content/User/assets/images/png-shapes/specialists__left-bottom-shape.png">
-        </div>
-    </div>
-    <div class="container container_right-sidebar">
-        <div class="article">
-            <div class="doctors-block">
-                <div class="img">
-                    <img src="/@Model.ImagePath">
-                </div>
-                <div class="content">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th colspan="2">
-                                    <h3 class="title">@Model.UserName    </h3>
-                                    @*<h5 class="profession">Neurosurgical </h5>*@
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>Speciality</th>
-                                <td>
-                                    @Model.Speciality
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>Areas of Expertise:</th>
-                                <td>
-                                    @Model.Education
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>Years of Practice:</th>
-                                <td>@Model.Experience</td>
-                            </tr>
-                            <tr>
-                                <th>Working Time:</th>
-                                <td>
-                                    <table>
-                                        <tr>
-                                            <td>@Model.AvailableDays</td>
-                                            <td>@Model.AvailableTime</td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-
-
-                            <tr>
-                                <th>Contacts:</th>
-                                <td>
-                                    <a href="tel:051-2362315">@Model.Phone </a><br>
-                                    @*<a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-instagram"></i></a>
-                                        <a href="#"><i class="fa fa-share-alt"></i></a>*@
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <!-- Start of .header-bottom-4 -->
+        <header class="header-bottom-4">
+            <img src="~/Content/User//assets/images/banner/banner5.jpg">
+            <div class="header-bottom-4__bg">
+                <div class="icon">
+                    <img src="~/Content/User/assets/images/banner/banner-shape.png">
                 </div>
             </div>
-
-
-
-
-
-            @*<div class="doctors-text">
-                        <h1 class="list-title">Dr  Mohib Ur Rehman  has to the following  key services:</h1>
-                        <p class="text">
-                            Lower Backache,
-                            Headache,
-                            Migraine,
-                            Dementia,
-                            Parkinsonism,
-                            Bell’s Palsy,
-                            Muscular Weakness,
-                            Alzheimeres,
-                            Epilepsy,
-                            Spine fixation.
-
-                        </p>
-                        @*<h1 class="list-title">Dr  Mohib Ur Rehman  has to the following  key services:</h1>
-                <ul class="list">
-                    <li class="list-item"><i class="fa fa-check"></i> Lower Backache</li>
-                    <li class="list-item"><i class="fa fa-check"></i> 	Headache</li>
-                    <li class="list-item"><i class="fa fa-check"></i> 	Migraine</li>
-                    <li class="list-item"><i class="fa fa-check"></i> 	Dementia</li>
-                    <li class="list-item"><i class="fa fa-check"></i> 	Parkinsonism</li>
-                    <li class="list-item"><i class="fa fa-check"></i> 	Bell’s Palsy</li>
-                    <li class="list-item"><i class="fa fa-check"></i> 	Muscular Weakness</li>
-                    <li class="list-item"><i class="fa fa-check"></i> 	Alzheimeres</li>
-                    <li class="list-item"><i class="fa fa-check"></i> 	 Epilepsy</li>
-                    <li class="list-item"><i class="fa fa-check"></i> 	 Spine fixation</li>
-                </ul>
-                </div>*@
-
-
-        </div>
-        <div class="sidebar">
-            <div class="doctors-sidebar">
-                <div class="work-hours">
-                    <h1 class="title">work hours</h1>
-                    <ul class="lists">
-                        <li class="list-item">
-                            <span class="date">@Model.AvailableDays</span>
-                            <span class="time">@Model.AvailableTime</span>
-                        </li>
-                        @*<li class="list-item">
-                                <span class="date">Sunday</span>
-                                <span class="time">Off</span>
-                            </li>*@
-                    </ul>
+            <div class="container">
+                <h1 class="section-title">  <span>@Model.UserName </span></h1>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">@Html.ActionLink("Home", "Index")</li>
+                    <li class="breadcrumb-item">@Html.ActionLink("Our Doctors", "Doctors")</li>
+                    <li class="breadcrumb-item active">Details</li>
+                </ol>
+            </div>
+        </header>
+        <!-- End of .header-bottom-4 -->
+        <!-- Start of .doctors -->
+        <section class="doctors main-blog">
+            <div class="main-blog__bg">
+                <div class="icon">
+                    <img src="~/Content/User/assets/images/png-shapes/form-shape.png">
                 </div>
-                <div class="appointment">
-                    <h1 class="title">Book an appointment</h1>
-                    <div class="d-flex justify-content-center ">
-                        <button type="button" class="btn btn_pink" id="popup-form-openid" data-toggle="modal" data-target="#exampleModal">book now</button>
+                <div class="icon">
+                    <img src="~/Content/User/assets/images/png-shapes/specialists__left-bottom-shape.png">
+                </div>
+            </div>
+            <div class="container container_right-sidebar">
+                <div class="article">
+                    <div class="doctors-block">
+                        <div class="img">
+                            <img src="/@Model.ImagePath">
+                        </div>
+                        <div class="content">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th colspan="2">
+                                            <h3 class="title">@Model.UserName    </h3>
+                                            @*<h5 class="profession">Neurosurgical </h5>*@
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>Speciality</th>
+                                        <td>
+                                            @Model.Speciality
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Areas of Expertise:</th>
+                                        <td>
+                                            @Model.Education
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Years of Practice:</th>
+                                        <td>@Model.Experience</td>
+                                    </tr>
+                                    @*<tr>
+                                        <th>Working Time:</th>
+                                        <td>
+                                            <table>
+                                                <tr>
+                                                    <td>@Model.AvailableDays</td>
+                                                    <td>@Model.AvailableTime</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>*@
+
+
+                                    <tr>
+                                        <th>Contacts:</th>
+                                        <td>
+                                            <a href="tel:051-2362315">@Model.Phone </a><br>
+                                            @*<a href="#"><i class="fa fa-facebook"></i></a>
+                                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                                <a href="#"><i class="fa fa-share-alt"></i></a>*@
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    @*<div class="doctors-text">
+                                <h1 class="list-title">Dr  Mohib Ur Rehman  has to the following  key services:</h1>
+                                <p class="text">
+                                    Lower Backache,
+                                    Headache,
+                                    Migraine,
+                                    Dementia,
+                                    Parkinsonism,
+                                    Bell’s Palsy,
+                                    Muscular Weakness,
+                                    Alzheimeres,
+                                    Epilepsy,
+                                    Spine fixation.
+
+                                </p>
+                                @*<h1 class="list-title">Dr  Mohib Ur Rehman  has to the following  key services:</h1>
+                        <ul class="list">
+                            <li class="list-item"><i class="fa fa-check"></i> Lower Backache</li>
+                            <li class="list-item"><i class="fa fa-check"></i> 	Headache</li>
+                            <li class="list-item"><i class="fa fa-check"></i> 	Migraine</li>
+                            <li class="list-item"><i class="fa fa-check"></i> 	Dementia</li>
+                            <li class="list-item"><i class="fa fa-check"></i> 	Parkinsonism</li>
+                            <li class="list-item"><i class="fa fa-check"></i> 	Bell’s Palsy</li>
+                            <li class="list-item"><i class="fa fa-check"></i> 	Muscular Weakness</li>
+                            <li class="list-item"><i class="fa fa-check"></i> 	Alzheimeres</li>
+                            <li class="list-item"><i class="fa fa-check"></i> 	 Epilepsy</li>
+                            <li class="list-item"><i class="fa fa-check"></i> 	 Spine fixation</li>
+                        </ul>
+                        </div>*@
+                </div>
+                <div class="sidebar">
+                    <div class="doctors-sidebar">
+                        <!--<div class="work-hours">
+                            <h1 class="title">work hours</h1>
+                            <ul class="lists">
+                                <li class="list-item">
+                                    <span class="date">Model.AvailableDays</span>
+                                    <span class="time">Model.AvailableTime</span>
+                                </li>-->
+                                @*<li class="list-item">
+                                        <span class="date">Sunday</span>
+                                        <span class="time">Off</span>
+                                    </li>*@
+                            <!--</ul>
+                        </div>-->
+                        <div class="appointment">
+                            <h1 class="title">Book an appointment</h1>
+                            <div class="d-flex justify-content-center ">
+                                @Html.ActionLink("book now", "MakeAnAppointment", "Home", new { doctorid = Model.Id }, new  { @class = "btn btn_pink" })
+                                @*<a   href="/Home/MakeAnAppointment/@Model.Id" >book now</a>*@
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-<!-- End of .doctors -->
-<!-- jQuery -->
+        </section>
+        <!-- End of .doctors -->
+        <!-- jQuery -->
+    }
+}

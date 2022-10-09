@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace NoorGeneralHospital.Controllers
 {
-    public class ReportController : Controller
+    public class ReportController : AdminController
     {
         private readonly ApplicationDbContext _db = new ApplicationDbContext();
         // GET: Report
@@ -41,7 +41,7 @@ namespace NoorGeneralHospital.Controllers
                //"@StatusId,@FromDate,@ToDate",
                //_StatusId, _FromDate, _ToDate).ToList();
 
-               list= _db.Database.SqlQuery<Appointment_GetAppointmentDetails>("Sp_GetAppointmentReportDetails @StatusId, @FromDate, @ToDate",
+               list= _db.Database.SqlQuery<Appointment_GetAppointmentDetails>("Appointment_GetAppointmentReportDetails @StatusId, @FromDate, @ToDate",
                    _StatusId, _FromDate, _ToDate).ToList();
                 //list = db.Database.SqlQuery<Appointment_GetAppointmentDetails>("dbo.Appointment_GetAppointmentReportDetails").ToList();
             }

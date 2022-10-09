@@ -9,7 +9,6 @@ namespace NoorGeneralHospital.Models.Sp_Model
     public class Appointment_GetAppointmentDetails
     {
         public int Id { get; set; }
-        public int PatientAge { get; set; }
         public string PatientName { get; set; }
         public string PatientEmail { get; set; }
         public string PatientPhone { get; set; }
@@ -18,7 +17,7 @@ namespace NoorGeneralHospital.Models.Sp_Model
         public int DoctorId { get; set; }
         public string Doctor { get; set; }
         public string ImagePath { get; set; }
-        public string AppointmentDate { get; set; }
+        public DateTime AppointmentDate { get; set; }
         public string Description { get; set; }
         public string Reason { get; set; }
         public bool IsActive { get; set; }
