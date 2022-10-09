@@ -3,8 +3,11 @@
 @{
     if (User.Identity.IsAuthenticated)
     {
+        string mailAddress = this.User.Identity.Name;
+        char atSign = '@';
+        string user = mailAddress.Split(atSign)[0]; // hello
 
-        <p> @(this.User.Identity.Name) </p>
+        <p> @user </p>
 
         @*if (HttpContext.Current.User.IsInRole("Admin"))
         {
