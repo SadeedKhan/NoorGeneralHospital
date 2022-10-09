@@ -30,9 +30,11 @@
                 <tbody>
                     @foreach (var doc in Model)
                     {
+                        char atSign = '@';
+                        string user = doc.PatientName.Split(atSign)[0]; // hello
                         <tr>
                             <td>
-                                @doc.PatientName
+                                @user
                             </td>
                             <td>@doc.PatientPhone</td>
                             <td>

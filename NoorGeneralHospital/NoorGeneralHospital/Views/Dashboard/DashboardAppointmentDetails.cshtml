@@ -18,9 +18,11 @@
                 <tbody>
                     @foreach (var doc in Model)
                     {
+                        char atSign = '@';
+                        string user = doc.PatientName.Split(atSign)[0];
                         <tr>
                             <td style="min-width: 200px;">
-                                <h2> @doc.PatientName</h2>
+                                <h2> @user</h2>
                             </td>
                             <td>
                                 <h5 class="time-title p-0">Appointment With</h5>

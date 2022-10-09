@@ -705,8 +705,6 @@ D:\Personal\NoorGeneralHospital\NoorGeneralHospital\NoorGeneralHospital\obj\Debu
 F:\Final Year Project\Repos\NoorGeneralHospitalLatest\NoorGeneralHospital\NoorGeneralHospital\bin\NoorGeneralHospital.dll.config
 F:\Final Year Project\Repos\NoorGeneralHospitalLatest\NoorGeneralHospital\NoorGeneralHospital\bin\NoorGeneralHospital.dll
 F:\Final Year Project\Repos\NoorGeneralHospitalLatest\NoorGeneralHospital\NoorGeneralHospital\bin\NoorGeneralHospital.pdb
-F:\Final Year Project\Repos\NoorGeneralHospitalLatest\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.csproj.AssemblyReference.cache
-F:\Final Year Project\Repos\NoorGeneralHospitalLatest\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.csproj.SuggestedBindingRedirects.cache
 F:\Final Year Project\Repos\NoorGeneralHospitalLatest\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.InitialCreate.resources
 F:\Final Year Project\Repos\NoorGeneralHospitalLatest\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.IntialDb.resources
 F:\Final Year Project\Repos\NoorGeneralHospitalLatest\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.updateidspecial.resources
@@ -745,7 +743,9 @@ F:\Final Year Project\Repos\NoorGeneralHospitalLatest\NoorGeneralHospital\NoorGe
 F:\Final Year Project\Repos\NoorGeneralHospitalLatest\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.Opp1.resources
 F:\Final Year Project\Repos\NoorGeneralHospitalLatest\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.Migrations.Opp2.resources
 F:\Final Year Project\Repos\NoorGeneralHospitalLatest\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.csproj.GenerateResource.cache
-F:\Final Year Project\Repos\NoorGeneralHospitalLatest\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.csproj.CoreCompileInputs.cache
-F:\Final Year Project\Repos\NoorGeneralHospitalLatest\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.csproj.CopyComplete
 F:\Final Year Project\Repos\NoorGeneralHospitalLatest\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.dll
 F:\Final Year Project\Repos\NoorGeneralHospitalLatest\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.pdb
+F:\Final Year Project\Repos\NoorGeneralHospitalLatest\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.csproj.AssemblyReference.cache
+F:\Final Year Project\Repos\NoorGeneralHospitalLatest\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.csproj.SuggestedBindingRedirects.cache
+F:\Final Year Project\Repos\NoorGeneralHospitalLatest\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.csproj.CoreCompileInputs.cache
+F:\Final Year Project\Repos\NoorGeneralHospitalLatest\NoorGeneralHospital\NoorGeneralHospital\obj\Debug\NoorGeneralHospital.csproj.CopyComplete
