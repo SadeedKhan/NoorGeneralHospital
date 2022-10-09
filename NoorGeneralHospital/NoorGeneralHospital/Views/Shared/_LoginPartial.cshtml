@@ -6,10 +6,10 @@
 
         <p> @(this.User.Identity.Name) </p>
 
-        if (HttpContext.Current.User.IsInRole("Admin"))
+        @*if (HttpContext.Current.User.IsInRole("Admin"))
         {
-            <a href="~/Dashboard/Index" class="btn btn_pink" title="Admin">Admin</a>
-        }
+            <a href="~/Dashboard/Index" class="btn btn_pink btn btn-sm" title="Admin">Admin</a>
+        }*@
         using (Html.BeginForm("LogOff", "Account", new { area = "" }, FormMethod.Post, new { @class = "form-inline" }))
         {
             @Html.AntiForgeryToken()

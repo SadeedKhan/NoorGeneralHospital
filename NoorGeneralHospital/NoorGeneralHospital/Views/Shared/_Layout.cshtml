@@ -95,8 +95,13 @@
                     </div>
                     <div class="header-top__call-item">
                         <div class="header-top__call-text">
+                           
+                        </div>
+                    </div>
+                    <div class="header-top__call-item">
+                        <div class="header-top__call-text">
                             @Html.Partial("_LoginPartial")
-                            </div>
+                        </div>
                     </div>
                     <!-- End of .header-top__call-item -->
                 </div>
@@ -156,15 +161,13 @@
                             </li>*@
                     </ul>
                     <div class="navbar__right">
-                        <div class="navbar__search searchBox-open">
-                            <svg width="24.71" height="25.687" viewBox="0 0 24.71 24.687">
-                                <path id="search.svg" class="cls-3"
-                                      d="M1144.4,440.468l8.19,8.178-3.47,3.467-8.19-8.178,1.18-1.177-1.38-1.385a7.878,7.878,0,1,1,1.11-1.11l1.38,1.383Zm-2.36-5.172a6.29,6.29,0,1,0-6.29,6.282A6.293,6.293,0,0,0,1142.04,435.3Zm8.33,13.35-3.61-3.6-1.24,1.245,3.6,3.6Zm-5.97-3.465,1.25-1.246-1.25-1.245-1.24,1.245Zm-11.79-9.885h-1.57a4.715,4.715,0,0,1,4.71-4.712v1.57A3.146,3.146,0,0,0,1132.61,435.3Z"
-                                      transform="translate(-1127.88 -427.438)" />
-                            </svg>
-                        </div>
-                        @*<button type="button" class="btn btn_pink" id="popup-form-open"  data-toggle="modal" data-target="#exampleModal">MAKE AN APPOINTMENT</button>*@
                         @Html.ActionLink("MAKE AN APPOINTMENT", "Doctors", "Home", null, new { @class = "btn btn_pink" })
+                    </div>
+                    <div class="navbar__right">
+                        @if (HttpContext.Current.User.IsInRole("Admin"))
+                        {
+                            @Html.ActionLink("Admin", "Index", "Dashboard", null, new { @class = "btn btn_pink" })
+                        }
                     </div>
                 </div>
 
