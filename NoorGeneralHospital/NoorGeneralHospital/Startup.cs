@@ -28,7 +28,6 @@ namespace NoorGeneralHospital
             var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
             var user = new ApplicationUser
             {
-                UserName = "Admin",
                 PhoneNumber="12345678919",
                 Email = email,
             };
